@@ -384,6 +384,42 @@ if ( ! function_exists( 'my_mc_enqueue_scripts' ) ) :
     add_action( 'wp_enqueue_scripts', 'my_mc_enqueue_scripts' );
 endif;
 
+
+
+add_action('admin_init', 'url_ticker_section');  
+
+function url_ticker_section() {  
+    add_settings_section(  
+        'url_ticker_setting_section', // Section ID 
+        'Seccion para cargar la url de la venta de las entradas', // Section Title
+        'url_ticker_setting_section_callback', // Callback
+        'general' // What Page?  This makes the section show up on the General Settings Page
+    );
+
+    add_settings_field( // Option 1
+        'url_ticket', // Option ID
+        'Url: ', // Label
+        'url_ticket_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed (General Settings)
+        'url_ticker_setting_section', // Name of our section
+        array( // The $args
+            'url_ticket' // Should match Option ID
+        )  
+    ); 
+
+    register_setting('general','url_ticket', 'esc_attr');
+}
+
+function url_ticker_setting_section_callback() { // Section Callback
+    echo '<p>Ingrese la url donde estaran las ventas de las entradas</p>';  
+}
+
+function url_ticket_callback($args) {  // Textbox Callback
+    $option = get_option($args[0]);
+    echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
+}
+
+
 function pgwp_sanitize_placeholder($input) { return $input; }
 /*
  * Resource files included by Pinegrow.

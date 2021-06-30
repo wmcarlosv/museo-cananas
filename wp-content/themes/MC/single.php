@@ -37,7 +37,7 @@
 <div class="exp-header-section">
     <div class="nav-spacer"></div>
     <div class="mycontainer header">
-          <a data-w-id="0a145c33-6e16-f8fc-bfd4-cb427c448321" href="https://www.eventbrite.com.mx/e/zeries-creando-el-mundo-que-queremos-charla-en-ingles-tickets-142800575365?aff=ebdssbonlinesearch" target="_blank" class="bot-n-tickets w-inline-block">
+          <a data-w-id="0a145c33-6e16-f8fc-bfd4-cb427c448321" target="_blank" href="<?php echo get_option('url_ticket'); ?>" class="bot-n-tickets w-inline-block">
             <div class="boton-tickets-text">
                   <?php _e( 'Compra', 'my_mc' ); ?>
                   <br>

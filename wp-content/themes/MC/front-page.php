@@ -38,7 +38,7 @@
 <div class="hp-header-section">
     <div class="nav-spacer"></div>
     <div class="mycontainer header">
-        <a data-w-id="2742f620-b5da-5a0c-b66e-5d44389ea04b" href="#" class="bot-n-tickets w-inline-block"> <div class="boton-tickets-text">
+        <a data-w-id="2742f620-b5da-5a0c-b66e-5d44389ea04b" target="_blank" href="<?php echo get_option('url_ticket'); ?>" class="bot-n-tickets w-inline-block"> <div class="boton-tickets-text">
                 <?php _e( 'Compra', 'my_mc' ); ?>
                 <br>
                 <?php _e( 'tus', 'my_mc' ); ?>

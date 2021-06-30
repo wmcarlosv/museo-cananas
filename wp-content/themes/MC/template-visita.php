@@ -36,7 +36,7 @@
     </div>
 </div>
 <div class="horarios-section">
-    <a data-w-id="22e93460-a2ef-c131-1368-f3365d755790" href="https://www.eventbrite.com.mx/d/online/guadalajara/" target="_blank" class="bot-n-tickets w-inline-block"> <div class="boton-tickets-text">
+    <a data-w-id="22e93460-a2ef-c131-1368-f3365d755790" target="_blank" href="<?php echo get_option('url_ticket'); ?>" class="bot-n-tickets w-inline-block"> <div class="boton-tickets-text">
             <?php _e( 'Compra', 'my_mc' ); ?>
             <br>
             <?php _e( 'tus', 'my_mc' ); ?>
