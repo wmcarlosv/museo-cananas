@@ -40,10 +40,49 @@
         <div class="div-block-2">
             <div data-duration-in="300" data-duration-out="100" class="w-tabs">
                 <div class="main-title-wrapper w-tab-menu">
-                    <a data-w-tab="Tab 4" class="exp-page-submenu-link w-inline-block w-tab-link"> <div>
-                            <?php _e( '2018', 'my_mc' ); ?>
+                    <?php 
+
+                        $args = array(
+                                'post_type'=>'licitaciones', 
+                                'post_status' => 'publish', 
+                                'meta_key'=>'licitaciones_year',
+                                'orderby' => 'meta_value',
+                                'order'=>'ASC'
+                            );
+
+
+                        $loop = new WP_Query($args);
+                        $years = [];
+
+                        if ($loop->have_posts()):
+                            while($loop->have_posts()) : $loop->the_post();
+                                $year = get_post_meta(get_the_ID(), 'licitaciones_year', true);
+                                $cont_exists = 0;
+                                for($i=0;$i < count($years);$i++){
+                                    if($years[$i] == $year){
+                                        $cont_exists++;
+                                    }
+                                }
+
+                                if($cont_exists == 0){
+                                    array_push($years, $year);
+                                }
+
+                                $cont_exists = 0;
+                            endwhile;
+                        endif;
+
+                        for($x=0;$x<count($years); $x++):
+                    ?>
+                    <a data-w-tab="Tab <?php echo $years[$x]; ?>" class="exp-page-submenu-link w-inline-block w-tab-link w--current"> <div>
+                            <?php echo $years[$x]; ?>
                         </div> </a>
-                    <a data-w-tab="Tab 1" class="exp-page-submenu-link w-inline-block w-tab-link"> <div>
+                <?php endfor; ?>
+                
+                    <!--<a data-w-tab="Tab 4" class="exp-page-submenu-link w-inline-block w-tab-link"> <div>
+                            <?php _e( '2018', 'my_mc' ); ?>
+
+                            <a data-w-tab="Tab 1" class="exp-page-submenu-link w-inline-block w-tab-link"> <div>
                             <?php _e( '2019', 'my_mc' ); ?>
                         </div> </a>
                     <a data-w-tab="Tab 2" class="exp-page-submenu-link w-inline-block w-tab-link"> <div>
@@ -51,10 +90,59 @@
                         </div> </a>
                     <a data-w-tab="Tab 3" class="exp-page-submenu-link w-inline-block w-tab-link w--current"> <div>
                             <?php _e( '2021', 'my_mc' ); ?>
-                        </div> </a>
+                        </div> </a>-->
+
                 </div>
+
+
                 <div class="w-tab-content">
-                    <div data-w-tab="Tab 4" class="w-tab-pane">
+                    <?php for($x=0;$x<count($years); $x++): ?>
+                        <div data-w-tab="Tab <?php echo $years[$x]; ?>" class="w-tab-pane">
+                            <div class="collection-list-wrapper-4">
+                                <?php 
+                                    $args = array(
+                                            'post_type'=>'licitaciones', 
+                                            'post_status' => 'publish', 
+                                            'meta_key'=>'licitaciones_year',
+                                            'orderby' => 'meta_value',
+                                            'order'=>'ASC',
+                                            'meta_query'=>array(
+                                                'key'=>'licitaciones_year',
+                                                'value'=>$years[$x],
+                                                'compare'=>'='
+                                            )
+                                        );
+
+
+                                    $loop = new WP_Query($args);
+                                    if($loop->have_posts()):
+                                        while($loop->have_posts()):
+                                            $loop->the_post();
+                                ?>
+                                <div class="licitaciones-item-container">
+                                    <h2 class="heading-coleccion licitaciones"><?php echo get_the_title(); ?></h2>
+                                    <div class="licitaciones-info-wrapper">
+                                        <div class="licitaciones-info-text">
+                                            <?php echo the_content(); ?>
+                                        </div>
+                                        <div class="licitaciones-info-text">
+                                            <?php echo $years[$x]; ?>
+                                        </div>
+                                        <?php 
+                                        $pdf_licitacion = get_post_meta( $post->ID, 'licitaciones_file', true );
+                                        if( !empty($pdf_licitacion) ): ?>
+                                          <a href="<?php echo $pdf_licitacion['url'];  ?>" class="basic-button licitaciones w-button" download><?php _e( 'descargar bases', 'my_mc' ); ?></a>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                <?php 
+                                        endwhile;
+                                    endif;
+                                ?>
+                            </div>
+                        </div>
+                    <?php endfor; ?>
+                    <!--<div data-w-tab="Tab 4" class="w-tab-pane">
                         <div class="collection-list-wrapper-4">
                             <div class="licitaciones-item-container">
                                 <h2 class="heading-coleccion licitaciones"><?php echo get_post_meta( get_the_ID(), 'heading_2018_0_heading_2018', true ); ?></h2>
@@ -293,8 +381,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
+
+
+
             </div>
             <h1 class="exp-page-heading"><?php _e( 'Licitaciones', 'my_mc' ); ?></h1>
         </div>

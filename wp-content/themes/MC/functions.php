@@ -419,6 +419,88 @@ function url_ticket_callback($args) {  // Textbox Callback
     echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
 }
 
+//Post Type de Licitaciones
+function licitaciones_postype(){
+    register_post_type( 'licitaciones',
+        array(
+            'labels' => array(
+                'name' => __('Licitaciones'),
+                'singular_name' => __('Licitacion')
+            ),
+            'public' => true,
+            'has_archive'=> true,
+            'rewrite' => array('slug' => 'licitaciones'),
+            'show_in_rest' => true
+        )
+    );
+}
+
+add_action('init', 'licitaciones_postype');
+
+
+function licitaciones_add_custom_box() {
+    $screens = [ 'licitaciones' ];
+    foreach ( $screens as $screen ) {
+        add_meta_box(
+            'licitaciones_box_id',                 // Unique ID
+            'Ano y Archivo de la Licitacion',      // Box title
+            'licitaciones_custom_box_html',  // Content callback, must be of type callable
+            $screen                            // Post type
+        );
+    }
+}
+
+function licitaciones_custom_box_html( $post ) {
+    wp_nonce_field(plugin_basename(__FILE__), 'licitaciones_file_nonce');
+
+    $year = get_post_meta( $post->ID, 'licitaciones_year', true );
+    $pdf_licitacion = get_post_meta( $post->ID, 'licitaciones_file', true );
+    
+    ?>
+    <label for="licitaciones_year">Ano:</label>
+    <input type="text" name="licitaciones_year" value="<?php echo @$year; ?>" id="licitaciones_year" />
+    <hr />
+    <label for="licitaciones_file">Archivo:</label>
+    <input type="file" name="licitaciones_file" id="licitaciones_file" />
+    <?php if(!empty($pdf_licitacion)): ?>
+        <a style="border:1px solid blue; padding: 5px; text-decoration: none;" href="<?php echo $pdf_licitacion['url'] ?>" target="_blank">Ver Archivo</a>
+    <?php endif; ?>
+    <?php
+}
+
+add_action( 'add_meta_boxes', 'licitaciones_add_custom_box' );
+
+function licitaciones_save_postdata( $post_id ) {
+    $year = (!empty($_POST['licitaciones_year'])) ? $_POST['licitaciones_year'] : '' ;
+
+     if(!empty($_FILES['licitaciones_file']['name'])) {
+        $supported_types = array('application/pdf');
+        $arr_file_type = wp_check_filetype(basename($_FILES['licitaciones_file']['name']));
+        $uploaded_type = $arr_file_type['type'];
+        
+        if(in_array($uploaded_type, $supported_types)) {
+            $upload = wp_upload_bits($_FILES['licitaciones_file']['name'], null, file_get_contents($_FILES['licitaciones_file']['tmp_name']));
+            if(isset($upload['error']) && $upload['error'] != 0) {
+                wp_die('There was an error uploading your file. The error is: ' . $upload['error']);
+            } else {
+                update_post_meta($post_id, 'licitaciones_file', $upload);
+            }
+        }
+        else {
+            wp_die("The file type that you've uploaded is not a PDF.");
+        }
+    }
+    
+    update_post_meta($post_id, 'licitaciones_year', $year);
+}
+
+add_action( 'save_post', 'licitaciones_save_postdata' );
+
+function update_edit_form() {
+    echo ' enctype="multipart/form-data"';
+}
+add_action('post_edit_form_tag', 'update_edit_form');
+
 
 function pgwp_sanitize_placeholder($input) { return $input; }
 /*
