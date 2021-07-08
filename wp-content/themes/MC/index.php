@@ -79,8 +79,17 @@
                     </div>
                     <div data-w-tab="Tab 1" class="w-tab-pane">
                         <div class="exhibiciones-page-wrapper">
-                            <?php if ( have_posts() ) : ?>
-                                <?php while ( have_posts() ) : the_post(); ?>
+                            <?php 
+                                $actuales = new WP_Query(
+                                    array(
+                                        'post_type'=>'post',
+                                        'category_name' => 'actuales' 
+                                    )
+                                );
+                                if ( have_posts() ) : 
+
+                                ?>
+                                <?php while ( $actuales->have_posts() ) : $actuales->the_post(); ?>
                                     <?php PG_Helper::rememberShownPost(); ?>
                                     <a href="<?php echo esc_url( get_permalink() ); ?>" <?php post_class( 'exhibicion-item w-inline-block' ); ?> id="post-<?php the_ID(); ?>"> <div class="exhibicion-text-wrapper">
                                             <div class="text-block-2">
@@ -108,8 +117,15 @@
                     </div>
                     <div data-w-tab="Tab 2" class="w-tab-pane">
                         <div class="exhibiciones-page-wrapper">
-                            <?php if ( have_posts() ) : ?>
-                                <?php while ( have_posts() ) : the_post(); ?>
+                            <?php 
+                             $pasadas = new WP_Query(
+                                    array(
+                                        'post_type'=>'post',
+                                        'category_name' => 'pasadas' 
+                                    )
+                                );
+                            if ( have_posts() ) : ?>
+                                <?php while ( $pasadas->have_posts() ) : $pasadas->the_post(); ?>
                                     <?php PG_Helper::rememberShownPost(); ?>
                                     <a href="<?php echo esc_url( get_permalink() ); ?>" <?php post_class( 'exhibicion-item w-inline-block' ); ?> id="post-<?php the_ID(); ?>"> <div class="exhibicion-text-wrapper">
                                             <div class="text-block-2">
@@ -137,8 +153,15 @@
                     </div>
                     <div data-w-tab="Tab 3" class="w-tab-pane w--tab-active">
                         <div class="exhibiciones-page-wrapper">
-                            <?php if ( have_posts() ) : ?>
-                                <?php while ( have_posts() ) : the_post(); ?>
+                            <?php 
+                            $proximas = new WP_Query(
+                                    array(
+                                        'post_type'=>'post',
+                                        'category_name' => 'proximas' 
+                                    )
+                                );
+                            if ( have_posts() ) : ?>
+                                <?php while ( $proximas->have_posts() ) : $proximas->the_post(); ?>
                                     <?php PG_Helper::rememberShownPost(); ?>
                                     <a href="<?php echo esc_url( get_permalink() ); ?>" <?php post_class( 'exhibicion-item w-inline-block' ); ?> id="post-<?php the_ID(); ?>"> <div class="exhibicion-text-wrapper">
                                             <div class="text-block-2">
@@ -166,7 +189,7 @@
                     </div>
                 </div>
             </div>
-            <h1 class="exp-page-heading"><?php the_title(); ?></h1>
+            <h1 class="exp-page-heading">Exposiciones</h1>
         </div>
     </div>
 </div>
