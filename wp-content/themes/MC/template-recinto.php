@@ -153,7 +153,11 @@
                 </div>
             </div>
             <div class="orozco-info-container">
-                <?php the_content(); ?>
+                <?php
+                $content = the_content();
+                    apply_filters('the_content', $content); 
+
+                  ?>
             </div>
             <div class="images-gallery-container-orozco">
                 <div class="div-block-4">
