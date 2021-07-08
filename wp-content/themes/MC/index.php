@@ -37,13 +37,13 @@
                     <a data-w-tab="Tab 4" class="exp-page-submenu-link w-inline-block w-tab-link"> <div>
                             <?php _e( 'Todas', 'my_mc' ); ?>
                         </div> </a>
-                    <a data-w-tab="Tab 1" class="exp-page-submenu-link w-inline-block w-tab-link"> <div>
+                    <a data-w-tab="Tab 1" class="exp-page-submenu-link w-inline-block w-tab-link w--current"> <div>
                             <?php _e( 'Actuales', 'my_mc' ); ?>
                         </div> </a>
                     <a data-w-tab="Tab 2" class="exp-page-submenu-link w-inline-block w-tab-link"> <div>
                             <?php _e( 'Pasadas', 'my_mc' ); ?>
                         </div> </a>
-                    <a data-w-tab="Tab 3" class="exp-page-submenu-link w-inline-block w-tab-link w--current"> <div>
+                    <a data-w-tab="Tab 3" class="exp-page-submenu-link w-inline-block w-tab-link"> <div>
                             <?php _e( 'Próximas', 'my_mc' ); ?>
                         </div> </a>
                 </div>
@@ -59,7 +59,7 @@
                                             </div>
                                             <h3 class="heading exhibicion"><?php the_title(); ?></h3>
                                             <div class="fechas">
-                                                <?php the_content(); ?>
+                                                <?php echo get_post_meta(get_the_ID(),'fechas', true); ?>
                                             </div>
                                         </div> <?php $image_attributes = !empty( get_the_ID() ) ? wp_get_attachment_image_src( PG_Image::isPostImage() ? get_the_ID() : get_post_thumbnail_id( get_the_ID() ), 'full' ) : null; ?><div class="exh-image-container" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"></div> <div class="exhibicion-item-arrow-container">
                                             <div class="arrow-2-container">
@@ -97,7 +97,7 @@
                                             </div>
                                             <h3 class="heading exhibicion"><?php the_title(); ?></h3>
                                             <div class="fechas">
-                                                <?php the_content(); ?>
+                                                <?php echo get_post_meta(get_the_ID(),'fechas', true); ?>
                                             </div>
                                         </div> <?php $image_attributes = !empty( get_the_ID() ) ? wp_get_attachment_image_src( PG_Image::isPostImage() ? get_the_ID() : get_post_thumbnail_id( get_the_ID() ), 'full' ) : null; ?><div class="exh-image-container" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"></div> <div class="exhibicion-item-arrow-container">
                                             <div class="arrow-2-container">
@@ -133,7 +133,7 @@
                                             </div>
                                             <h3 class="heading exhibicion"><?php the_title(); ?></h3>
                                             <div class="fechas">
-                                                <?php the_content(); ?>
+                                                <?php echo get_post_meta(get_the_ID(),'fechas', true); ?>
                                             </div>
                                         </div> <?php $image_attributes = !empty( get_the_ID() ) ? wp_get_attachment_image_src( PG_Image::isPostImage() ? get_the_ID() : get_post_thumbnail_id( get_the_ID() ), 'full' ) : null; ?><div class="exh-image-container" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"></div> <div class="exhibicion-item-arrow-container">
                                             <div class="arrow-2-container">
@@ -169,7 +169,7 @@
                                             </div>
                                             <h3 class="heading exhibicion"><?php the_title(); ?></h3>
                                             <div class="fechas">
-                                                <?php the_content(); ?>
+                                                <?php echo get_post_meta(get_the_ID(),'fechas', true); ?>
                                             </div>
                                         </div> <?php $image_attributes = !empty( get_the_ID() ) ? wp_get_attachment_image_src( PG_Image::isPostImage() ? get_the_ID() : get_post_thumbnail_id( get_the_ID() ), 'full' ) : null; ?><div class="exh-image-container" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"></div> <div class="exhibicion-item-arrow-container">
                                             <div class="arrow-2-container">
