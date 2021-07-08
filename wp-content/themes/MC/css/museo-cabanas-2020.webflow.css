@@ -1659,7 +1659,7 @@ h1 {
   color: #000;
   font-size: 40px;
   line-height: 46px;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
 }
 
 .cine-content-wrapper {
@@ -3810,7 +3810,7 @@ h1 {
   color: #981a4b !important;  
 }
 
-div.exp-content-text-wrapper p{
+div.exp-content-text-wrapper p, div.orozco-info-container p{
     margin-right: 25px;
     padding-right: 0px;
     padding-bottom: 15px;

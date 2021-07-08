@@ -109,10 +109,10 @@
         </div>
     </div>
 </div>
-<div class="escuelas-section">
+<div class="escuelas-section" style="padding-bottom: 50px">
     <div class="mycontainer cine-container">
         <div class="main-title-wrapper cine">
-            <h1 class="main-title"><?php _e( 'Patrimonio de la humanidad', 'my_mc' ); ?></h1>
+            <h1 class="main-title"><?php _e( 'Patrimonio de la Humanidad', 'my_mc' ); ?></h1>
         </div>
         <div class="taquilla-container">
             <div id="w-node-a183232a-1d6d-c331-d893-f022152a96a0-aae5941d" class="col-wrapper">
@@ -121,8 +121,15 @@
         </div>
     </div>
 </div>
-<div data-w-id="d98485cd-5fe5-c0e7-2f81-cafc3bb95cb8" class="hp-fourth-section detalle">
+<div data-w-id="d98485cd-5fe5-c0e7-2f81-cafc3bb95cb8" class="hp-fourth-section">
     <div class="mycontainer orozco">
+
+        <div style="padding-top:56.17021276595745%; margin-bottom: 100px;" class="w-embed-youtubevideo youtube">
+            <iframe src="<?php echo get_post_meta( get_the_ID(), 'video', true ); ?>" frameborder="0" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen="">
+                <?php echo get_post_meta( get_the_ID(), 'video', true ); ?>
+            </iframe>
+        </div>
+
         <div class="orozco-hp-wrapper">
             <div class="huge-orozco-text">
                 <?php _e( 'Orozco', 'my_mc' ); ?>
@@ -147,11 +154,6 @@
             </div>
             <div class="orozco-info-container">
                 <?php the_content(); ?>
-            </div>
-            <div style="padding-top:56.17021276595745%" class="w-embed-youtubevideo youtube">
-                <iframe src="  <?php echo get_post_meta( get_the_ID(), 'video', true ); ?>" frameborder="0" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen="">
-                    <?php echo get_post_meta( get_the_ID(), 'video', true ); ?>
-                </iframe>
             </div>
             <div class="images-gallery-container-orozco">
                 <div class="div-block-4">
