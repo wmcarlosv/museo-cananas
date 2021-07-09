@@ -270,6 +270,7 @@
         <div class="footer-wrapper">
             <div id="w-node-aac255a4-46db-2952-e2ac-403bb428fac7-2aaf4bf3" class="newsletter-wrapper">
                 <div class="w-form">
+                    
                     <form id="wf-form-Newsletter" name="wf-form-Newsletter" data-name="Newsletter">
                         <label for="email" class="footer-list-title">
                             <?php _e( '¿Quieres recibir información del Museo Cabañas? ¡Suscríbete!', 'my_mc' ); ?>

@@ -407,7 +407,19 @@ function url_ticker_section() {
         )  
     ); 
 
+    add_settings_field( // Option 1
+        'mailchip_data', // Option ID
+        'Datos Formulario MailChip: ', // Label
+        'mailchip_data_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed (General Settings)
+        'url_ticker_setting_section', // Name of our section
+        array( // The $args
+            'mailchip_data' // Should match Option ID
+        )  
+    ); 
+
     register_setting('general','url_ticket', 'esc_attr');
+    register_setting('general','mailchip_data', 'esc_attr');
 }
 
 function url_ticker_setting_section_callback() { // Section Callback
@@ -415,6 +427,11 @@ function url_ticker_setting_section_callback() { // Section Callback
 }
 
 function url_ticket_callback($args) {  // Textbox Callback
+    $option = get_option($args[0]);
+    echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
+}
+
+function mailchip_data_callback($args){
     $option = get_option($args[0]);
     echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
 }

@@ -117,7 +117,7 @@
                             'post_type' => 'subscription'
                     ) ); ?>
                     <?php if( !$mailer->processed || $mailer->error) : ?>
-                        <form id="wf-form-Newsletter" name="wf-form-Newsletter" data-name="Newsletter" action="<?php echo '#pgpb_contact_form_mailer_id'; ?>" method="post" onsubmit="event.stopImmediatePropagation();event.stopPropagation();">
+                        <form <?php echo get_option('mailchip_data'); ?>>
                             <label for="email-2" class="footer-list-title">
                                 <?php _e( '¿Quieres recibir información del Museo Cabañas? ¡Suscríbete!', 'my_mc' ); ?>
                             </label>
