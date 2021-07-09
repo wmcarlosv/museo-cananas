@@ -50,7 +50,7 @@
              <div class="col-wrapper">
 
 
-                <div class="experiencia-container">
+                <div class="experiencia-container">  
                     <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_one_title', true ); ?></h2>
                     <div class="div-block-8">
                         <div class="experiencia-info-text">
