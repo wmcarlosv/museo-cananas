@@ -90,6 +90,13 @@
                 <p class="taquilla-texto"><?php echo get_post_meta( get_the_ID(), 'cafeteria_horarios:', true ); ?></p>
             </div>
         </div>
+        <br />
+        <div style="text-align: center;">
+        <?php 
+            $imagen_escuela = get_post_meta(get_the_ID(), 'imagen_cafeteria', true);
+            echo wp_get_attachment_image($imagen_escuela, array('1002','624'));
+        ?>
+        </div>
     </div>
 </div>
 <div class="escuelas-section">

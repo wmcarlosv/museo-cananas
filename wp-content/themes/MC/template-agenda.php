@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: visita page
+ Template Name: Agenda page
  Template Post Type: page
 */
 ?>
@@ -29,106 +29,78 @@
         </div>
         <!-- #main-nav -->
         <div class="nav-items-wrapper-language">
-          <?php if ( is_active_sidebar( 'my_lang' ) ) : ?>
+         <?php if ( is_active_sidebar( 'my_lang' ) ) : ?>
               <?php dynamic_sidebar( 'my_lang' ); ?>
           <?php endif; ?>
       </div>
     </div>
 </div>
-<div class="horarios-section">
-    <a data-w-id="22e93460-a2ef-c131-1368-f3365d755790" target="_blank" href="<?php echo get_option('url_ticket'); ?>" class="bot-n-tickets w-inline-block"> <div class="boton-tickets-text">
-            <?php _e( 'Compra', 'my_mc' ); ?>
-            <br>
-            <?php _e( 'tus', 'my_mc' ); ?>
-            <br>
-            <?php _e( 'entradas', 'my_mc' ); ?>
-            <br>
-            <?php _e( 'aquí', 'my_mc' ); ?>
-        </div> </a>
+<div class="cine-section">
     <div class="mycontainer cine-container">
         <div class="main-title-wrapper cine">
-            <h1 class="main-title"><?php the_title(); ?></h1>
+            <h1 class="main-title"><strong><?php the_title(); ?></strong></h1>
         </div>
-        <div class="taquilla-container">
-            <div class="col-wrapper">
-                <h2 class="heading-cine"><?php _e( 'Entradas:', 'my_mc' ); ?></h2>
-                <div class="div-block-3">
-                    <div class="taquilla-texto">
-                        <?php echo get_post_meta( get_the_ID(), 'entradas_text_0_entradas_text', true ); ?>
-                    </div>
-                    <div class="taquilla-texto">
-                        <?php echo get_post_meta( get_the_ID(), 'entradas_price_0_entradas_price', true ); ?>
-                    </div>
-                </div>
-                <div class="div-block-3">
-                    <div class="taquilla-texto">
-                        <?php echo get_post_meta( get_the_ID(), 'entradas_text_1_entradas_text', true ); ?>
-                    </div>
-                    <div class="taquilla-texto">
-                        <?php echo get_post_meta( get_the_ID(), 'entradas_price_1_entradas_price', true ); ?>
-                    </div>
-                </div>
-                <div class="div-block-3">
-                    <div class="taquilla-texto">
-                        <?php echo get_post_meta( get_the_ID(), 'entradas_text_2_entradas_text', true ); ?>
-                    </div>
-                    <div class="taquilla-texto">
-                        <?php echo get_post_meta( get_the_ID(), 'entradas_price_2_entradas_price', true ); ?>
-                    </div>
-                </div>
-                <div class="div-block-3">
-                    <div class="taquilla-texto">
-                        <?php echo get_post_meta( get_the_ID(), 'entradas_text_3_entradas_text', true ); ?>
-                    </div>
-                    <div class="taquilla-texto">
-                        <?php echo get_post_meta( get_the_ID(), 'entradas_price_3_entradas_price', true ); ?>
-                    </div>
-                </div>
-                <div class="div-block-3">
-                    <div class="taquilla-texto">
-                        <?php echo get_post_meta( get_the_ID(), 'entradas_text_4_entradas_text', true ); ?>
-                    </div>
-                    <div class="taquilla-texto">
-                        <?php echo get_post_meta( get_the_ID(), 'entradas_price_4_entradas_price', true ); ?>
-                    </div>
-                </div>
-                <div class="div-block-3">
-                    <div class="taquilla-texto">
-                        <?php echo get_post_meta( get_the_ID(), 'entradas_text_5_entradas_text', true ); ?>
-                    </div>
-                </div>
-                <h2 class="heading-cine"><?php echo get_post_meta( get_the_ID(), 'entrada_libre', true ); ?></h2>
+        <div class="experiencias-content-wrapper educacion">
+            <?php $imagen_top = get_post_meta(get_the_ID(), 'imagen_top', true); ?>
+            <div class="col-wrapper left">
+                    <?php echo wp_get_attachment_image($imagen_top, 'real'); ?>
+                    <br />
+                    <?php the_content(); ?>
             </div>
-            <div class="col-wrapper">
-                <h2 class="heading-cine"><?php _e( 'Horario:', 'my_mc' ); ?></h2>
-                <div class="div-block-3">
-                    <div class="taquilla-texto">
-                        <?php echo get_post_meta( get_the_ID(), 'horario', true ); ?>
+             <div class="col-wrapper">
+
+
+                <div class="experiencia-container">  
+                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_one_title', true ); ?></h2>
+                    <div class="div-block-8">
+                        <div class="experiencia-info-text">
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_one_date', true ); ?>
+                        </div>
+                        <div class="experiencia-info-text red">
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_one_taller', true ); ?>
+                        </div>
                     </div>
+                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'groupe_one_content', true ); ?></p>
                 </div>
-                <!--<h2 class="heading-cine"><?php _e( 'Horario Especial (Covid 19):', 'my_mc' ); ?></h2>
-                <div class="div-block-3">
-                    <div class="taquilla-texto">
-                        <?php echo get_post_meta( get_the_ID(), 'horario_especial_covid_19', true ); ?>
+                <div class="experiencia-container">
+                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_two_title', true ); ?></h2>
+                    <div class="div-block-8">
+                        <div class="experiencia-info-text">
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_two_date', true ); ?>
+                        </div>
+                        <div class="experiencia-info-text red">
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_two_taller', true ); ?>
+                        </div>
                     </div>
-                </div>-->
-            </div>
-        </div>
-    </div>
-</div>
-<div class="escuelas-section">
-    <div class="mycontainer cine-container">
-        <div class="main-title-wrapper cine">
-            <h1 class="main-title"><?php _e( 'Planea tu visita', 'my_mc' ); ?></h1>
-        </div>
-        <div class="taquilla-container">
-            <div class="col-wrapper" style="width: 500px;">
-                <h2 class="heading-cine"><?php _e( 'Estacionamientos públicos por la zona del Museo Cabañas:', 'my_mc' ); ?></h2>
-                <p style="white-space: pre;"><?php echo get_post_meta( get_the_ID(), 'estacionamientos_publicos_por_la_zona_del_museo_cabanas', true ); ?></p>
-            </div>
-            <div class="col-wrapper">
-                <h2 class="heading-cine"><?php _e( 'Rutas para llegar al Museo Cabañas:', 'my_mc' ); ?></h2>
-                <p style="white-space: pre;"><?php echo get_post_meta( get_the_ID(), 'rutas_para_llegar_al_museo_cabanas', true ); ?></p>
+                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'groupe_two_content', true ); ?></p>
+                </div>
+                <div class="experiencia-container">
+                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_three_title', true ); ?></h2>
+                    <div class="div-block-8">
+                        <div class="experiencia-info-text">
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_three_date', true ); ?>
+                        </div>
+                        <div class="experiencia-info-text red">
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_three_taller', true ); ?>
+                        </div>
+                    </div>
+                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'groupe_three_content', true ); ?></p>
+                </div>
+                <div class="experiencia-container">
+                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_four_title', true ); ?></h2>
+                    <div class="div-block-8">
+                        <div class="experiencia-info-text">
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_four_date', true ); ?>
+                        </div>
+                        <div class="experiencia-info-text red">
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_four_taller', true ); ?>
+                        </div>
+                    </div>
+                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'groupe_four_content', true ); ?></p>
+                </div>
+
+
+
             </div>
         </div>
     </div>
