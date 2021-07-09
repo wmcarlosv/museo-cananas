@@ -57,12 +57,12 @@
                         <?php echo get_post_meta( get_the_ID(), 'horario:', true ); ?>
                     </div>
                 </div>
-                <h2 class="heading-cine"><?php _e( 'Horario Especial (Covid 19):', 'my_mc' ); ?></h2>
+                <!--<h2 class="heading-cine"><?php _e( 'Horario Especial (Covid 19):', 'my_mc' ); ?></h2>
                 <div class="div-block-3">
                     <div class="taquilla-texto">
                         <?php echo get_post_meta( get_the_ID(), 'horario_especial_covid_19', true ); ?>
                     </div>
-                </div>
+                </div>-->
             </div>
             <div id="w-node-dca9636e-46c2-30a6-5f1a-cb3bd87e7ad7-154101aa" class="col-wrapper">
                 <?php //the_content(); ?>

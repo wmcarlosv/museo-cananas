@@ -35,14 +35,72 @@
       </div>
     </div>
 </div>
-<div class="escuelas-section first">
+<div class="cine-section">
     <div class="mycontainer cine-container">
         <div class="main-title-wrapper cine">
-            <h1 class="main-title"><?php the_title(); ?></h1>
+            <h1 class="main-title"><strong><?php the_title(); ?></strong></h1>
         </div>
-        <div class="taquilla-container">
-            <div class="col-wrapper">
-                <?php the_content(); ?>
+        <div class="experiencias-content-wrapper educacion">
+            <?php $imagen_top = get_post_meta(get_the_ID(), 'imagen_top', true); ?>
+            <div class="col-wrapper left">
+                    <?php echo wp_get_attachment_image($imagen_top, 'real'); ?>
+                    <br />
+                    <?php the_content(); ?>
+            </div>
+             <div class="col-wrapper">
+
+
+                <div class="experiencia-container">  
+                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_one_title', true ); ?></h2>
+                    <div class="div-block-8">
+                        <div class="experiencia-info-text">
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_one_date', true ); ?>
+                        </div>
+                        <div class="experiencia-info-text red">
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_one_taller', true ); ?>
+                        </div>
+                    </div>
+                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'groupe_one_content', true ); ?></p>
+                </div>
+                <div class="experiencia-container">
+                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_two_title', true ); ?></h2>
+                    <div class="div-block-8">
+                        <div class="experiencia-info-text">
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_two_date', true ); ?>
+                        </div>
+                        <div class="experiencia-info-text red">
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_two_taller', true ); ?>
+                        </div>
+                    </div>
+                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'groupe_two_content', true ); ?></p>
+                </div>
+                <div class="experiencia-container">
+                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_three_title', true ); ?></h2>
+                    <div class="div-block-8">
+                        <div class="experiencia-info-text">
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_three_date', true ); ?>
+                        </div>
+                        <div class="experiencia-info-text red">
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_three_taller', true ); ?>
+                        </div>
+                    </div>
+                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'groupe_three_content', true ); ?></p>
+                </div>
+                <div class="experiencia-container">
+                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_four_title', true ); ?></h2>
+                    <div class="div-block-8">
+                        <div class="experiencia-info-text">
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_four_date', true ); ?>
+                        </div>
+                        <div class="experiencia-info-text red">
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_four_taller', true ); ?>
+                        </div>
+                    </div>
+                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'groupe_four_content', true ); ?></p>
+                </div>
+
+
+
             </div>
         </div>
     </div>

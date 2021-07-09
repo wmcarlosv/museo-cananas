@@ -42,6 +42,11 @@
         </div>
         <div class="experiencias-content-wrapper educacion">
             <div class="col-wrapper left">
+                <?php 
+                    $imagen_escuela = get_post_meta(get_the_ID(), 'imagen_experiencia', true);
+                    echo wp_get_attachment_image($imagen_escuela, 'real');
+                    echo "<br />";
+                ?>
                 <?php the_content(); ?>
             </div>
             <div class="col-wrapper">

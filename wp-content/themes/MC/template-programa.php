@@ -45,54 +45,16 @@
                 <?php the_content(); ?>
             </div>
             <div class="col-wrapper">
-                <div class="experiencia-container">
-                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_one_title', true ); ?></h2>
-                    <div class="div-block-8">
-                        <div class="experiencia-info-text">
-                            <?php echo get_post_meta( get_the_ID(), 'groupe_one_date', true ); ?>
-                        </div>
-                        <div class="experiencia-info-text red">
-                            <?php echo get_post_meta( get_the_ID(), 'groupe_one_taller', true ); ?>
-                        </div>
-                    </div>
-                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'groupe_one_content', true ); ?></p>
-                </div>
-                <div class="experiencia-container">
-                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_two_title', true ); ?></h2>
-                    <div class="div-block-8">
-                        <div class="experiencia-info-text">
-                            <?php echo get_post_meta( get_the_ID(), 'groupe_two_date', true ); ?>
-                        </div>
-                        <div class="experiencia-info-text red">
-                            <?php echo get_post_meta( get_the_ID(), 'groupe_two_taller', true ); ?>
-                        </div>
-                    </div>
-                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'groupe_two_content', true ); ?></p>
-                </div>
-                <div class="experiencia-container">
-                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_three_title', true ); ?></h2>
-                    <div class="div-block-8">
-                        <div class="experiencia-info-text">
-                            <?php echo get_post_meta( get_the_ID(), 'groupe_three_date', true ); ?>
-                        </div>
-                        <div class="experiencia-info-text red">
-                            <?php echo get_post_meta( get_the_ID(), 'groupe_two_taller', true ); ?>
-                        </div>
-                    </div>
-                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'groupe_two_content', true ); ?></p>
-                </div>
-                <div class="experiencia-container">
-                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_four_title', true ); ?></h2>
-                    <div class="div-block-8">
-                        <div class="experiencia-info-text">
-                            <?php echo get_post_meta( get_the_ID(), 'groupe_four_date', true ); ?>
-                        </div>
-                        <div class="experiencia-info-text red">
-                            <?php echo get_post_meta( get_the_ID(), 'groupe_four_taller', true ); ?>
-                        </div>
-                    </div>
-                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'groupe_four_content', true ); ?></p>
-                </div>
+                <?php 
+
+                    $gallery = get_post_meta(get_the_ID(), 'publico_galleria', true);  
+
+                    for($i=0; $i < count($gallery); $i++){
+                        echo wp_get_attachment_image($gallery[$i],'real');
+                        echo "<br />";
+                    }
+
+                ?>
             </div>
         </div>
     </div>
