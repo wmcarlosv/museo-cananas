@@ -144,7 +144,7 @@
                     <h6 class="footer-list-title"><?php _e( 'Quienes Somos:', 'my_mc' ); ?></h6>
                 </li>
                 <li class="footer-list-item">
-                    <a href="<?php echo get_theme_mod( 'quienes_somos_quienes_somos_Misión', '#' ); ?>" class="footer-link"><?php _e( 'Misión', 'my_mc' ); ?></a>
+                    <a href="<?php echo get_permalink(get_page_by_title("Misión")); ?>" class="footer-link"><?php _e( 'Misión', 'my_mc' ); ?></a>
                 </li>
                 <li class="footer-list-item">
                     <a href="<?php echo get_theme_mod( 'quienes_somos_quienes_somos_organigrama', '#' ); ?>" class="footer-link"><?php _e( 'Organigrama', 'my_mc' ); ?></a>
