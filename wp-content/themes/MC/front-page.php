@@ -50,14 +50,19 @@
             </div> </a>
         <div data-delay="4000" data-animation="cross" data-autoplay="1" data-easing="ease-in-out-quad" data-duration="500" data-infinite="1" class="slider w-slider">
             <div class="w-slider-mask">
-                <?php if ( have_posts() ) : ?>
-                    <?php while ( have_posts() ) : the_post(); ?>
+                <?php
+                    $gallery_home = new WP_Query(array(
+                        'post_type'=>'galeria_home'
+                    ));
+                 ?>
+                <?php if ( $gallery_home->have_posts() ) : ?>
+                    <?php while ( $gallery_home->have_posts() ) : $gallery_home->the_post(); ?>
                         <?php PG_Helper::rememberShownPost(); ?>
                         <div data-w-id="5c9df79f-71cd-1123-9ecf-71dfdd5c1eb5" <?php post_class( 'w-slide' ); ?> id="post-<?php the_ID(); ?>">
                             <div class="slider-wrapper">
                                 <div class="slider-text-wrapper">
                                     <div class="text-block-2">
-                                        <?php _e( 'Exposiciones Actuales', 'my_mc' ); ?>
+                                        <?php echo get_post_meta(get_the_ID(), 'above_header', true); ?>
                                     </div>
                                     <h1 class="heading"><?php the_title(); ?></h1>
                                     <?php
@@ -67,7 +72,7 @@
                                     ?>
                                 </div>
                                 <div class="slider-image-wrapper">
-                                    <a href="<?php echo get_permalink(); ?>">
+                                    <a href="<?php echo get_post_meta(get_the_ID(), 'enlace_asociado', true)['url']; ?>">
                                     <?php echo PG_Image::getPostImage( null, 'full', array(
                                             'class' => 'slider-image',
                                             'loading' => 'lazy',

@@ -454,6 +454,25 @@ function licitaciones_postype(){
 
 add_action('init', 'licitaciones_postype');
 
+//Post Type de Licitaciones
+function galeria_home_postype(){
+    register_post_type( 'galeria_home',
+        array(
+            'labels' => array(
+                'name' => __('Galerias Home'),
+                'singular_name' => __('Galeria Home')
+            ),
+            'public' => true,
+            'has_archive'=> true,
+            'rewrite' => array('slug' => 'galeria_home'),
+            'show_in_rest' => true,
+            'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments')
+        )
+    );
+}
+
+add_action('init', 'galeria_home_postype');
+
 
 function licitaciones_add_custom_box() {
     $screens = [ 'licitaciones' ];
