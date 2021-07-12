@@ -452,7 +452,29 @@ function licitaciones_postype(){
     );
 }
 
+
+
 add_action('init', 'licitaciones_postype');
+
+//Post Type de Licitaciones
+function directorio_postype(){
+    register_post_type( 'directorios',
+        array(
+            'labels' => array(
+                'name' => __('Directorios'),
+                'singular_name' => __('Directorio')
+            ),
+            'public' => true,
+            'has_archive'=> true,
+            'rewrite' => array('slug' => 'directorios'),
+            'show_in_rest' => true
+        )
+    );
+}
+
+add_action('init', 'directorio_postype');
+
+
 
 //Post Type de Licitaciones
 function galeria_home_postype(){
