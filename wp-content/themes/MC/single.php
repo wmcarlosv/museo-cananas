@@ -175,7 +175,7 @@
                     <a href="<?php echo get_permalink(get_page_by_title("Misión")); ?>" class="footer-link"><?php _e( 'Misión', 'my_mc' ); ?></a>
                 </li>
                 <li class="footer-list-item">
-                    <a href="<?php echo get_theme_mod( 'quienes_somos_quienes_somos_organigrama', '#' ); ?>" class="footer-link"><?php _e( 'Organigrama', 'my_mc' ); ?></a>
+                    <a href="<?php echo get_permalink(get_page_by_title("Directorio")); ?>" class="footer-link"><?php _e( 'Directorio', 'my_mc' ); ?></a>
                 </li>
             </ol>
             <ol id="w-node-b407221c-e062-a29b-b2c2-4e7144ef7f19-44ef7ef1" role="list" class="footer-links-list w-list-unstyled">

@@ -260,13 +260,13 @@ function my_mc_customize_register( $wp_customize ) {
         'section' => 'quienes_somos'
     ));
 
-    $wp_customize->add_setting( 'quienes_somos_quienes_somos_organigrama', array(
+    $wp_customize->add_setting( 'quienes_somos_quienes_somos_Directorio', array(
         'type' => 'theme_mod',
         'sanitize_callback' => $pgwp_sanitize
     ));
 
-    $wp_customize->add_control( 'quienes_somos_quienes_somos_organigrama', array(
-        'label' => __( ' organigrama', 'my_mc' ),
+    $wp_customize->add_control( 'quienes_somos_quienes_somos_Directorio', array(
+        'label' => __( ' Directorio', 'my_mc' ),
         'type' => 'url',
         'section' => 'quienes_somos'
     ));

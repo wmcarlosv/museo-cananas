@@ -314,7 +314,7 @@
                     <a href="#" class="footer-link"><?php _e( 'Misión', 'my_mc' ); ?></a>
                 </li>
                 <li class="footer-list-item">
-                    <a href="#" class="footer-link"><?php _e( 'Organigrama', 'my_mc' ); ?></a>
+                    <a href="#" class="footer-link"><?php _e( 'Directorio', 'my_mc' ); ?></a>
                 </li>
             </ol>
             <ol id="w-node-_67c1b115-bdb0-9a09-cd1a-ba5c577882fb-2aaf4bf3" role="list" class="footer-links-list w-list-unstyled">
