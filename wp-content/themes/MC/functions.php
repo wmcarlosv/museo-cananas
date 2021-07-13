@@ -488,7 +488,8 @@ function galeria_home_postype(){
             'has_archive'=> true,
             'rewrite' => array('slug' => 'galeria_home'),
             'show_in_rest' => true,
-            'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments')
+            'show_in_menu' => true,
+            'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'revisions', 'page-attributes' ),
         )
     );
 }

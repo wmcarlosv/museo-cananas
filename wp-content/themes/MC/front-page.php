@@ -72,7 +72,7 @@
                                     ?>
                                 </div>
                                 <div class="slider-image-wrapper">
-                                    <a href="<?php echo get_post_meta(get_the_ID(), 'enlace_asociado', true)['url']; ?>">
+                                    <a href="<?php echo esc_url( get_permalink() ); ?>">
                                     <?php echo PG_Image::getPostImage( null, 'full', array(
                                             'class' => 'slider-image',
                                             'loading' => 'lazy',
