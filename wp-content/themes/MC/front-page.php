@@ -179,8 +179,8 @@
                     </div>
                 </div>
                 <div class="coleccion-item">
-                    <h4 class="heading-coleccion"><?php _e( 'Historia-hicham', 'my_mc' ); ?></h4>
-                    <p class="coleccion-parrafo">
+                    <h4 class="heading-coleccion"><?php _e( 'Historia', 'my_mc' ); ?></h4>
+                    <p class="coleccion-parrafo" style="overflow: hidden; display: -webkit-box; text-overflow: ellipsis; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
 
                       <?php
 

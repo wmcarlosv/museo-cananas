@@ -418,8 +418,20 @@ function url_ticker_section() {
         )  
     ); 
 
+    add_settings_field( // Option 1
+        'ver_boton_compra_data', // Option ID
+        'Visualizar Boton de Compra: ', // Label
+        'ver_boton_compra_data_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed (General Settings)
+        'url_ticker_setting_section', // Name of our section
+        array( // The $args
+            'ver_boton_compra_data' // Should match Option ID
+        )  
+    ); 
+
     register_setting('general','url_ticket', 'esc_attr');
     register_setting('general','mailchip_data', 'esc_attr');
+    register_setting('general','ver_boton_compra_data', 'esc_attr');
 }
 
 function url_ticker_setting_section_callback() { // Section Callback
@@ -434,6 +446,17 @@ function url_ticket_callback($args) {  // Textbox Callback
 function mailchip_data_callback($args){
     $option = get_option($args[0]);
     echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
+}
+
+function ver_boton_compra_data_callback($args){
+    $option = get_option($args[0]);
+    if(!empty($option)){
+        $checked = "checked='checked'";
+    }else{
+        $checked = "";
+    }
+    
+    echo '<input type="checkbox" id="'. $args[0] .'" name="'. $args[0] .'" value="yes" '.$checked.' />';
 }
 
 //Post Type de Licitaciones
