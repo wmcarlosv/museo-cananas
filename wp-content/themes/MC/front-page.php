@@ -5,7 +5,16 @@
 */
 ?>
 <?php get_header(); ?>
+<style type="text/css">
 
+    div#patrimonio p {
+        display: none;
+    }
+
+    p.taquilla-texto{
+        display: block !important;
+    }
+</style>
 <div class="nav-container">
     <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/Logo-rojo.svg" loading="lazy" height="" width="150" alt="" class="main-logo mobile">
     <div data-w-id="20c92c8a-de61-cf16-b65e-7a6aa147bdad" class="menu-icon-wrapper">
@@ -203,7 +212,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="coleccion-item">
+                <div class="coleccion-item" id="patrimonio">
                     <h4 class="heading-coleccion"><?php _e( 'Patrimonio De La Humanidad', 'my_mc' ); ?></h4>
                     <p class="coleccion-parrafo">
                       <?php
