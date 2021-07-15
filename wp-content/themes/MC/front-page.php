@@ -11,7 +11,7 @@
         display: none;
     }
 
-    p.taquilla-texto{
+    p.taquilla-texto, p.p1{
         display: block !important;
     }
 </style>
