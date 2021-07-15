@@ -54,7 +54,7 @@
                 <div class="collection-list-2">
                     <?php while ( $pgpb_colecciones_query->have_posts() ) : $pgpb_colecciones_query->the_post(); ?>
                         <?php PG_Helper::rememberShownPost(); ?>
-                        <a href="<?php echo esc_url( get_permalink() ); ?>" <?php post_class( 'colection-item-container w-inline-block' ); ?> id="post-<?php the_ID(); ?>"> <?php $image_attributes = !empty( get_the_ID() ) ? wp_get_attachment_image_src( PG_Image::isPostImage() ? get_the_ID() : get_post_thumbnail_id( get_the_ID() ), 'full' ) : null; ?><div class="colection-img-wrapper" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"></div> <h2 class="heading-coleccion"><?php the_title(); ?></h2> <?php the_content(); ?> <div class="text-block-2">
+                        <a href="<?php echo esc_url( get_permalink() ); ?>" <?php post_class( 'colection-item-container w-inline-block' ); ?> id="post-<?php the_ID(); ?>"> <?php $image_attributes = !empty( get_the_ID() ) ? wp_get_attachment_image_src( PG_Image::isPostImage() ? get_the_ID() : get_post_thumbnail_id( get_the_ID() ), 'full' ) : null; ?><div class="colection-img-wrapper" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"></div> <h2 class="heading-coleccion"><?php the_title(); ?></h2> <?php echo get_the_excerpt(get_the_ID()) ?> <div class="text-block-2">
                                 <?php _e( 'Permanente', 'my_mc' ); ?>
                             </div> <div class="arrow-1-container colecciones">
                                 <div class="line-03"></div>
