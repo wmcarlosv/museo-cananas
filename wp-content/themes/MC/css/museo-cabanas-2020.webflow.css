@@ -438,7 +438,7 @@ h1 {
   position: sticky;
   top: 130px;
   z-index: 5;
-  margin-top: -75px;
+  margin-top: -20px;
   padding-top: 25px;
   padding-left: 50px;
   -webkit-box-flex: 1;
@@ -459,7 +459,6 @@ h1 {
 
 .coleccion-item {
   position: relative;
-  margin-top: 30px;
   margin-bottom: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -563,7 +562,7 @@ h1 {
   display: -ms-flexbox;
   display: flex;
   margin-top: 100px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -621,7 +620,7 @@ h1 {
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
- 
+  margin-left: 15px;
   background-position: 50% 50%;
   background-size: cover;
   -webkit-filter: grayscale(100%);
@@ -783,7 +782,7 @@ h1 {
   left: auto;
   top: auto;
   right: 30px;
-  bottom: 30px;
+  bottom: 5px;
 }
 
 .line-01 {
@@ -1013,6 +1012,8 @@ h1 {
   align-items: flex-start;
   -o-object-fit: fill;
   object-fit: fill;
+  -webkit-column-count: 2;
+  column-count: 2;
 }
 
 .orozco-info-container.first {
@@ -1032,8 +1033,6 @@ h1 {
   font-size: 12px;
   line-height: 22px;
   /*text-transform: uppercase;*/
-  -webkit-column-count: 2;
-  column-count: 2;
 }
 
 .subtitulo-imagen-orozco {
@@ -1370,24 +1369,21 @@ h1 {
 }
 
 .exp-content-text-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
+  padding-top: 30px;
+  padding-right: 85px;
   padding-left: 85px;
+  -webkit-column-count: 2;
+  column-count: 2;
 }
 
 .exp-parrafo {
-  margin-right: 25px;
   padding-right: 0px;
   padding-bottom: 15px;
   font-family: Lato, sans-serif;
   color: #000;
   font-size: 12px;
   line-height: 22px;
-  /*text-transform: uppercase*/;
-  -webkit-column-count: 2;
-  column-count: 2;
 }
 
 .img-content-wrapper {
@@ -3820,8 +3816,6 @@ div.exp-content-text-wrapper p, div.orozco-info-container p{
     font-size: 12px;
     line-height: 22px;
     /*text-transform: uppercase;*/
-    -webkit-column-count: 2;
-    column-count: 2;
 }
 
 .menu-item a {
