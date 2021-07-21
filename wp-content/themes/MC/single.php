@@ -49,6 +49,9 @@
               </div>
           </a>
         <div class="exp-header-container">
+            <div class="exp-pie-foto">
+                <?php echo get_post_meta(get_the_ID(), 'pie_de_foto', true); ?>
+            </div>
             <div class="exp-title-wrapper">
                 <div class="text-block-2">
                     <?php _e( 'Exhibiciones Actuales', 'my_mc' ); ?>

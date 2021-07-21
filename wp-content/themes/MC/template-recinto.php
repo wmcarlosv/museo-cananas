@@ -107,6 +107,16 @@
                 </div>
             </div>
         </div>
+        <div class="div-block-9">
+            <?php 
+                $imagen_1 = get_post_meta(get_the_ID(), 'imagen_1', true);
+                $imagen_2 = get_post_meta(get_the_ID(), 'imagen_2', true);
+
+                print wp_get_attachment_image($imagen_1,array('660','821'));
+                
+                print wp_get_attachment_image($imagen_2,array('660','821'));
+            ?>
+        </div>
     </div>
 </div>
 <div class="escuelas-section" style="padding-bottom: 50px">

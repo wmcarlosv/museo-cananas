@@ -3828,3 +3828,20 @@ div.exp-content-text-wrapper p, div.orozco-info-container p{
   padding-top:  30px !important;
   padding-bottom: 30px !important;
 }
+
+div.div-block-9 img{
+  margin: 20px 5px;
+}
+
+.exp-pie-foto {
+    position: absolute;
+    left: auto;
+    top: auto;
+    right: 85px;
+    bottom: 0%;
+    font-family: Cardo, sans-serif;
+    color: #000;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+}
