@@ -3837,11 +3837,6 @@ div.div-block-9{
   grid-template-rows: auto auto;
 }
 
-div.div-block-9 img{
-  margin: 10px;
-  width: 100% !important;
-}
-
 .exp-pie-foto {
     position: absolute;
     left: auto;
@@ -3853,4 +3848,13 @@ div.div-block-9 img{
     font-size: 12px;
     font-style: italic;
     font-weight: 400;
+}
+
+.image-7 {
+    width: 50%;
+    height: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+    -o-object-fit: cover;
+    object-fit: cover;
 }

@@ -111,11 +111,9 @@
             <?php 
                 $imagen_1 = get_post_meta(get_the_ID(), 'imagen_1', true);
                 $imagen_2 = get_post_meta(get_the_ID(), 'imagen_2', true);
-
-                print wp_get_attachment_image($imagen_1,'medium');
-                
-                print wp_get_attachment_image($imagen_2, 'medium');
             ?>
+            <img src="<?=wp_get_attachment_image_src($imagen_1,array('650','821'))[0]?>" loading="lazy" sizes="(max-width: 479px) 46vw, (max-width: 767px) 45vw, (max-width: 991px) 46vw, 47vw" alt="" class="image-7">
+            <img src="<?=wp_get_attachment_image_src($imagen_2,array('650','821'))[0]?>" loading="lazy" sizes="(max-width: 479px) 46vw, (max-width: 767px) 45vw, (max-width: 991px) 46vw, 47vw" alt="" class="image-7">
         </div>
     </div>
 </div>
