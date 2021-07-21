@@ -1001,7 +1001,7 @@ h1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
+  display: block;
   width: 85%;
   margin-top: 20px;
   margin-bottom: 10px;
