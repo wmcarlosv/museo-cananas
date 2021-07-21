@@ -70,9 +70,9 @@
                         <div data-w-id="5c9df79f-71cd-1123-9ecf-71dfdd5c1eb5" <?php post_class( 'w-slide' ); ?> id="post-<?php the_ID(); ?>">
                             <div class="slider-wrapper">
                                 <div class="slider-text-wrapper">
-                                    <div class="text-block-2">
-                                        <?php echo get_post_meta(get_the_ID(), 'above_header', true); ?>
-                                    </div>
+                                    <!--<div class="text-block-2">
+                                        <?php echo get_post_meta(get_the_ID(), 'above_header', true); ?> 
+                                    </div>-->
                                     <h1 class="heading"><?php the_title(); ?></h1>
                                     <?php
 

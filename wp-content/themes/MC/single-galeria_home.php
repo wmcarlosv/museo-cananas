@@ -64,34 +64,34 @@
         <div class="exp-data-wrapper">
             <div class="exp-data-content">
                 <div class="exp-data-subtitle">
-                    <?php _e( 'Autor', 'my_mc' ); ?>
+                    <?php echo get_post_meta( get_the_ID(), 'label_atributo_1', true ); ?>
                 </div>
                 <div class="exp-data-text">
-                    <?php echo get_post_meta( get_the_ID(), 'autor', true ); ?>
+                    <?php echo get_post_meta( get_the_ID(), 'valor_atributo_1', true ); ?>
                 </div>
             </div>
             <div class="exp-data-content">
                 <div class="exp-data-subtitle">
-                    <?php _e( 'Curador', 'my_mc' ); ?>
+                    <?php echo get_post_meta( get_the_ID(), 'label_atributo_2', true ); ?>
                 </div>
                 <div class="exp-data-text">
-                    <?php echo get_post_meta( get_the_ID(), 'curador', true ); ?>
+                    <?php echo get_post_meta( get_the_ID(), 'valor_atributo_2', true ); ?>
                 </div>
             </div>
             <div class="exp-data-content">
                 <div class="exp-data-subtitle">
-                    <?php _e( 'Sala', 'my_mc' ); ?>
+                    <?php echo get_post_meta( get_the_ID(), 'label_atributo_3', true ); ?>
                 </div>
                 <div class="exp-data-text">
-                    <?php echo get_post_meta( get_the_ID(), 'sala', true ); ?>
+                    <?php echo get_post_meta( get_the_ID(), 'valor_atributo_3', true ); ?>
                 </div>
             </div>
             <div class="exp-data-content">
                 <div class="exp-data-subtitle">
-                    <?php _e( 'Fechas', 'my_mc' ); ?>
+                    <?php echo get_post_meta( get_the_ID(), 'label_atributo_4', true ); ?>
                 </div>
                 <div class="exp-data-text">
-                    <?php echo get_post_meta( get_the_ID(), 'fechas', true ); ?>
+                    <?php echo get_post_meta( get_the_ID(), 'valor_atributo_4', true ); ?>
                 </div>
             </div>
         </div>
