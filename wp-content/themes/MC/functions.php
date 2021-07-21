@@ -356,7 +356,7 @@ if ( ! function_exists( 'my_mc_enqueue_scripts' ) ) :
     wp_deregister_script( 'webflow' );
     wp_enqueue_script( 'webflow', get_template_directory_uri() . '/js/webflow.js', false, null, true);
     wp_deregister_script( 'main' );
-    wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', false, null, true);
+    wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js?v=1', false, null, true);
 
     /* Pinegrow generated Enqueue Scripts End */
 
@@ -373,7 +373,7 @@ if ( ! function_exists( 'my_mc_enqueue_scripts' ) ) :
     wp_enqueue_style( 'webflow', get_template_directory_uri() . '/css/webflow.css', false, null, 'all');
 
     wp_deregister_style( 'museocabanaswebflow' );
-    wp_enqueue_style( 'museocabanaswebflow', get_template_directory_uri() . '/css/museo-cabanas-2020.webflow.css?v=5', false, null, 'all');
+    wp_enqueue_style( 'museocabanaswebflow', get_template_directory_uri() . '/css/museo-cabanas-2020.webflow.css?v=7', false, null, 'all');
 
     wp_deregister_style( 'style' );
     wp_enqueue_style( 'style', get_bloginfo('stylesheet_url'), false, null, 'all');

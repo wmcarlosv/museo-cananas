@@ -18,3 +18,6 @@
     });
 
   };
+
+  enlace = document.querySelector("a[href*='https://www.jalisco.gob.mx']");
+  enlace.setAttribute("target","_blank");
