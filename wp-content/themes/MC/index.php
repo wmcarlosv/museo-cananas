@@ -55,7 +55,8 @@
                                     <?php PG_Helper::rememberShownPost(); ?>
                                     <a href="<?php echo esc_url( get_permalink() ); ?>" <?php post_class( 'exhibicion-item w-inline-block' ); ?> id="post-<?php the_ID(); ?>"> <div class="exhibicion-text-wrapper">
                                             <div class="text-block-2">
-                                               <?php echo get_post_meta( get_the_ID(), 'above_header', true ); ?>
+                                               <!--<?php echo get_post_meta( get_the_ID(), 'above_header', true ); ?>-->
+                                               <?php _e( 'Todas las Exposiciones', 'my_mc' ); ?>
                                             </div>
                                             <h3 class="heading exhibicion"><?php the_title(); ?></h3>
                                             <div class="fechas">
@@ -93,7 +94,8 @@
                                     <?php PG_Helper::rememberShownPost(); ?>
                                     <a href="<?php echo esc_url( get_permalink() ); ?>" <?php post_class( 'exhibicion-item w-inline-block' ); ?> id="post-<?php the_ID(); ?>"> <div class="exhibicion-text-wrapper">
                                             <div class="text-block-2">
-                                                <?php echo get_post_meta( get_the_ID(), 'above_header', true ); ?>
+                                                <!--<?php echo get_post_meta( get_the_ID(), 'above_header', true ); ?>-->
+                                                <?php _e( 'Exposiciones Actuales', 'my_mc' ); ?>
                                             </div>
                                             <h3 class="heading exhibicion"><?php the_title(); ?></h3>
                                             <div class="fechas">
@@ -129,7 +131,8 @@
                                     <?php PG_Helper::rememberShownPost(); ?>
                                     <a href="<?php echo esc_url( get_permalink() ); ?>" <?php post_class( 'exhibicion-item w-inline-block' ); ?> id="post-<?php the_ID(); ?>"> <div class="exhibicion-text-wrapper">
                                             <div class="text-block-2">
-                                               <?php echo get_post_meta( get_the_ID(), 'above_header', true ); ?>
+                                               <!--<?php echo get_post_meta( get_the_ID(), 'above_header', true ); ?>-->
+                                               <?php _e( 'Exposiciones Pasadas', 'my_mc' ); ?>
                                             </div>
                                             <h3 class="heading exhibicion"><?php the_title(); ?></h3>
                                             <div class="fechas">
@@ -165,7 +168,8 @@
                                     <?php PG_Helper::rememberShownPost(); ?>
                                     <a href="<?php echo esc_url( get_permalink() ); ?>" <?php post_class( 'exhibicion-item w-inline-block' ); ?> id="post-<?php the_ID(); ?>"> <div class="exhibicion-text-wrapper">
                                             <div class="text-block-2">
-                                                <?php echo get_post_meta( get_the_ID(), 'above_header', true ); ?>
+                                                <!--<?php echo get_post_meta( get_the_ID(), 'above_header', true ); ?>--> 
+                                                <?php _e( 'Próximas Exposiciones', 'my_mc' ); ?>
                                             </div>
                                             <h3 class="heading exhibicion"><?php the_title(); ?></h3>
                                             <div class="fechas">
