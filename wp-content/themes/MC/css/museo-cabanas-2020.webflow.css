@@ -308,7 +308,6 @@ h1 {
   color: #000;
   font-size: 40px;
   line-height: 46px;
-  text-transform: capitalize;
 }
 
 .heading.exhibicion {
@@ -998,20 +997,11 @@ h1 {
 
 .orozco-info-container {
   position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: block;
   width: 85%;
   margin-top: 20px;
   margin-bottom: 10px;
   padding-top: 10px;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  -o-object-fit: fill;
-  object-fit: fill;
   -webkit-column-count: 2;
   column-count: 2;
 }
@@ -1918,7 +1908,6 @@ h1 {
 
 .taquilla-texto {
   margin-top: 0px;
-  margin-right: 80px;
   margin-bottom: 0px;
   font-family: Lato, sans-serif;
   color: #000;
