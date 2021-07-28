@@ -50,42 +50,37 @@
                 <?php the_content(); ?>
             </div>
             <div class="col-wrapper">
-                <div class="experiencia-container">
-                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'experiencia_i_title', true ); ?></h2>
+                <?php 
+                    $args = array(
+                        'post_type'=> 'actividades',
+                        'meta_query' => array(
+                            array(
+                                'key'=>'groupe_page',
+                                'value'=>'Escuelas'
+                            )
+                        )
+                    );
+
+                    $loop = new WP_Query( $args );
+
+                    while($loop->have_posts()):$loop->the_post();
+                ?>
+
+
+                <div class="experiencia-container">  
+                    <h2 class="heading-experiencias"><?php the_title() ?></h2>
                     <div class="div-block-8">
                         <div class="experiencia-info-text">
-                            <?php echo get_post_meta( get_the_ID(), 'experiencia_i_time', true ); ?>
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_date', true ); ?>
                         </div>
                         <div class="experiencia-info-text red">
-                            <?php echo get_post_meta( get_the_ID(), 'experiencia_i_price', true ); ?>
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_taller', true ); ?>
                         </div>
                     </div>
-                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'experiencia_i_content', true ); ?></p>
+                    <p class="cartelera-sinopsis"><?php echo get_the_content(); ?></p>
                 </div>
-                <div class="experiencia-container">
-                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'experiencia_II_title', true ); ?></h2>
-                    <div class="div-block-8">
-                        <div class="experiencia-info-text">
-                            <?php echo get_post_meta( get_the_ID(), 'experiencia_II_time', true ); ?>
-                        </div>
-                        <div class="experiencia-info-text red">
-                            <?php echo get_post_meta( get_the_ID(), 'experiencia_II_price', true ); ?>
-                        </div>
-                    </div>
-                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'experiencia_II_content', true ); ?></p>
-                </div>
-                <div class="experiencia-container">
-                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'experiencia_III_title', true ); ?></h2>
-                    <div class="div-block-8">
-                        <div class="experiencia-info-text">
-                            <?php echo get_post_meta( get_the_ID(), 'experiencia_III_time', true ); ?>
-                        </div>
-                        <div class="experiencia-info-text red">
-                            <?php echo get_post_meta( get_the_ID(), 'experiencia_II_price', true ); ?>
-                        </div>
-                    </div>
-                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'experiencia_III_content', true ); ?></p>
-                </div>
+
+                <?php endwhile; ?>
             </div>
         </div>
         <div class="experiencias-content-wrapper educacion">

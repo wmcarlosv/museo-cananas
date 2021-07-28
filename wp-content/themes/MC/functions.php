@@ -459,6 +459,31 @@ function ver_boton_compra_data_callback($args){
     echo '<input type="checkbox" id="'. $args[0] .'" name="'. $args[0] .'" value="yes" '.$checked.' />';
 }
 
+
+
+
+//Post Type de Licitaciones
+function actividades_postype(){
+    register_post_type( 'actividades',
+        array(
+            'labels' => array(
+                'name' => __('Actividades'),
+                'singular_name' => __('Actividad')
+            ),
+            'public' => true,
+            'has_archive'=> true,
+            'rewrite' => array('slug' => 'actividades'),
+            'show_in_rest' => true
+        )
+    );
+}
+
+
+
+add_action('init', 'actividades_postype');
+
+
+
 //Post Type de Licitaciones
 function licitaciones_postype(){
     register_post_type( 'licitaciones',
