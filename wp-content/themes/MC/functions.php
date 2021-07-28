@@ -482,6 +482,26 @@ function actividades_postype(){
 
 add_action('init', 'actividades_postype');
 
+//Post Type de Licitaciones
+function peliculas_postype(){
+    register_post_type( 'peliculas',
+        array(
+            'labels' => array(
+                'name' => __('Peliculas'),
+                'singular_name' => __('Pelicula')
+            ),
+            'public' => true,
+            'has_archive'=> true,
+            'rewrite' => array('slug' => 'peliculas'),
+            'show_in_rest' => true
+        )
+    );
+}
+
+
+
+add_action('init', 'peliculas_postype');
+
 
 
 //Post Type de Licitaciones

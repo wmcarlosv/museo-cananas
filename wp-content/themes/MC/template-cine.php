@@ -46,51 +46,27 @@
                 <!--<a href="#" class="basic-button small w-button"><?php _e( 'Comprar tickets', 'my_mc' ); ?></a>-->
             </div>
             <div class="col-wrapper">
+                 <?php 
+                    $args = array(
+                        'post_type'=> 'peliculas'
+                    );
+
+                    $loop = new WP_Query( $args );
+
+                    while($loop->have_posts()):$loop->the_post();
+                ?>
                 <div class="cartelera-item-container">
                     <div class="cartelera-img">
-                        <img src="<?php echo PG_Image::getUrl( get_post_meta( get_the_ID(), 'content_one_image_one', true ), 'large' ) ?>" loading="lazy" alt="">
+                        <img src="<?php echo PG_Image::getUrl( get_post_meta( get_the_ID(), 'content_image', true ), 'large' ) ?>" loading="lazy" alt="">
 
                     </div>
                     <div id="w-node-e815aabd-f2f4-aed2-5286-f8f3e8e5718f-e20f46c7" class="cartelera-info">
-                        <?php echo get_post_meta( get_the_ID(), 'content_one_heading', true ); ?>
+                        <?php echo get_post_meta( get_the_ID(), 'content_heading', true ); ?>
                     </div>
-                    <p id="w-node-e815aabd-f2f4-aed2-5286-f8f3e8e571a6-e20f46c7" class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'content_one_text', true ); ?></p>
-
-                    <!--<a id="w-node-e815aabd-f2f4-aed2-5286-f8f3e8e571a8-e20f46c7" href="#" class="basic-button w-button"><?php _e( 'Comprar tickets', 'my_mc' ); ?></a>-->
+                    <p id="w-node-e815aabd-f2f4-aed2-5286-f8f3e8e571a6-e20f46c7" class="cartelera-sinopsis"><?php echo get_the_content(); ?></p>
                 </div>
-                <div class="cartelera-item-container">
-                    <div class="cartelera-img">
 
-                        <img src="<?php echo PG_Image::getUrl( get_post_meta( get_the_ID(), 'content_two_image_two', true ), 'large' ) ?>" loading="lazy" alt="">
-                    </div>
-                    <div id="w-node-d9036a32-17ed-d99b-f35d-57d9f5e1c47c-e20f46c7" class="cartelera-info">
-                        <?php echo get_post_meta( get_the_ID(), 'content_two__heading', true ); ?>
-                    </div>
-                    <p id="w-node-d9036a32-17ed-d99b-f35d-57d9f5e1c493-e20f46c7" class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'content_two_text', true ); ?></p>
-                    <!--<a id="w-node-d9036a32-17ed-d99b-f35d-57d9f5e1c495-e20f46c7" href="#" class="basic-button w-button"><?php _e( 'Comprar tickets', 'my_mc' ); ?></a>-->
-                </div>
-                <div class="cartelera-item-container">
-                    <div class="cartelera-img">
-
-                      <img src="<?php echo PG_Image::getUrl( get_post_meta( get_the_ID(), 'content_three_image_three', true ), 'large' ) ?>" loading="lazy" alt="">
-                    </div>
-                    <div id="w-node-bace9b98-4d16-b267-f423-f0bb86fddacd-e20f46c7" class="cartelera-info">
-                        <?php echo get_post_meta( get_the_ID(), 'content_three_heading', true ); ?>
-                    </div>
-                    <p id="w-node-bace9b98-4d16-b267-f423-f0bb86fddae4-e20f46c7" class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'content_three_text', true ); ?></p>
-                    <!--<a id="w-node-bace9b98-4d16-b267-f423-f0bb86fddae6-e20f46c7" href="#" class="basic-button w-button"><?php _e( 'Comprar tickets', 'my_mc' ); ?></a>-->
-                </div>
-                <div class="cartelera-item-container">
-                    <div class="cartelera-img">
-
-                      <img src="<?php echo PG_Image::getUrl( get_post_meta( get_the_ID(), 'content_four_image_four', true ), 'large' ) ?>" loading="lazy" alt="">
-                    </div>
-                    <div id="w-node-_52ec2acd-3cfe-0ee0-66ed-b26b577e56eb-e20f46c7" class="cartelera-info">
-                        <?php echo get_post_meta( get_the_ID(), 'content_four_heading', true ); ?>
-                    </div>
-                    <p id="w-node-_52ec2acd-3cfe-0ee0-66ed-b26b577e5702-e20f46c7" class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'content_four_text', true ); ?></p>
-                    <!--<a id="w-node-_52ec2acd-3cfe-0ee0-66ed-b26b577e5704-e20f46c7" href="#" class="basic-button w-button"><?php _e( 'Comprar tickets', 'my_mc' ); ?></a>-->
-                </div>
+                <?php endwhile; ?>
             </div>
         </div>
     </div>
