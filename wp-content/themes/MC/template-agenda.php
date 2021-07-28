@@ -48,59 +48,37 @@
                     <?php the_content(); ?>
             </div>
              <div class="col-wrapper">
+                <?php 
+                    $args = array(
+                        'post_type'=> 'actividades',
+                        'meta_query' => array(
+                            array(
+                                'key'=>'groupe_page',
+                                'value'=>'Agenda de Actividades'
+                            )
+                        )
+                    );
+
+                    $loop = new WP_Query( $args );
+
+                    while($loop->have_posts()):$loop->the_post();
+                ?>
 
 
                 <div class="experiencia-container">  
-                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_one_title', true ); ?></h2>
+                    <h2 class="heading-experiencias"><?php the_title() ?></h2>
                     <div class="div-block-8">
                         <div class="experiencia-info-text">
-                            <?php echo get_post_meta( get_the_ID(), 'groupe_one_date', true ); ?>
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_date', true ); ?>
                         </div>
                         <div class="experiencia-info-text red">
-                            <?php echo get_post_meta( get_the_ID(), 'groupe_one_taller', true ); ?>
+                            <?php echo get_post_meta( get_the_ID(), 'groupe_taller', true ); ?>
                         </div>
                     </div>
-                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'groupe_one_content', true ); ?></p>
-                </div>
-                <div class="experiencia-container">
-                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_two_title', true ); ?></h2>
-                    <div class="div-block-8">
-                        <div class="experiencia-info-text">
-                            <?php echo get_post_meta( get_the_ID(), 'groupe_two_date', true ); ?>
-                        </div>
-                        <div class="experiencia-info-text red">
-                            <?php echo get_post_meta( get_the_ID(), 'groupe_two_taller', true ); ?>
-                        </div>
-                    </div>
-                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'groupe_two_content', true ); ?></p>
-                </div>
-                <div class="experiencia-container">
-                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_three_title', true ); ?></h2>
-                    <div class="div-block-8">
-                        <div class="experiencia-info-text">
-                            <?php echo get_post_meta( get_the_ID(), 'groupe_three_date', true ); ?>
-                        </div>
-                        <div class="experiencia-info-text red">
-                            <?php echo get_post_meta( get_the_ID(), 'groupe_three_taller', true ); ?>
-                        </div>
-                    </div>
-                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'groupe_three_content', true ); ?></p>
-                </div>
-                <div class="experiencia-container">
-                    <h2 class="heading-experiencias"><?php echo get_post_meta( get_the_ID(), 'groupe_four_title', true ); ?></h2>
-                    <div class="div-block-8">
-                        <div class="experiencia-info-text">
-                            <?php echo get_post_meta( get_the_ID(), 'groupe_four_date', true ); ?>
-                        </div>
-                        <div class="experiencia-info-text red">
-                            <?php echo get_post_meta( get_the_ID(), 'groupe_four_taller', true ); ?>
-                        </div>
-                    </div>
-                    <p class="cartelera-sinopsis"><?php echo get_post_meta( get_the_ID(), 'groupe_four_content', true ); ?></p>
+                    <p class="cartelera-sinopsis"><?php echo get_the_content(); ?></p>
                 </div>
 
-
-
+                <?php endwhile; ?>
             </div>
         </div>
     </div>

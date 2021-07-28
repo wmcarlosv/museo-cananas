@@ -1,0 +1,783 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MC\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-23 12:19+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.3; wp-5.7.2\n"
+"X-Domain: my_mc"
+
+#: functions.php:269
+msgid " Directorio"
+msgstr ""
+
+#: template-Escuelas.php:98
+msgid "1. Selecciona un recorrido."
+msgstr ""
+
+#: template-Escuelas.php:102
+msgid "2. Elige un taller"
+msgstr ""
+
+#: template-Escuelas.php:106
+msgid "3. Elige una película"
+msgstr ""
+
+#: template-membresias.php:177 template-membresia.php:154
+#: template-comunidad.php:140 functions.php:288 index.php:278
+#: template-mision.php:145 template-experiencias.php:182
+#: template-recinto.php:300 single-galeria_home.php:203
+#: template-directorio.php:164 template-Inclusión.php:140
+#: single-colecciones.php:161 template-exhibition.php:188
+#: template-diversidad.php:139 template-cine.php:175 front-page.php:392
+#: template-Escuelas.php:191 template-servicios.php:196
+#: template-programa.php:139 single.php:192 template-licitaciones.php:216
+#: template-colecciones.php:152 template-Mediación.php:185
+#: template-visita.php:213 template-agenda.php:185
+msgid "33 3668 16 42 - Ext. 31014"
+msgstr ""
+
+#: template-membresias.php:180 template-membresia.php:157
+#: template-comunidad.php:143 functions.php:300 index.php:281
+#: template-mision.php:148 template-experiencias.php:185
+#: template-recinto.php:303 single-galeria_home.php:206
+#: template-directorio.php:167 template-Inclusión.php:143
+#: single-colecciones.php:164 template-exhibition.php:191
+#: template-diversidad.php:142 template-cine.php:178 front-page.php:395
+#: template-Escuelas.php:194 template-servicios.php:199
+#: template-programa.php:142 single.php:195 template-licitaciones.php:219
+#: template-colecciones.php:155 template-Mediación.php:188
+#: template-visita.php:216 template-agenda.php:188
+msgid "33 3668 16 45"
+msgstr ""
+
+#: home.php:328
+msgid "3668 16 42 Ext. 31014"
+msgstr ""
+
+#: home.php:331
+msgid "3668 16 45"
+msgstr ""
+
+#: template-exhibition.php:76 template-exhibition.php:80
+#: template-exhibition.php:84 template-exhibition.php:88
+#: template-exhibition.php:92 template-exhibition.php:96
+#: template-exhibition.php:100 template-exhibition.php:104
+msgid "80X202 cm"
+msgstr ""
+
+#: index.php:41
+msgid "Actuales"
+msgstr ""
+
+#: functions.php:281
+msgid "address Info"
+msgstr ""
+
+#. Name of the template
+msgid "Agenda page"
+msgstr ""
+
+#: template-membresias.php:75
+msgid "Amigo Cabañas"
+msgstr ""
+
+#: template-recinto.php:46 single-galeria_home.php:42 single-colecciones.php:42
+#: template-exhibition.php:48 front-page.php:58 template-servicios.php:46
+#: single.php:48 template-visita.php:46 home.php:49
+msgid "aquí"
+msgstr ""
+
+#: template-servicios.php:109
+msgid "Artes y Museografía del Museo Cabañas"
+msgstr ""
+
+#: single.php:75
+msgid "Autor"
+msgstr ""
+
+#: template-membresias.php:86
+msgid "Benefactor Cabañas"
+msgstr ""
+
+#: template-servicios.php:105
+msgid "Biblioteca"
+msgstr ""
+
+#: template-servicios.php:85
+msgid "Black Coffee"
+msgstr ""
+
+#: template-membresias.php:174 template-membresia.php:151
+#: template-comunidad.php:137 functions.php:276 index.php:275
+#: template-mision.php:142 template-experiencias.php:179
+#: template-recinto.php:297 single-galeria_home.php:200
+#: template-directorio.php:161 template-Inclusión.php:137
+#: single-colecciones.php:158 template-exhibition.php:185
+#: template-diversidad.php:136 template-cine.php:172 front-page.php:389
+#: template-Escuelas.php:188 template-servicios.php:193
+#: template-programa.php:136 single.php:189 template-licitaciones.php:213
+#: template-colecciones.php:149 template-Mediación.php:182
+#: template-visita.php:210 template-agenda.php:182 home.php:325
+msgid "Cabañas #8, Plaza Tapatía Zona Centro"
+msgstr ""
+
+#: template-servicios.php:81
+msgid "Cafetería"
+msgstr ""
+
+#: template-cine.php:41
+msgid "Cine Cabañas"
+msgstr ""
+
+#: front-page.php:247 front-page.php:253 front-page.php:259 front-page.php:265
+#: home.php:205 home.php:211 home.php:217 home.php:223
+msgid "cine cabañas"
+msgstr ""
+
+#. Name of the template
+msgid "cine page"
+msgstr ""
+
+#: single-galeria_home.php:49 single-colecciones.php:47
+#: template-exhibition.php:53
+msgid "Coleccion Permanente"
+msgstr ""
+
+#: functions.php:91
+msgid "coleccione"
+msgstr ""
+
+#: template-colecciones.php:41
+msgid "Colecciones"
+msgstr ""
+
+#: functions.php:90
+msgid "colecciones"
+msgstr ""
+
+#. Name of the template
+msgid "colecciones page"
+msgstr ""
+
+#. Name of the template
+msgid "colecciones post"
+msgstr ""
+
+#: front-page.php:165 home.php:136
+msgid "colecciones:"
+msgstr ""
+
+#: template-recinto.php:159 front-page.php:289 home.php:247
+msgid "Colección Permanente"
+msgstr ""
+
+#: template-recinto.php:40 single-galeria_home.php:36 single-colecciones.php:36
+#: template-exhibition.php:42 front-page.php:52 template-servicios.php:40
+#: single.php:42 template-visita.php:40 home.php:43
+msgid "Compra"
+msgstr ""
+
+#: template-cine.php:46 template-cine.php:59 template-cine.php:70
+#: template-cine.php:81 template-cine.php:92
+msgid "Comprar tickets"
+msgstr ""
+
+#. Name of the template
+msgid "comunidad page"
+msgstr ""
+
+#: functions.php:185
+msgid "contact info"
+msgstr ""
+
+#: template-membresias.php:171 template-membresia.php:148
+#: template-comunidad.php:134 index.php:272 template-mision.php:139
+#: template-experiencias.php:176 template-recinto.php:294
+#: single-galeria_home.php:197 template-directorio.php:158
+#: template-Inclusión.php:134 single-colecciones.php:155
+#: template-exhibition.php:182 template-diversidad.php:133
+#: template-cine.php:169 front-page.php:386 template-Escuelas.php:185
+#: template-servicios.php:190 template-programa.php:133 single.php:186
+#: template-licitaciones.php:210 template-colecciones.php:146
+#: template-Mediación.php:179 template-visita.php:207 template-agenda.php:179
+#: home.php:322
+msgid "Contacto:"
+msgstr ""
+
+#: single.php:83
+msgid "Curador"
+msgstr ""
+
+#: template-licitaciones.php:119
+msgid "descargar"
+msgstr ""
+
+#: template-membresias.php:166 template-membresia.php:143
+#: template-comunidad.php:129 index.php:267 template-mision.php:134
+#: template-experiencias.php:171 template-recinto.php:289
+#: single-galeria_home.php:192 template-directorio.php:153
+#: template-Inclusión.php:129 single-colecciones.php:150
+#: template-exhibition.php:177 template-diversidad.php:128
+#: template-cine.php:164 front-page.php:381 template-Escuelas.php:180
+#: template-servicios.php:185 template-programa.php:128 single.php:181
+#: template-licitaciones.php:205 template-colecciones.php:141
+#: template-Mediación.php:174 template-visita.php:202 template-agenda.php:174
+#: home.php:317
+msgid "Directorio"
+msgstr ""
+
+#. Name of the template
+msgid "Directorio page"
+msgstr ""
+
+#: template-diversidad.php:41
+msgid "Diversidad e interculturalidad"
+msgstr ""
+
+#. Name of the template
+msgid "diversidad page"
+msgstr ""
+
+#: template-recinto.php:155 front-page.php:285 home.php:243
+msgid "El Hombre En Llamas"
+msgstr ""
+
+#: home.php:252
+msgid ""
+"En 1923, por invitación de José Vasconcelos, pintó al fresco los muros de la "
+"Escuela Nacional Preparatoria que concluyó en 1926."
+msgstr ""
+
+#: home.php:163
+msgid ""
+"En 1939, Orozco terminó ahí El hombre en llamas, considerada su obra maestra "
+"y una de las piezas cumbres de la pintura mundial del siglo xx."
+msgstr ""
+
+#: template-recinto.php:44 single-galeria_home.php:40 single-colecciones.php:40
+#: template-exhibition.php:46 front-page.php:56 template-servicios.php:44
+#: single.php:46 template-visita.php:44 home.php:47
+msgid "entradas"
+msgstr ""
+
+#: template-visita.php:54
+msgid "Entradas:"
+msgstr ""
+
+#: home.php:252
+msgid ""
+"Es autor de obra muralística, dibujística y de caballete que forma parte de "
+"relevantes colecciones de México y del extranjero y de series que han sido "
+"piedra de toque en la iconografía nacional, como México en la Revolución y "
+"La casa del llanto, entre otros."
+msgstr ""
+
+#. Name of the template
+msgid "Escuelas page"
+msgstr ""
+
+#: template-visita.php:126
+msgid "Estacionamientos públicos por la zona del Museo Cabañas:"
+msgstr ""
+
+#: home.php:252
+msgid ""
+"Estudió pintura en la Academia de San Carlos durante ocho años. En 1916 "
+"presentó su primera exhibición individual en la Galería Biblos en la Ciudad "
+"de México."
+msgstr ""
+
+#: single.php:57 home.php:60
+msgid "Exhibiciones Actuales"
+msgstr ""
+
+#: front-page.php:114 home.php:94
+msgid "exhibiciones:"
+msgstr ""
+
+#. Name of the template
+msgid "exi post"
+msgstr ""
+
+#. Name of the template
+msgid "experiencias page"
+msgstr ""
+
+#: index.php:98
+msgid "Exposiciones Actuales"
+msgstr ""
+
+#: index.php:135
+msgid "Exposiciones Pasadas"
+msgstr ""
+
+#: template-membresias.php:143 template-membresia.php:120
+#: template-comunidad.php:106 index.php:244 template-mision.php:111
+#: template-experiencias.php:148 template-recinto.php:266
+#: single-galeria_home.php:169 template-directorio.php:130
+#: template-Inclusión.php:106 single-colecciones.php:127
+#: template-exhibition.php:154 template-diversidad.php:105
+#: template-cine.php:141 front-page.php:358 template-Escuelas.php:157
+#: template-servicios.php:162 template-programa.php:105 single.php:158
+#: template-licitaciones.php:182 template-colecciones.php:118
+#: template-Mediación.php:151 template-visita.php:179 template-agenda.php:151
+#: home.php:300
+msgid "Facebook"
+msgstr ""
+
+#: functions.php:203
+msgid "facebook"
+msgstr ""
+
+#: template-membresias.php:64
+msgid "Familiar"
+msgstr ""
+
+#: functions.php:293
+msgid "Fax Number"
+msgstr ""
+
+#: single.php:99
+msgid "Fechas"
+msgstr ""
+
+#: front-page.php:191 home.php:162
+msgid "Historia"
+msgstr ""
+
+#. Name of the template
+msgid "home page"
+msgstr ""
+
+#: functions.php:316
+msgid "home recinto"
+msgstr ""
+
+#: template-servicios.php:60 template-visita.php:109
+msgid "Horario Especial (Covid 19):"
+msgstr ""
+
+#: template-servicios.php:54 template-visita.php:103
+msgid "Horario:"
+msgstr ""
+
+#: template-servicios.php:89 template-servicios.php:113
+msgid "Horarios:"
+msgstr ""
+
+#. URI of the theme
+msgid "http://example.com"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://pinegrow.com/"
+msgstr ""
+
+#: template-exhibition.php:76 template-exhibition.php:80
+#: template-exhibition.php:84 template-exhibition.php:88
+#: template-exhibition.php:92 template-exhibition.php:96
+#: template-exhibition.php:100 template-exhibition.php:104
+msgid "Ignacio Aguirre"
+msgstr ""
+
+#: functions.php:189
+msgid "image recinto home"
+msgstr ""
+
+#. Name of the template
+msgid "Inclusión page"
+msgstr ""
+
+#: template-membresias.php:53
+msgid "Individual"
+msgstr ""
+
+#: template-membresias.php:146 template-membresia.php:123
+#: template-comunidad.php:109 index.php:247 template-mision.php:114
+#: template-experiencias.php:151 template-recinto.php:269
+#: single-galeria_home.php:172 template-directorio.php:133
+#: template-Inclusión.php:109 single-colecciones.php:130
+#: template-exhibition.php:157 template-diversidad.php:108
+#: template-cine.php:144 front-page.php:361 template-Escuelas.php:160
+#: template-servicios.php:165 template-programa.php:108 single.php:161
+#: template-licitaciones.php:185 template-colecciones.php:121
+#: template-Mediación.php:154 template-visita.php:182 template-agenda.php:154
+#: home.php:303
+msgid "Instagram"
+msgstr ""
+
+#: functions.php:214
+msgid "instagram"
+msgstr ""
+
+#: home.php:252
+msgid ""
+"José Clemente Orozco, uno de los más importantes y representativos artistas "
+"plásticos mexicanos del siglo XX, nació el 23 de noviembre de 1883 en "
+"Zapotlán El Grande, Jalisco."
+msgstr ""
+
+#: front-page.php:310 home.php:263
+msgid "Leer más"
+msgstr ""
+
+#: template-licitaciones.php:135
+msgid "Licitaciones"
+msgstr ""
+
+#. Name of the template
+msgid "licitaciones page"
+msgstr ""
+
+#. Name of the theme
+msgid "MC"
+msgstr ""
+
+#. Name of the template
+msgid "Mediación page"
+msgstr ""
+
+#. Name of the template
+msgid "Membresia page"
+msgstr ""
+
+#. Name of the template
+msgid "membresias page"
+msgstr ""
+
+#. Name of the template
+msgid "Mision page"
+msgstr ""
+
+#: template-membresias.php:163 template-membresia.php:140
+#: template-comunidad.php:126 functions.php:258 index.php:264
+#: template-mision.php:131 template-experiencias.php:168
+#: template-recinto.php:286 single-galeria_home.php:189
+#: template-directorio.php:150 template-Inclusión.php:126
+#: single-colecciones.php:147 template-exhibition.php:174
+#: template-diversidad.php:125 template-cine.php:161 front-page.php:378
+#: template-Escuelas.php:177 template-servicios.php:182
+#: template-programa.php:125 single.php:178 template-licitaciones.php:202
+#: template-colecciones.php:138 template-Mediación.php:171
+#: template-visita.php:199 template-agenda.php:171 home.php:314
+msgid "Misión"
+msgstr ""
+
+#: home.php:290
+msgid "Oops! Something went wrong while submitting the form."
+msgstr ""
+
+#: template-recinto.php:143 front-page.php:277 home.php:235
+msgid "Orozco"
+msgstr ""
+
+#: template-exhibition.php:76 template-exhibition.php:80
+#: template-exhibition.php:84 template-exhibition.php:88
+#: template-exhibition.php:92 template-exhibition.php:96
+#: template-exhibition.php:100 template-exhibition.php:104
+msgid "Paisaje, 1963"
+msgstr ""
+
+#: index.php:44
+msgid "Pasadas"
+msgstr ""
+
+#: template-Escuelas.php:93
+msgid "Pasos y requisitos para agendar tu visita"
+msgstr ""
+
+#: front-page.php:216 home.php:180
+msgid "Patrimonio De La Humanidad"
+msgstr ""
+
+#: template-recinto.php:123
+msgid "Patrimonio de la Humanidad"
+msgstr ""
+
+#: front-page.php:170 front-page.php:201 front-page.php:225
+#: template-colecciones.php:58 home.php:141 home.php:165 home.php:183
+msgid "Permanente"
+msgstr ""
+
+#: functions.php:305
+msgid "Phone Number"
+msgstr ""
+
+#: template-visita.php:122
+msgid "Planea tu visita"
+msgstr ""
+
+#: home.php:181
+msgid ""
+"Por su belleza arquitectónica, e importancia histórica y cultural, recibe el "
+"nombramiento de Patrimonio Cultural de la Humanidad que otorga la UNESCO"
+msgstr ""
+
+#: functions.php:30
+msgid "Primary Menu"
+msgstr ""
+
+#: template-membresias.php:41
+msgid "Programa de Membresías Cabañas"
+msgstr ""
+
+#. Name of the template
+msgid "programa publico page"
+msgstr ""
+
+#: index.php:47
+msgid "Próximas"
+msgstr ""
+
+#: index.php:172
+msgid "Próximas Exposiciones"
+msgstr ""
+
+#: functions.php:181
+msgid "quienes somos"
+msgstr ""
+
+#: template-membresias.php:160 template-membresia.php:137
+#: template-comunidad.php:123 index.php:261 template-mision.php:128
+#: template-experiencias.php:165 template-recinto.php:283
+#: single-galeria_home.php:186 template-directorio.php:147
+#: template-Inclusión.php:123 single-colecciones.php:144
+#: template-exhibition.php:171 template-diversidad.php:122
+#: template-cine.php:158 front-page.php:375 template-Escuelas.php:174
+#: template-servicios.php:179 template-programa.php:122 single.php:175
+#: template-licitaciones.php:199 template-colecciones.php:135
+#: template-Mediación.php:168 template-visita.php:196 template-agenda.php:168
+#: home.php:311
+msgid "Quienes Somos:"
+msgstr ""
+
+#. Name of the template
+msgid "recinto page"
+msgstr ""
+
+#: front-page.php:187 home.php:158
+msgid "recinto:"
+msgstr ""
+
+#: functions.php:177 functions.php:193
+msgid "redes sociales"
+msgstr ""
+
+#: template-membresias.php:140 template-membresia.php:117
+#: template-comunidad.php:103 index.php:241 template-mision.php:108
+#: template-experiencias.php:145 template-recinto.php:263
+#: single-galeria_home.php:166 template-directorio.php:127
+#: template-Inclusión.php:103 single-colecciones.php:124
+#: template-exhibition.php:151 template-diversidad.php:102
+#: template-cine.php:138 front-page.php:355 template-Escuelas.php:154
+#: template-servicios.php:159 template-programa.php:102 single.php:155
+#: template-licitaciones.php:179 template-colecciones.php:115
+#: template-Mediación.php:148 template-visita.php:176 template-agenda.php:148
+#: home.php:297
+msgid "Redes Sociales:"
+msgstr ""
+
+#: template-visita.php:130
+msgid "Rutas para llegar al Museo Cabañas:"
+msgstr ""
+
+#: single.php:91
+msgid "Sala"
+msgstr ""
+
+#. Name of the template
+msgid "servicios page"
+msgstr ""
+
+#: functions.php:31
+msgid "Social Links Menu"
+msgstr ""
+
+#: template-membresias.php:49
+msgid "Solicitar membresía"
+msgstr ""
+
+#: index.php:77 index.php:116 index.php:153 index.php:190 front-page.php:97
+#: front-page.php:147 front-page.php:241 template-colecciones.php:70
+#: home.php:77 home.php:119 home.php:199
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: template-membresias.php:155 template-membresia.php:132
+#: template-comunidad.php:118 index.php:256 template-mision.php:123
+#: template-experiencias.php:160 template-recinto.php:278
+#: single-galeria_home.php:181 template-directorio.php:142
+#: template-Inclusión.php:118 single-colecciones.php:139
+#: template-exhibition.php:166 template-diversidad.php:117
+#: template-cine.php:153 front-page.php:370 template-Escuelas.php:169
+#: template-servicios.php:174 template-programa.php:117 single.php:170
+#: template-licitaciones.php:194 template-colecciones.php:130
+#: template-Mediación.php:163 template-visita.php:191 template-agenda.php:163
+msgid "Spotify"
+msgstr ""
+
+#: functions.php:247
+msgid "spotify"
+msgstr ""
+
+#: functions.php:103
+msgid "subscription"
+msgstr ""
+
+#: functions.php:102
+msgid "subscriptions"
+msgstr ""
+
+#: home.php:285
+msgid "Thank you! Your submission has been received!"
+msgstr ""
+
+#: home.php:101
+msgid "This is some text inside of a div block."
+msgstr ""
+
+#. Description of the theme
+msgid "This theme was created with Pinegrow Web Editor"
+msgstr ""
+
+#: template-servicios.php:50
+msgid "Tienda"
+msgstr ""
+
+#: index.php:38
+msgid "Todas"
+msgstr ""
+
+#: index.php:59
+msgid "Todas las Exposiciones"
+msgstr ""
+
+#: functions.php:154
+msgid "translate"
+msgstr ""
+
+#: template-recinto.php:42 single-galeria_home.php:38 single-colecciones.php:38
+#: template-exhibition.php:44 front-page.php:54 template-servicios.php:42
+#: single.php:44 template-visita.php:42 home.php:45
+msgid "tus"
+msgstr ""
+
+#: template-membresias.php:149 template-membresia.php:126
+#: template-comunidad.php:112 index.php:250 template-mision.php:117
+#: template-experiencias.php:154 template-recinto.php:272
+#: single-galeria_home.php:175 template-directorio.php:136
+#: template-Inclusión.php:112 single-colecciones.php:133
+#: template-exhibition.php:160 template-diversidad.php:111
+#: template-cine.php:147 front-page.php:364 template-Escuelas.php:163
+#: template-servicios.php:168 template-programa.php:111 single.php:164
+#: template-licitaciones.php:188 template-colecciones.php:124
+#: template-Mediación.php:157 template-visita.php:185 template-agenda.php:157
+#: home.php:306
+msgid "Twitter"
+msgstr ""
+
+#: functions.php:225
+msgid "twitter"
+msgstr ""
+
+#: front-page.php:249 front-page.php:255 front-page.php:261 front-page.php:267
+#: home.php:207 home.php:213 home.php:219 home.php:225
+msgid "ver cartelera"
+msgstr ""
+
+#: front-page.php:184 home.php:155
+msgid "Ver todas las colecciones"
+msgstr ""
+
+#: home.php:121
+msgid "Ver todas las exhibiciones"
+msgstr ""
+
+#: front-page.php:150
+msgid "Ver todas las exposiciones"
+msgstr ""
+
+#. Name of the template
+msgid "visita page"
+msgstr ""
+
+#. Author of the theme
+msgid "Your name"
+msgstr ""
+
+#: template-membresias.php:152 template-membresia.php:129
+#: template-comunidad.php:115 index.php:253 template-mision.php:120
+#: template-experiencias.php:157 template-recinto.php:275
+#: single-galeria_home.php:178 template-directorio.php:139
+#: template-Inclusión.php:115 single-colecciones.php:136
+#: template-exhibition.php:163 template-diversidad.php:114
+#: template-cine.php:150 front-page.php:367 template-Escuelas.php:166
+#: template-servicios.php:171 template-programa.php:114 single.php:167
+#: template-licitaciones.php:191 template-colecciones.php:127
+#: template-Mediación.php:160 template-visita.php:188 template-agenda.php:160
+msgid "Youtube"
+msgstr ""
+
+#: functions.php:236
+msgid "youtube"
+msgstr ""
+
+#: template-Escuelas.php:97
+msgid "¡Arma tu visita!"
+msgstr ""
+
+#: template-membresias.php:128 template-membresia.php:105
+#: template-comunidad.php:91 index.php:229 template-mision.php:96
+#: template-experiencias.php:133 template-recinto.php:251
+#: single-galeria_home.php:154 template-directorio.php:115
+#: template-Inclusión.php:91 single-colecciones.php:112
+#: template-exhibition.php:139 template-diversidad.php:90 template-cine.php:126
+#: front-page.php:343 template-Escuelas.php:142 template-servicios.php:147
+#: template-programa.php:90 single.php:143 template-licitaciones.php:167
+#: template-colecciones.php:103 template-Mediación.php:136
+#: template-visita.php:164 template-agenda.php:136
+msgid "¡Gracias por suscribirte!"
+msgstr ""
+
+#: template-membresias.php:133 template-membresia.php:110
+#: template-comunidad.php:96 index.php:234 template-mision.php:101
+#: template-experiencias.php:138 template-recinto.php:256
+#: single-galeria_home.php:159 template-directorio.php:120
+#: template-Inclusión.php:96 single-colecciones.php:117
+#: template-exhibition.php:144 template-diversidad.php:95 template-cine.php:131
+#: front-page.php:348 template-Escuelas.php:147 template-servicios.php:152
+#: template-programa.php:95 single.php:148 template-licitaciones.php:172
+#: template-colecciones.php:108 template-Mediación.php:141
+#: template-visita.php:169 template-agenda.php:141
+msgid "¡Oops! Parece que algo salio mal."
+msgstr ""
+
+#: template-membresias.php:114 template-membresia.php:91
+#: template-comunidad.php:77 index.php:215 template-mision.php:82
+#: template-experiencias.php:119 template-recinto.php:237
+#: single-galeria_home.php:140 template-directorio.php:101
+#: template-Inclusión.php:77 single-colecciones.php:98
+#: template-exhibition.php:125 template-diversidad.php:76 template-cine.php:112
+#: front-page.php:329 template-Escuelas.php:128 template-servicios.php:133
+#: template-programa.php:76 single.php:129 template-licitaciones.php:153
+#: template-colecciones.php:89 template-Mediación.php:122
+#: template-visita.php:150 template-agenda.php:122 home.php:276
+msgid "¿Quieres recibir información del Museo Cabañas? ¡Suscríbete!"
+msgstr ""
+
+#: template-exhibition.php:76 template-exhibition.php:80
+#: template-exhibition.php:84 template-exhibition.php:88
+#: template-exhibition.php:92 template-exhibition.php:96
+#: template-exhibition.php:100 template-exhibition.php:104
+msgid "Óleo sobre fibracel"
+msgstr ""
