@@ -309,11 +309,12 @@
                     </div>
                 </div>
             </div>
-            <div class="orozco-info-container">
-                <div class="parrafo-orozco"><?php
+            <div class="orozco-info-container" style="border-bottom: 1px solid #981a4b;height:200px; text-transform: uppercase; z-index: 0;">
+                <div class="parrafo-orozco" style="overflow: none;display: block; border-bottom: 0px;">
+                    <?php
                   $recinto= get_page_by_path('recinto');
                   $content = apply_filters( 'the_content', $recinto->post_content );
-                  echo $content;
+                  echo substr($content, 0, 750)." ...";
                   ?>
                 </div>
                 <a data-w-id="add4b97c-06ce-5bc5-5460-b5ef16ba2408" href="<?php echo esc_url( get_permalink( get_page_by_title( 'recinto' ) ) ); ?>" class="leer-mas-wrapper w-inline-block"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/Recurso-16.svg" loading="lazy" alt="" class="image-4"> <div class="arrow-2-container">

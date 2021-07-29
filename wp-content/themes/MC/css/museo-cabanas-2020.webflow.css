@@ -2421,11 +2421,6 @@ h1 {
     font-size: 140px;
   }
 
-  .parrafo-orozco {
-    -webkit-column-count: 1;
-    column-count: 1;
-  }
-
   .columna-info-orozco {
     width: 100%;
   }
@@ -2715,10 +2710,6 @@ h1 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-  }
-
-  .parrafo-orozco {
-    border-bottom-style: none;
   }
 
   .nav-content-wrapper {
