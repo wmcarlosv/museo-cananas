@@ -52,7 +52,6 @@
 
                     for($i=0; $i < count($gallery); $i++){
                         echo wp_get_attachment_image($gallery[$i],'real');
-                        echo "<br />";
                     }
 
                 ?>
