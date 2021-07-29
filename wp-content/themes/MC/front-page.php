@@ -116,6 +116,9 @@
             <?php 
                 $args = array(
                     'post_type' => 'post',
+                    'post_per_page'=>6,
+                    'orderby'=>'date',
+                    'order'=>'DESC',
                     'meta_query' => array(
                         'relation' => 'OR',
                         array(
