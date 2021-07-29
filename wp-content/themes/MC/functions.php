@@ -373,7 +373,7 @@ if ( ! function_exists( 'my_mc_enqueue_scripts' ) ) :
     wp_enqueue_style( 'webflow', get_template_directory_uri() . '/css/webflow.css', false, null, 'all');
 
     wp_deregister_style( 'museocabanaswebflow' );
-    wp_enqueue_style( 'museocabanaswebflow', get_template_directory_uri() . '/css/museo-cabanas-2020.webflow.css?v=21', false, null, 'all');
+    wp_enqueue_style( 'museocabanaswebflow', get_template_directory_uri() . '/css/museo-cabanas-2020.webflow.css?v=22', false, null, 'all');
 
     wp_deregister_style( 'style' );
     wp_enqueue_style( 'style', get_bloginfo('stylesheet_url'), false, null, 'all');
@@ -581,11 +581,15 @@ function licitaciones_custom_box_html( $post ) {
     wp_nonce_field(plugin_basename(__FILE__), 'licitaciones_file_nonce');
 
     $year = get_post_meta( $post->ID, 'licitaciones_year', true );
+    $code = get_post_meta( $post->ID, 'licitaciones_code', true );
     $pdf_licitacion = get_post_meta( $post->ID, 'licitaciones_file', true );
     
     ?>
     <label for="licitaciones_year">Ano:</label>
     <input type="text" name="licitaciones_year" value="<?php echo @$year; ?>" id="licitaciones_year" />
+    <hr />
+    <label for="licitaciones_code">Codigo:</label>
+    <input type="text" name="licitaciones_code" value="<?php echo @$code; ?>" id="licitaciones_code" />
     <hr />
     <label for="licitaciones_file">Archivo:</label>
     <input type="file" name="licitaciones_file" id="licitaciones_file" />
@@ -595,10 +599,12 @@ function licitaciones_custom_box_html( $post ) {
     <?php
 }
 
+
 add_action( 'add_meta_boxes', 'licitaciones_add_custom_box' );
 
 function licitaciones_save_postdata( $post_id ) {
     $year = (!empty($_POST['licitaciones_year'])) ? $_POST['licitaciones_year'] : '' ;
+    $code = (!empty($_POST['licitaciones_code'])) ? $_POST['licitaciones_code'] : '' ;
 
      if(!empty($_FILES['licitaciones_file']['name'])) {
         $supported_types = array('application/pdf');
@@ -619,6 +625,7 @@ function licitaciones_save_postdata( $post_id ) {
     }
     
     update_post_meta($post_id, 'licitaciones_year', $year);
+    update_post_meta($post_id, 'licitaciones_code', $code);
 }
 
 add_action( 'save_post', 'licitaciones_save_postdata' );

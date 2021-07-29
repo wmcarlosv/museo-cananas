@@ -106,9 +106,10 @@
                                 ?>
                                 <div class="licitaciones-item-container">
                                     <h2 class="heading-coleccion licitaciones"><?php echo get_the_title(); ?></h2>
+                                    <div class="licitaciones-info-text"><?php echo the_content(); ?></div>
                                     <div class="licitaciones-info-wrapper">
                                         <div class="licitaciones-info-text">
-                                            <?php echo the_content(); ?>
+                                            <?php echo get_post_meta( $post->ID, 'licitaciones_code', true ); ?>
                                         </div>
                                         <div class="licitaciones-info-text">
                                             <?php echo $years[$x]; ?>
