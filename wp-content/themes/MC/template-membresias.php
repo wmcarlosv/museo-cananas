@@ -114,8 +114,8 @@
                                 <?php _e( '¿Quieres recibir información del Museo Cabañas? ¡Suscríbete!', 'my_mc' ); ?>
                             </label>
                             <div class="text-field-container">
-                                <input type="email" class="text-field w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="Correo electronico" id="email-2" required="" value="<?php echo ( isset( $_POST['email-2'] ) ? $_POST['email-2'] : '' ); ?>">
-                                <input type="submit" value="Suscribirte" data-wait="Please wait..." class="submit-button w-button" name="pgpb_contact_form_mailer_id_2">
+                                <input type="email" class="text-field w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="<?php _e( '¡Correo electronico!', 'my_mc' ); ?>" id="email-2" required="" value="<?php echo ( isset( $_POST['email-2'] ) ? $_POST['email-2'] : '' ); ?>">
+                                <input type="submit" value="<?php _e( 'Suscribirte', 'my_mc' ); ?>" data-wait="Please wait..." class="submit-button w-button" name="pgpb_contact_form_mailer_id_2">
                             </div>
                             <input type="hidden" name="pgpb_contact_form_mailer_id" value="1"/>
                         </form>
@@ -125,7 +125,7 @@
                     <?php endif; ?>
                     <div class="success-message w-form-done">
                         <div class="text-block-3">
-                            <?php _e( '¡Gracias por suscribirte!', 'my_mc' ); ?>
+                            <?php _e( '¡Gracias por Suscribirte!', 'my_mc' ); ?>
                         </div>
                     </div>
                     <div class="error-message w-form-fail">
