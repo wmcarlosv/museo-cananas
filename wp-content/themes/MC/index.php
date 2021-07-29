@@ -84,7 +84,19 @@
                                 $actuales = new WP_Query(
                                     array(
                                         'post_type'=>'post',
-                                        'category_name' => 'actuales' 
+                                        'tax_query' => array(
+                                            'relation'=>'OR',
+                                            array(
+                                                'taxonomy'=>'category',
+                                                'field'=>'name',
+                                                'terms'=>'actuales'
+                                            ),
+                                            array(
+                                                'taxonomy'=>'category',
+                                                'field'=>'name',
+                                                'terms'=>'current'
+                                            )
+                                        )
                                     )
                                 );
                                 if ( have_posts() ) : 
@@ -123,7 +135,19 @@
                              $pasadas = new WP_Query(
                                     array(
                                         'post_type'=>'post',
-                                        'category_name' => 'pasadas' 
+                                        'tax_query' => array(
+                                            'relation'=>'OR',
+                                            array(
+                                                'taxonomy'=>'category',
+                                                'field'=>'name',
+                                                'terms'=>'pasadas'
+                                            ),
+                                            array(
+                                                'taxonomy'=>'category',
+                                                'field'=>'name',
+                                                'terms'=>'last'
+                                            )
+                                        )
                                     )
                                 );
                             if ( have_posts() ) : ?>
@@ -160,9 +184,22 @@
                             $proximas = new WP_Query(
                                     array(
                                         'post_type'=>'post',
-                                        'category_name' => 'proximas' 
+                                        'tax_query' => array(
+                                            'relation'=>'OR',
+                                            array(
+                                                'taxonomy'=>'category',
+                                                'field'=>'name',
+                                                'terms'=>'proximas'
+                                            ),
+                                            array(
+                                                'taxonomy'=>'category',
+                                                'field'=>'name',
+                                                'terms'=>'upcoming'
+                                            )
+                                        )
                                     )
                                 );
+
                             if ( have_posts() ) : ?>
                                 <?php while ( $proximas->have_posts() ) : $proximas->the_post(); ?>
                                     <?php PG_Helper::rememberShownPost(); ?>
