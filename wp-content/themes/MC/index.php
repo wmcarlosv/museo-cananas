@@ -193,7 +193,7 @@
                     </div>
                 </div>
             </div>
-            <h1 class="exp-page-heading">Exposiciones</h1>
+            <h1 class="exp-page-heading"><?php _e('Exposiciones','my_mc'); ?></h1>
         </div>
     </div>
 </div>
