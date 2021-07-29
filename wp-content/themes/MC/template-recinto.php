@@ -138,7 +138,7 @@
             </iframe>
         </div>
 
-        <div class="orozco-hp-wrapper">
+        <div class="orozco-hp-wrapper" id="orozco-zone">
             <div class="huge-orozco-text">
                 <?php _e( 'Orozco', 'my_mc' ); ?>
             </div>
