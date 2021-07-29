@@ -64,13 +64,13 @@
                         <h4 class="heading-cine"><?php echo get_the_title(); ?></h4>
 
                         <div class="cartelera-info-row">
-                          <div class="cartelera-info-titulo">Director: </div>
+                          <div class="cartelera-info-titulo">Director:</div>
                           <div class="cartelera-info-text"><?php echo get_post_meta(get_the_ID(), 'director', true); ?></div>
                         </div>
 
                         <div class="cartelera-info-row">
                           <div class="cartelera-info-titulo">País, Año:</div>
-                          <div class="cartelera-info-text"><?php get_post_meta(get_the_ID(), 'pais', true); ?>, <?php echo get_post_meta(get_the_ID(), 'pais', true); ?></div>
+                          <div class="cartelera-info-text"><?php echo get_post_meta(get_the_ID(), 'pais', true); ?>, <?php echo get_post_meta(get_the_ID(), 'ano', true); ?></div>
                         </div>
 
                         <div class="cartelera-info-row">
