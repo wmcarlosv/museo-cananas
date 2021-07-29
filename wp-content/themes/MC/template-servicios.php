@@ -54,7 +54,9 @@
                 <h2 class="heading-cine"><?php _e( 'Horario:', 'my_mc' ); ?></h2>
                 <div class="div-block-3">
                     <div class="taquilla-texto">
-                        <?php echo get_post_meta( get_the_ID(), 'horario:', true ); ?>
+                        <?php 
+                            echo get_post_meta( get_the_ID(), 'horario:', true );
+                        ?>
                     </div>
                 </div>
                 <!--<h2 class="heading-cine"><?php _e( 'Horario Especial (Covid 19):', 'my_mc' ); ?></h2>
@@ -112,6 +114,11 @@
             <div class="col-wrapper">
                 <h2 class="heading-cine"><?php _e( 'Horarios:', 'my_mc' ); ?></h2>
                 <p class="taquilla-texto"><?php echo get_post_meta( get_the_ID(), 'biblioteca_horarios:', true ); ?></p>
+                <br />
+                <?php 
+                    $imagen = get_post_meta(get_the_ID(), 'imagen_biblioteca', true);
+                    echo wp_get_attachment_image($imagen,'real');
+                ?>
             </div>
         </div>
     </div>
