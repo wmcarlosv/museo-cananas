@@ -113,16 +113,32 @@
             <div class="subtitle">
                 <?php _e( 'exhibiciones:', 'my_mc' ); ?>
             </div>
-            <?php if ( have_posts() ) : ?>
-                <?php while ( have_posts() ) : the_post(); ?>
+            <?php 
+                $args = array(
+                    'post_type' => 'post',
+                    'meta_query' => array(
+                        'relation' => 'OR',
+                        array(
+                            'key'=>'above_header',
+                            'value' => 'Current Exhibition'
+                        ),
+                        array(
+                            'key'=>'above_header',
+                            'value'=>'Exposición Actual'
+                        )
+                    )
+                );
+
+                $loop = new WP_Query( $args );
+            ?>
+            <?php if ( $loop->have_posts() ) : ?>
+                <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                     <?php PG_Helper::rememberShownPost(); ?>
                     <a href="<?php echo esc_url( get_permalink() ); ?>" <?php post_class( 'exhibicion-item w-inline-block' ); ?> id="post-<?php the_ID(); ?>"> <div class="exhibicion-text-wrapper">
                             <div class="text-block-2">
                                   <?php
-
                                         the_field('above_header',);
-
-                                    ?>
+                                  ?>
                             </div>
                             <h3 class="heading exhibicion"><?php the_title(); ?></h3>
                             <div class="fechas">
