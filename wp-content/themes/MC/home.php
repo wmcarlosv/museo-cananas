@@ -276,7 +276,7 @@
                             <?php _e( '¿Quieres recibir información del Museo Cabañas? ¡Suscríbete!', 'my_mc' ); ?>
                         </label>
                         <div class="text-field-container">
-                            <input type="email" class="text-field w-input" maxlength="256" name="email" data-name="Email" placeholder="<?php _e( '¡Correo electronico!', 'my_mc' ); ?>" id="email" required="">
+                            <input type="email" class="text-field w-input" maxlength="256" name="email" data-name="Email" placeholder="<?php _e( 'Correo electronico', 'my_mc' ); ?>" id="email" required="">
                             <input type="submit" value="<?php _e( 'Suscribirte', 'my_mc' ); ?>" data-wait="Please wait..." class="submit-button w-button">
                         </div>
                     </form>
