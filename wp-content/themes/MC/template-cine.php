@@ -57,13 +57,33 @@
                 ?>
                 <div class="cartelera-item-container">
                     <div class="cartelera-img">
-                        <img src="<?php echo PG_Image::getUrl( get_post_meta( get_the_ID(), 'content_image', true ), 'large' ) ?>" loading="lazy" alt="">
+                        <img src="<?php echo PG_Image::getUrl( get_post_meta( get_the_ID(), 'portada', true ), 'large' ) ?>" loading="lazy" alt="">
 
                     </div>
-                    <div id="w-node-e815aabd-f2f4-aed2-5286-f8f3e8e5718f-e20f46c7" class="cartelera-info">
-                        <?php echo get_post_meta( get_the_ID(), 'content_heading', true ); ?>
+                    <div class="cartelera-info">
+                        <h4 class="heading-cine"><?php echo get_the_title(); ?></h4>
+
+                        <div class="cartelera-info-row">
+                          <div class="cartelera-info-titulo">Director:</div>
+                          <div class="cartelera-info-text"><?php echo get_post_meta(get_the_ID(), 'director', true); ?></div>
+                        </div>
+
+                        <div class="cartelera-info-row">
+                          <div class="cartelera-info-titulo">País, Año:</div>
+                          <div class="cartelera-info-text"><?php get_post_meta(get_the_ID(), 'pais', true); ?>, <?php echo get_post_meta(get_the_ID(), 'pais', true); ?></div>
+                        </div>
+
+                        <div class="cartelera-info-row">
+                          <div class="cartelera-info-titulo">Duración:</div>
+                          <div class="cartelera-info-text"><?php echo get_post_meta(get_the_ID(), 'duracion', true); ?></div>
+                        </div>
+
+                        <div class="cartelera-info-row">
+                          <div class="cartelera-info-titulo">Género:</div>
+                          <div class="cartelera-info-text"><?php echo get_post_meta(get_the_ID(), 'genero', true); ?></div>
+                        </div>
                     </div>
-                    <p id="w-node-e815aabd-f2f4-aed2-5286-f8f3e8e571a6-e20f46c7" class="cartelera-sinopsis"><?php echo get_the_content(); ?></p>
+                    <p id="w-node-e815aabd-f2f4-aed2-5286-f8f3e8e571a6-e20f46c7" class="cartelera-sinopsis"><?php echo wp_strip_all_tags(get_the_content()); ?></p>
                 </div>
 
                 <?php endwhile; ?>
