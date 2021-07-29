@@ -185,7 +185,7 @@
                 </div>
                 <?php while ( $pgpb_colecciones_query->have_posts() ) : $pgpb_colecciones_query->the_post(); ?>
                     <?php PG_Helper::rememberShownPost(); ?>
-                    <a href="<?php echo esc_url( get_permalink() ); ?>" <?php post_class( 'coleccion-item w-inline-block' ); ?> id="post-<?php the_ID(); ?>"> <h4 class="heading-coleccion"><?php the_title(); ?></h4> <?php the_content(); ?> <div class="text-block-2">
+                    <a href="<?php echo esc_url( get_permalink() ); ?>" <?php post_class( 'coleccion-item w-inline-block' ); ?> id="post-<?php the_ID(); ?>"> <h4 class="heading-coleccion"><?php the_title(); ?></h4> <p style="overflow: hidden; display: -webkit-box; text-overflow: ellipsis; -webkit-line-clamp: 2; -webkit-box-orient: vertical;"><?php echo get_the_excerpt(); ?></p> <div class="text-block-2">
                             <?php _e( 'Permanente', 'my_mc' ); ?>
                         </div> <div class="coeccion-item-arrow-container">
                             <div class="arrow-1-container">
