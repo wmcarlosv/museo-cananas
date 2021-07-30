@@ -68,7 +68,13 @@
             </div>
             <div id="w-node-dca9636e-46c2-30a6-5f1a-cb3bd87e7ad7-154101aa" class="col-wrapper">
                 <?php //the_content(); ?>
-                <div class="wide-img-container"></div>
+                <?php 
+                    $imagen_top = get_post_meta(get_the_ID(), 'imagen_top', true);
+                    $imagen_url = wp_get_attachment_image_url($imagen_top,'real');
+                ?>
+                <div class="wide-img-container" style="background: url('<?=$imagen_url?>') no-repeat;">
+                    
+                </div>
             </div>
             <img src="<?php echo PG_Image::getUrl( get_post_meta( get_the_ID(), 'product_gallery_0_image', true ), 'large' ) ?>" loading="lazy" alt="" class="tienda-simple-img">
             <img src="<?php echo PG_Image::getUrl( get_post_meta( get_the_ID(), 'product_gallery_1_image', true ), 'large' ) ?>" loading="lazy" alt="" class="tienda-simple-img">
