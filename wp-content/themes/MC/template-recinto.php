@@ -133,7 +133,7 @@
     <div class="mycontainer orozco">
 
         <div style="padding-top:56.17021276595745%; margin-bottom: 100px;" class="w-embed-youtubevideo youtube">
-            <iframe src="<?php echo get_post_meta( get_the_ID(), 'video', true ); ?>" frameborder="0" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen="">
+            <iframe src="<?php echo get_post_meta( get_the_ID(), 'video', true ); ?>" frameborder="0" style="position:absolute;left:0;top:0;width:100%;height:740px;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen="">
                 <?php echo get_post_meta( get_the_ID(), 'video', true ); ?>
             </iframe>
         </div>
