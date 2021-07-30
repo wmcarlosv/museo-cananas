@@ -309,7 +309,7 @@
                     </div>
                 </div>
             </div>
-            <div class="orozco-info-container" style="border-bottom: 1px solid #981a4b;height:200px; text-transform: uppercase; z-index: 0;">
+            <div class="orozco-info-container" style="border-bottom: 1px solid #981a4b;height:200px; z-index: 0;">
                 <div class="parrafo-orozco" style="overflow: none;display: block; border-bottom: 0px;">
                     <?php
                   $recinto= get_page_by_path('recinto');
