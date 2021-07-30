@@ -44,7 +44,7 @@
         <div class="exp-header-container">
             <div class="exp-title-wrapper">
                 <div class="text-block-2">
-                    <?php _e( 'Coleccion Permanente', 'my_mc' ); ?>
+                    <?php _e( 'Coleccion Acervo', 'my_mc' ); ?>
                 </div>
                 <h1 class="heading"><strong><?php the_title(); ?></strong></h1>
             </div>
