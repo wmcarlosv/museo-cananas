@@ -54,7 +54,7 @@
             </div>
             <div class="exp-title-wrapper">
                 <div class="text-block-2">
-                    <?php _e( 'Exhibiciones Actuales', 'my_mc' ); ?>
+                    <?php echo get_post_meta( get_the_ID(), 'above_header', true ); ?>
                 </div>
                 <h1 class="heading"><?php the_title(); ?></h1>
                 <div class="fechas">
