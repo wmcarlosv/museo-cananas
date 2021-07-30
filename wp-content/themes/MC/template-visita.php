@@ -122,11 +122,11 @@
             <h1 class="main-title"><?php _e( 'Planea tu visita', 'my_mc' ); ?></h1>
         </div>
         <div class="taquilla-container">
-            <div class="col-wrapper" style="width: 500px;">
-                <h2 class="heading-cine"><?php _e( 'Estacionamientos públicos por la zona del Museo Cabañas:', 'my_mc' ); ?></h2>
+            <div class="col-wrapper">
+                <h2 class="heading-cine" style="width: 500px;"><?php _e( 'Estacionamientos públicos por la zona del Museo Cabañas:', 'my_mc' ); ?></h2>
                 <p style="white-space: pre;"><?php echo get_post_meta( get_the_ID(), 'estacionamientos_publicos_por_la_zona_del_museo_cabanas', true ); ?></p>
             </div>
-            <div class="col-wrapper">
+            <div class="col-wrapper" style="border:1px solid red;">
                 <h2 class="heading-cine"><?php _e( 'Rutas para llegar al Museo Cabañas:', 'my_mc' ); ?></h2>
                 <p style="white-space: pre;"><?php echo get_post_meta( get_the_ID(), 'rutas_para_llegar_al_museo_cabanas', true ); ?></p>
             </div>
