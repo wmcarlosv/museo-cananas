@@ -46,7 +46,7 @@
 
             <div class="exp-title-wrapper">
                 <div class="text-block-2">
-                    <?php _e( 'Coleccion Permanente', 'my_mc' ); ?>
+                    <?php echo get_post_meta(get_the_ID(), 'above_header', true); ?> 
                 </div>
                 <h1 class="heading"><strong><?php the_title(); ?></strong></h1>
                 <div class="fechas">

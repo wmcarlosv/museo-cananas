@@ -1747,8 +1747,7 @@ h1 {
 }
 
 .cartelera-sinopsis {
-  margin-top: 20px;
-  margin-bottom: 0px;
+  display: block !important;
 }
 
 .cartelera-info-row {

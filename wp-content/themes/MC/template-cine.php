@@ -83,8 +83,23 @@
                           <div class="cartelera-info-titulo">Género:</div>
                           <div class="cartelera-info-text"><?php echo get_post_meta(get_the_ID(), 'genero', true); ?></div>
                         </div>
+
+                        <div class="cartelera-info-row">
+                          <div class="cartelera-info-titulo">Clasificacion:</div>
+                          <div class="cartelera-info-text"><?php echo get_post_meta(get_the_ID(), 'clasificacion', true); ?></div>
+                        </div>
+
+                        <div class="cartelera-info-row">
+                          <div class="cartelera-info-titulo">Funciones:</div>
+                          <div class="cartelera-info-text"><?php echo get_post_meta(get_the_ID(), 'funciones', true); ?></div>
+                        </div>
+
+                        <div class="cartelera-info-row">
+                          <div class="cartelera-info-titulo">Entradas:</div>
+                          <div class="cartelera-info-text"><?php echo get_post_meta(get_the_ID(), 'entradas', true); ?></div>
+                        </div>
                     </div>
-                    <p id="w-node-e815aabd-f2f4-aed2-5286-f8f3e8e571a6-e20f46c7" class="cartelera-sinopsis"><?php echo wp_strip_all_tags(get_the_content()); ?></p>
+                    <div id="w-node-e815aabd-f2f4-aed2-5286-f8f3e8e571a6-e20f46c7" class="cartelera-sinopsis"><?php echo get_the_content(); ?></div>
                 </div>
 
                 <?php endwhile; ?>
