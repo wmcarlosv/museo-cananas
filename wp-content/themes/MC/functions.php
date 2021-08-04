@@ -102,10 +102,9 @@ function my_mc_init() {
                 'name' => __( 'subscriptions', 'my_mc' ),
                 'singular_name' => __( 'subscription', 'my_mc' )
             ),
-        'public' => false,
-        'supports' => array( 'title', 'editor', 'author' ),
-        'show_in_rest' => false,
-        'show_ui' => true,
+        'public' => true,
+        'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'revisions', 'page-attributes' ),
+        'show_in_rest' => true,
         'show_in_menu' => true
     ));
 
@@ -373,7 +372,7 @@ if ( ! function_exists( 'my_mc_enqueue_scripts' ) ) :
     wp_enqueue_style( 'webflow', get_template_directory_uri() . '/css/webflow.css', false, null, 'all');
 
     wp_deregister_style( 'museocabanaswebflow' );
-    wp_enqueue_style( 'museocabanaswebflow', get_template_directory_uri() . '/css/museo-cabanas-2020.webflow.css?v=22', false, null, 'all');
+    wp_enqueue_style( 'museocabanaswebflow', get_template_directory_uri() . '/css/museo-cabanas-2020.webflow.css?v=26', false, null, 'all');
 
     wp_deregister_style( 'style' );
     wp_enqueue_style( 'style', get_bloginfo('stylesheet_url'), false, null, 'all');
@@ -471,9 +470,10 @@ function actividades_postype(){
                 'singular_name' => __('Actividad')
             ),
             'public' => true,
-            'has_archive'=> true,
             'rewrite' => array('slug' => 'actividades'),
-            'show_in_rest' => true
+            'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'revisions', 'page-attributes' ),
+            'show_in_rest' => true,
+            'show_in_menu' => true
         )
     );
 }
