@@ -124,7 +124,7 @@
         </div>
         <div class="taquilla-container">
             <div id="w-node-a183232a-1d6d-c331-d893-f022152a96a0-aae5941d" class="col-wrapper">
-                <p class="taquilla-texto"><?php echo get_post_meta( get_the_ID(), 'patrimonio_de_la_humanidad', true ); ?></p>
+                <div class="taquilla-texto" style="white-space:pre-line"><?php echo get_post_meta( get_the_ID(), 'patrimonio_de_la_humanidad', true ); ?></div>
             </div>
         </div>
     </div>
