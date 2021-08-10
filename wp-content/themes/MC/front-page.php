@@ -232,7 +232,7 @@
                     </div>
                 </div>
                 <div class="coleccion-item" id="patrimonio">
-                    <h4 class="heading-coleccion"><?php _e( 'Patrimonio De La Humanidad', 'my_mc' ); ?></h4>
+                    <h4 class="heading-coleccion"><?php _e( 'Patrimonio de la Humanidad', 'my_mc' ); ?></h4>
                     <p class="coleccion-parrafo">
                       <?php
 
@@ -301,7 +301,7 @@
             <div class="orozco-info-container first">
                 <div class="columna-info-orozco">
                     <div class="subtitulo-imagen-orozco">
-                        <?php _e( 'El Hombre En Llamas', 'my_mc' ); ?>
+                        <?php _e( 'El hombre de Fuego', 'my_mc' ); ?>
                     </div>
                     <div class="subtitulo-imagen-orozco">/</div>
                     <div class="subtitulo-imagen-orozco">
