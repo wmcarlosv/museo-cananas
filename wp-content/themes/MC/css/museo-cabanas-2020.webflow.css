@@ -836,6 +836,7 @@ h1 {
   width: 100%;
   height: 5px;
   background-color: #981a4b;
+  margin-right: -5px;
 }
 
 .line-03.blue {
@@ -1736,15 +1737,16 @@ h1 {
 }
 
 .cartelera-img img {
-  width: 150px;
-  height: 200px;
-
-  background-position: 50% 50%;
-  background-size: cover;
+    width: 100%;
+    height: auto;
+    background-position: 50% 50%;
+    background-size: cover;
+    padding-right: 15px;
+    min-width: 200px;
 }
 
 .cartelera-info {
-  margin-left: -20px;
+  margin-left: 0px;
 }
 
 .cartelera-sinopsis {
@@ -2039,8 +2041,6 @@ h1 {
   color: #000;
   font-size: 13px;
   font-weight: 400;
-  width: 666px !important;
-  /*text-transform: uppercase;*/
 }
 
 .vertical-line {
@@ -2055,6 +2055,7 @@ h1 {
 }
 
 .div-block-5 {
+  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2424,7 +2425,10 @@ h1 {
     margin-bottom: -46px;
     font-size: 140px;
   }
-
+  .orozco-info-container {
+    -webkit-column-count: 1;
+    column-count: 1;  }
+	
   .columna-info-orozco {
     width: 100%;
   }
@@ -2734,6 +2738,10 @@ h1 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+	-webkit-column-count: 1;
+	column-count: 1;
+	padding-right: 20px;
+    padding-left: 20px;
   }
 
   .exp-parrafo {
