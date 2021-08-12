@@ -50,13 +50,7 @@
              <div class="col-wrapper">
                 <?php 
                     $args = array(
-                        'post_type'=> 'actividades',
-                        'meta_query' => array(
-                            array(
-                                'key'=>'groupe_page',
-                                'value'=>'Agenda de Actividades'
-                            )
-                        )
+                        'post_type'=> 'actividades'
                     );
 
                     $loop = new WP_Query( $args );
