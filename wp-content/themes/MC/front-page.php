@@ -74,11 +74,9 @@
                                         <?php echo get_post_meta(get_the_ID(), 'above_header', true); ?> 
                                     </div>
                                     <h1 class="heading"><?php the_title(); ?></h1>
-                                    <?php
-
-                                        the_field('fechas',);
-
-                                    ?>
+                                    <div class="fechas">
+                                    <?php the_field('fechas',); ?>
+                                    </div>
                                 </div>
                                 <div class="slider-image-wrapper">
                                     <a href="<?php echo esc_url( get_permalink() ); ?>">
