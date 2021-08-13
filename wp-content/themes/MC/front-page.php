@@ -317,7 +317,12 @@
             <div class="orozco-info-container" style="border-bottom: 1px solid #981a4b;height:200px; z-index: 0;">
                 <div class="parrafo-orozco" style="overflow: none;display: block; border-bottom: 0px;">
                     <?php
-                  $recinto= get_page_by_path('recinto');
+                    if(get_bloginfo("language") == 'en-US'){
+                         $recinto= get_page_by_path('premises');
+                    }else{
+                         $recinto= get_page_by_path('recinto');
+                    }
+                 
                   $content = apply_filters( 'the_content', $recinto->post_content );
                   echo substr($content, 0, 750)." ...";
                   ?>
