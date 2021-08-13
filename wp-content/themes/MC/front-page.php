@@ -211,13 +211,13 @@
                     <p class="coleccion-parrafo" style="overflow: hidden; display: -webkit-box; text-overflow: ellipsis; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
 
                       <?php
-                          $superID = 0;
+                          $historia = 0;
                           if(get_bloginfo("language") == 'en-US'){
-                            $superID = 773;
+                            $historia = 773;
                           }else{
-                            $superID = 396;
+                            $historia = 396;
                           }
-                          the_field('historia_parrafo_0_parrafo', $superID);
+                          the_field('historia_parrafo_0_parrafo', $historia);
 
                       ?>
                     </p>
@@ -240,14 +240,14 @@
                     <h4 class="heading-coleccion"><?php _e( 'Patrimonio de la Humanidad', 'my_mc' ); ?></h4>
                     <p class="coleccion-parrafo">
                       <?php
-                          $superID = 0;
+                          $humanidad = 0;
                           if(get_bloginfo("language") == 'en-US'){
-                            $superID = 773;
+                            $humanidad = 773;
                           }else{
-                            $superID = 396;
+                            $humanidad = 396;
                           }
-                          
-                          the_field('patrimonio_de_la_humanidad', $superID);
+
+                          the_field('patrimonio_de_la_humanidad', $humanidad);
 
                       ?>
                     </p>
