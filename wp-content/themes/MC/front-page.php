@@ -211,8 +211,13 @@
                     <p class="coleccion-parrafo" style="overflow: hidden; display: -webkit-box; text-overflow: ellipsis; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
 
                       <?php
-
-                          the_field('historia_parrafo_0_parrafo', 396);
+                          $superID = 0;
+                          if(get_bloginfo("language") == 'en-US'){
+                            $superID = 773;
+                          }else{
+                            $superID = 396;
+                          }
+                          the_field('historia_parrafo_0_parrafo', $superID);
 
                       ?>
                     </p>
@@ -236,7 +241,7 @@
                     <p class="coleccion-parrafo">
                       <?php
 
-                          the_field('patrimonio_de_la_humanidad', 396);
+                          the_field('patrimonio_de_la_humanidad', $superID);
 
                       ?>
                     </p>
