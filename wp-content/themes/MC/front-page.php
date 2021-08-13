@@ -240,7 +240,13 @@
                     <h4 class="heading-coleccion"><?php _e( 'Patrimonio de la Humanidad', 'my_mc' ); ?></h4>
                     <p class="coleccion-parrafo">
                       <?php
-
+                          $superID = 0;
+                          if(get_bloginfo("language") == 'en-US'){
+                            $superID = 773;
+                          }else{
+                            $superID = 396;
+                          }
+                          
                           the_field('patrimonio_de_la_humanidad', $superID);
 
                       ?>
