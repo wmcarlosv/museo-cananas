@@ -428,9 +428,33 @@ function url_ticker_section() {
         )  
     ); 
 
+    add_settings_field(
+        'facebook_pixel_data',
+        'Codigo Facebook Pixel: ',
+        'facebook_pixel_data_cb',
+        'general',
+        'url_ticker_setting_section',
+        array(
+            'facebook_pixel_data'
+        )  
+    ); 
+
+    add_settings_field(
+        'google_analytics_data',
+        'Codigo Google Analytics: ',
+        'google_analytics_data_cb',
+        'general',
+        'url_ticker_setting_section',
+        array(
+            'google_analytics_data'
+        )  
+    ); 
+
     register_setting('general','url_ticket', 'esc_attr');
     register_setting('general','mailchip_data', 'esc_attr');
     register_setting('general','ver_boton_compra_data', 'esc_attr');
+    register_setting('general','facebook_pixel_data', 'esc_attr');
+    register_setting('general','google_analytics_data', 'esc_attr');
 }
 
 function url_ticker_setting_section_callback() { // Section Callback
@@ -456,6 +480,16 @@ function ver_boton_compra_data_callback($args){
     }
     
     echo '<input type="checkbox" id="'. $args[0] .'" name="'. $args[0] .'" value="yes" '.$checked.' />';
+}
+
+function facebook_pixel_data_cb($args){
+    $option = get_option($args[0]);
+    echo '<textarea id="'. $args[0] .'" name="'. $args[0] .'">'.$option.'</textarea>';
+}
+
+function google_analytics_data_cb($args){
+    $option = get_option($args[0]);
+    echo '<textarea id="'. $args[0] .'" name="'. $args[0] .'">'.$option.'</textarea>';
 }
 
 

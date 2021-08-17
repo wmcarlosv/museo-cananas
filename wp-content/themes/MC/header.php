@@ -13,6 +13,15 @@
         <link href="<?php echo esc_url( get_template_directory_uri() ); ?>/images/webclip.png" rel="apple-touch-icon">
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <?php wp_head(); ?>
+        <?php 
+            if(!empty(get_option('facebook_pixel_data'))){
+                echo get_option('facebook_pixel_data');
+            }
+
+            if( !empty(get_option('google_analytics_data'))){
+                echo get_option('google_analytics_data');
+            }
+        ?>
     </head>
     <body class="<?php echo implode(' ', get_body_class()); ?>">
         <?php if( function_exists( 'wp_body_open' ) ) wp_body_open(); ?>
