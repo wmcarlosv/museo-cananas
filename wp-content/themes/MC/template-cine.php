@@ -65,37 +65,37 @@
                         <h4 class="heading-cine"><?php echo get_the_title(); ?></h4>
 
                         <div class="cartelera-info-row">
-                          <div class="cartelera-info-titulo">Director:</div>
+                          <div class="cartelera-info-titulo"><?php echo _e( 'Director', 'my_mc' ); ?>:</div>
                           <div class="cartelera-info-text"><?php echo get_post_meta(get_the_ID(), 'director', true); ?></div>
                         </div>
 
                         <div class="cartelera-info-row">
-                          <div class="cartelera-info-titulo">País, Año:</div>
+                          <div class="cartelera-info-titulo"><?php echo _e( 'País, Año', 'my_mc' ); ?>:</div>
                           <div class="cartelera-info-text"><?php echo get_post_meta(get_the_ID(), 'pais', true); ?>, <?php echo get_post_meta(get_the_ID(), 'ano', true); ?></div>
                         </div>
 
                         <div class="cartelera-info-row">
-                          <div class="cartelera-info-titulo">Duración:</div>
+                          <div class="cartelera-info-titulo"><?php echo _e( 'Duración', 'my_mc' ); ?>:</div>
                           <div class="cartelera-info-text"><?php echo get_post_meta(get_the_ID(), 'duracion', true); ?></div>
                         </div>
 
                         <div class="cartelera-info-row">
-                          <div class="cartelera-info-titulo">Género:</div>
+                          <div class="cartelera-info-titulo"><?php echo _e( 'Género', 'my_mc' ); ?>:</div>
                           <div class="cartelera-info-text"><?php echo get_post_meta(get_the_ID(), 'genero', true); ?></div>
                         </div>
 
                         <div class="cartelera-info-row">
-                          <div class="cartelera-info-titulo">Clasificacion:</div>
+                          <div class="cartelera-info-titulo"><?php echo _e( 'Clasificación', 'my_mc' ); ?>:</div>
                           <div class="cartelera-info-text"><?php echo get_post_meta(get_the_ID(), 'clasificacion', true); ?></div>
                         </div>
 
                         <div class="cartelera-info-row">
-                          <div class="cartelera-info-titulo">Funciones:</div>
+                          <div class="cartelera-info-titulo"><?php echo _e( 'Funciones', 'my_mc' ); ?>:</div>
                           <div class="cartelera-info-text"><?php echo get_post_meta(get_the_ID(), 'funciones', true); ?></div>
                         </div>
 
                         <div class="cartelera-info-row">
-                          <div class="cartelera-info-titulo">Entradas:</div>
+                          <div class="cartelera-info-titulo"><?php echo _e( 'Entradas', 'my_mc' ); ?>:</div>
                           <div class="cartelera-info-text"><?php echo get_post_meta(get_the_ID(), 'entradas', true); ?></div>
                         </div>
                     </div>
