@@ -4,6 +4,12 @@
  Template Post Type: page
 */
 ?>
+<style>
+    div.imagen-cafeteria img{
+        margin: 0px auto;
+        display: block;
+    }   
+</style>
 <?php get_header(); ?>
 
 <div class="nav-container">
@@ -118,12 +124,14 @@
             <div class="col-wrapper">
                 <h2 class="heading-cine"><?php _e( 'Horarios:', 'my_mc' ); ?></h2>
                 <p class="taquilla-texto"><?php echo get_post_meta( get_the_ID(), 'biblioteca_horarios:', true ); ?></p>
-                <br />
-                <?php 
-                    $imagen = get_post_meta(get_the_ID(), 'imagen_biblioteca', true);
-                    echo wp_get_attachment_image($imagen,'real');
-                ?>
             </div>
+        </div>
+        <br />
+        <div class="imagen-cafeteria">
+            <?php 
+                $imagen = get_post_meta(get_the_ID(), 'imagen_biblioteca', true);
+                echo wp_get_attachment_image($imagen,'real');
+            ?>
         </div>
     </div>
 </div>
