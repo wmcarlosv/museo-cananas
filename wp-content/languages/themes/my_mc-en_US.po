@@ -5,10 +5,10 @@ msgstr ""
 "Language: en_US\n"
 "Language-Team: English (United States)\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"PO-Revision-Date: 2021-08-09 21:39+0000\n"
+"PO-Revision-Date: 2021-08-13 00:23+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "POT-Creation-Date: 2021-07-29 17:56+0000\n"
-"Last-Translator: Alberto Flores\n"
+"Last-Translator: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -162,7 +162,7 @@ msgstr "Collections"
 
 #: functions.php:90
 msgid "colecciones"
-msgstr ""
+msgstr "Collections"
 
 #. Name of the template
 msgid "colecciones page"
@@ -174,7 +174,7 @@ msgstr ""
 
 #: home.php:136 front-page.php:184
 msgid "colecciones:"
-msgstr ""
+msgstr "Collections:"
 
 #: template-recinto.php:159 home.php:247 front-page.php:308
 msgid "Colección Permanente"
@@ -184,11 +184,11 @@ msgstr "Permanent Collection"
 #: single-colecciones.php:36 single-galeria_home.php:36 front-page.php:52
 #: template-exhibition.php:42 template-visita.php:40
 msgid "Compra"
-msgstr ""
+msgstr "Buy"
 
 #: template-cine.php:47
 msgid "Comprar tickets"
-msgstr ""
+msgstr "Buy tickets"
 
 #. Name of the template
 msgid "comunidad page"
@@ -261,7 +261,7 @@ msgstr ""
 
 #: template-recinto.php:155 home.php:243 front-page.php:304
 msgid "El Hombre En Llamas"
-msgstr ""
+msgstr "The man of fire"
 
 #: home.php:252
 msgid ""
@@ -279,7 +279,7 @@ msgstr ""
 #: single-colecciones.php:40 single-galeria_home.php:40 front-page.php:56
 #: template-exhibition.php:46 template-visita.php:44
 msgid "entradas"
-msgstr ""
+msgstr "Tickets"
 
 #: template-visita.php:54
 msgid "Entradas:"
@@ -570,7 +570,7 @@ msgstr "About us"
 #: template-exhibition.php:171 template-colecciones.php:135
 #: template-membresia.php:137 template-visita.php:196
 msgid "Quienes Somos:"
-msgstr ""
+msgstr "About us:"
 
 #. Name of the template
 msgid "recinto page"
@@ -595,7 +595,7 @@ msgstr "Social Media"
 #: template-exhibition.php:151 template-colecciones.php:115
 #: template-membresia.php:117 template-visita.php:176
 msgid "Redes Sociales:"
-msgstr ""
+msgstr "Social Media:"
 
 #: template-visita.php:130
 msgid "Rutas para llegar al Museo Cabañas:"
@@ -715,7 +715,7 @@ msgstr ""
 #: home.php:207 home.php:213 home.php:219 home.php:225 front-page.php:268
 #: front-page.php:274 front-page.php:280 front-page.php:286
 msgid "ver cartelera"
-msgstr ""
+msgstr "Now playing"
 
 #: home.php:155 front-page.php:203
 msgid "Ver todas las colecciones"

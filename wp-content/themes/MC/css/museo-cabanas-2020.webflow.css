@@ -278,7 +278,7 @@ h1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 55%;
+  width: 70%;
   margin-top: 55px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -836,7 +836,6 @@ h1 {
   width: 100%;
   height: 5px;
   background-color: #981a4b;
-  margin-right: -5px;
 }
 
 .line-03.blue {
@@ -931,7 +930,7 @@ h1 {
   display: flex;
   width: 100%;
   height: 100%;
-  padding-top: 20px;
+  padding-top: 80px;
   padding-right: 85px;
   padding-left: 85px;
   -webkit-box-orient: vertical;
@@ -1659,8 +1658,8 @@ h1 {
   grid-auto-columns: 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 10px;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 0.75fr 1fr;
+  grid-template-columns: 0.75fr 1fr;
   -ms-grid-rows: auto;
   grid-template-rows: auto;
 }
@@ -1688,6 +1687,7 @@ h1 {
   position: -webkit-sticky;
   position: sticky;
   top: 200px;
+  margin-top: 65px;
 }
 
 .col-wrapper img{
@@ -1724,13 +1724,13 @@ h1 {
 .cartelera-item-container {
   display: -ms-grid;
   display: grid;
-  width: 70%;
+  width: 100%;
   padding: 15px;
   grid-auto-columns: 1fr;
   grid-column-gap: 5px;
   grid-row-gap: 5px;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 0.5fr 1fr;
+  grid-template-columns: 0.5fr 1fr;
   -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
