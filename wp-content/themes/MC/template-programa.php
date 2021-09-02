@@ -43,6 +43,26 @@
         <div class="experiencias-content-wrapper educacion">
             <div class="col-wrapper left">
                 <?php the_content(); ?>
+                <div class="title-descargables">
+                    <?php _e( 'Descargables', 'my_mc' ); ?>
+                </div>
+                <?php 
+                    $args = array(
+                        'post_type'=>'pparchivos'
+                    );
+
+                    $loop = new WP_Query( $args );
+
+                    if($loop->have_posts()){
+                        
+                    }
+
+                ?>
+                    <div class="descargables-pp-wrapper">
+                        <div class="licitaciones-info-text"><?php echo get_the_title(); ?></div>
+                        <a href="#" class="basic-button descargables w-button">Descargar</a>
+                    </div>
+
             </div>
             <div class="col-wrapper">
                 <?php 
