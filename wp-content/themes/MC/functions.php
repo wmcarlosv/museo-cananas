@@ -372,7 +372,7 @@ if ( ! function_exists( 'my_mc_enqueue_scripts' ) ) :
     wp_enqueue_style( 'webflow', get_template_directory_uri() . '/css/webflow.css', false, null, 'all');
 
     wp_deregister_style( 'museocabanaswebflow' );
-    wp_enqueue_style( 'museocabanaswebflow', get_template_directory_uri() . '/css/museo-cabanas-2020.webflow.css?v=35', false, null, 'all');
+    wp_enqueue_style( 'museocabanaswebflow', get_template_directory_uri() . '/css/museo-cabanas-2020.webflow.css?v=38', false, null, 'all');
 
     wp_deregister_style( 'style' );
     wp_enqueue_style( 'style', get_bloginfo('stylesheet_url'), false, null, 'all');
@@ -591,6 +591,24 @@ function directorio_postype(){
 }
 
 add_action('init', 'directorio_postype');
+
+
+function pparchivos_postype(){
+    register_post_type( 'pparchivos',
+        array(
+            'labels' => array(
+                'name' => __('Archivos Programas Publicos'),
+                'singular_name' => __('Archivo Programa Publico')
+            ),
+            'public' => true,
+            'has_archive'=> true,
+            'rewrite' => array('slug' => 'pparchivos'),
+            'show_in_rest' => true
+        )
+    );
+}
+
+add_action('init', 'pparchivos_postype');
 
 
 

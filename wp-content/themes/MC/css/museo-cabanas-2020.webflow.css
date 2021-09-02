@@ -3855,3 +3855,29 @@ div.div-block-9{
 .hp-header-section{
   height: 100vh;
 }
+
+.title-descargables {
+    width: 100%;
+    margin-top: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #000;
+    font-family: Cardo, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.descargables-pp-wrapper {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.licitaciones-info-text {
+    margin-bottom: 10px;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+}
+
+.basic-button.descargables {
+    margin-top: 5px;
+}

@@ -291,7 +291,7 @@
                 </div>
             </div>
             <div class="orozco-info-container" style="border-bottom: 1px solid #981a4b;height:200px; z-index: 0;">
-                <div class="parrafo-orozco" style="overflow: none;display: block; border-bottom: 0px;">
+                <div style="overflow: none;display: block; border-bottom: 0px;">
                     <?php
                     if(get_bloginfo("language") == 'en-US'){
                          $recinto= get_page_by_path('premises');
