@@ -124,7 +124,7 @@
         </div>
     </div>
 </div>
-<div class="escuelas-section" style="padding-bottom: 50px">
+<!--<div class="escuelas-section" style="padding-bottom: 50px">
     <div class="mycontainer cine-container">
         <div class="main-title-wrapper cine">
             <h1 class="main-title"><?php _e( 'Patrimonio de la Humanidad', 'my_mc' ); ?></h1>
@@ -135,7 +135,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <div data-w-id="d98485cd-5fe5-c0e7-2f81-cafc3bb95cb8" class="hp-fourth-section">
     <div class="mycontainer orozco">
 
