@@ -47,6 +47,7 @@
                     <?php _e( 'Descargables', 'my_mc' ); ?>
                 </div>
                 <?php 
+                $gallery = get_post_meta(get_the_ID(), 'publico_galleria', true); 
                     $args = array(
                         'post_type'=>'pparchivos'
                     );
@@ -54,20 +55,20 @@
                     $loop = new WP_Query( $args );
 
                     if($loop->have_posts()){
-                        
-                    }
+                        while($loop->have_posts()):
+                            $loop->the_post();
 
                 ?>
                     <div class="descargables-pp-wrapper">
                         <div class="licitaciones-info-text"><?php echo get_the_title(); ?></div>
-                        <a href="#" class="basic-button descargables w-button">Descargar</a>
+                        <a href="<?=wp_get_attachment_url(get_post_meta(get_the_ID(), 'archivo', true))?>" class="basic-button descargables w-button">Descargar</a>
                     </div>
 
             </div>
             <div class="col-wrapper">
-                <?php 
-
-                    $gallery = get_post_meta(get_the_ID(), 'publico_galleria', true);  
+                <?php  
+                         endwhile;
+                    }
 
                     for($i=0; $i < count($gallery); $i++){
                         echo wp_get_attachment_image($gallery[$i],'real');
