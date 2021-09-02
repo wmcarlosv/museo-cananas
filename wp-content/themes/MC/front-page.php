@@ -270,34 +270,6 @@
         <?php endif; ?>
     </div>
 </div>
-<div data-w-id="5f14965c-0621-0e79-ce63-22d9af41f2cc" class="hp-third-section">
-    <a data-w-id="c035ee6d-8a12-6c73-6181-5794390faf2c" href="<?php echo esc_url( get_permalink( get_page_by_title( 'Cine Cabanas' ) ) ); ?>" class="marquee-container-cine w-inline-block"> <div class="text-wrapper-marquee">
-            <h2 class="heading-2"><?php _e( 'cine cabañas', 'my_mc' ); ?></h2>
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/flecha-der.svg" loading="lazy" alt="" class="image-3">
-            <h2 class="heading-2"><?php _e( 'ver cartelera', 'my_mc' ); ?></h2>
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/flecha-der.svg" loading="lazy" alt="" class="image-3">
-            <div class="film-texture-container"></div>
-        </div> <div class="text-wrapper-marquee">
-            <h2 class="heading-2"><?php _e( 'cine cabañas', 'my_mc' ); ?></h2>
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/flecha-der.svg" loading="lazy" alt="" class="image-3">
-            <h2 class="heading-2"><?php _e( 'ver cartelera', 'my_mc' ); ?></h2>
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/flecha-der.svg" loading="lazy" alt="" class="image-3">
-            <div class="film-texture-container"></div>
-        </div> <div class="text-wrapper-marquee">
-            <h2 class="heading-2"><?php _e( 'cine cabañas', 'my_mc' ); ?></h2>
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/flecha-der.svg" loading="lazy" alt="" class="image-3">
-            <h2 class="heading-2"><?php _e( 'ver cartelera', 'my_mc' ); ?></h2>
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/flecha-der.svg" loading="lazy" alt="" class="image-3">
-            <div class="film-texture-container"></div>
-        </div> <div class="text-wrapper-marquee">
-            <h2 class="heading-2"><?php _e( 'cine cabañas', 'my_mc' ); ?></h2>
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/flecha-der.svg" loading="lazy" alt="" class="image-3">
-            <h2 class="heading-2"><?php _e( 'ver cartelera', 'my_mc' ); ?></h2>
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/flecha-der.svg" loading="lazy" alt="" class="image-3">
-            <div class="film-texture-container"></div>
-        </div> </a>
-    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/cine-cabanas-image.png" loading="lazy" data-w-id="6436fdd8-90f1-bf6e-6cda-600de50d4e5b" alt="" class="circle-cine">
-</div>
 <div data-w-id="1cc6e57b-f7cf-754b-6d51-d838d0e399b2" class="hp-fourth-section">
     <div class="mycontainer orozco">
         <div class="orozco-hp-wrapper">
@@ -345,6 +317,34 @@
             </div>
         </div>
     </div>
+</div>
+<div data-w-id="5f14965c-0621-0e79-ce63-22d9af41f2cc" class="hp-third-section">
+    <a data-w-id="c035ee6d-8a12-6c73-6181-5794390faf2c" href="<?php echo esc_url( get_permalink( get_page_by_title( 'Cine Cabanas' ) ) ); ?>" class="marquee-container-cine w-inline-block"> <div class="text-wrapper-marquee">
+            <h2 class="heading-2"><?php _e( 'cine cabañas', 'my_mc' ); ?></h2>
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/flecha-der.svg" loading="lazy" alt="" class="image-3">
+            <h2 class="heading-2"><?php _e( 'ver cartelera', 'my_mc' ); ?></h2>
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/flecha-der.svg" loading="lazy" alt="" class="image-3">
+            <div class="film-texture-container"></div>
+        </div> <div class="text-wrapper-marquee">
+            <h2 class="heading-2"><?php _e( 'cine cabañas', 'my_mc' ); ?></h2>
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/flecha-der.svg" loading="lazy" alt="" class="image-3">
+            <h2 class="heading-2"><?php _e( 'ver cartelera', 'my_mc' ); ?></h2>
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/flecha-der.svg" loading="lazy" alt="" class="image-3">
+            <div class="film-texture-container"></div>
+        </div> <div class="text-wrapper-marquee">
+            <h2 class="heading-2"><?php _e( 'cine cabañas', 'my_mc' ); ?></h2>
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/flecha-der.svg" loading="lazy" alt="" class="image-3">
+            <h2 class="heading-2"><?php _e( 'ver cartelera', 'my_mc' ); ?></h2>
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/flecha-der.svg" loading="lazy" alt="" class="image-3">
+            <div class="film-texture-container"></div>
+        </div> <div class="text-wrapper-marquee">
+            <h2 class="heading-2"><?php _e( 'cine cabañas', 'my_mc' ); ?></h2>
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/flecha-der.svg" loading="lazy" alt="" class="image-3">
+            <h2 class="heading-2"><?php _e( 'ver cartelera', 'my_mc' ); ?></h2>
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/flecha-der.svg" loading="lazy" alt="" class="image-3">
+            <div class="film-texture-container"></div>
+        </div> </a>
+    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/cine-cabanas-image.png" loading="lazy" data-w-id="6436fdd8-90f1-bf6e-6cda-600de50d4e5b" alt="" class="circle-cine">
 </div>
 <div class="footer">
     <div class="mycontainer footer">

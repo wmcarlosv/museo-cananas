@@ -106,6 +106,13 @@
                     <div class="div-block-7"></div>
                 </div>
             </div>
+            <div class="div-block-5">
+                <h2 class="numeros-historia"><?php echo get_post_meta( get_the_ID(), 'numeros_historia_8_year', true ); ?></h2>
+                <div class="div-block-6">
+                    <p class="historia-parrafo"><?php echo get_post_meta( get_the_ID(), 'historia_parrafo_8_parrafo', true ); ?></p>
+                    <div class="div-block-7"></div>
+                </div>
+            </div>
         </div>
         <div class="div-block-9">
             <?php 
@@ -132,11 +139,11 @@
 <div data-w-id="d98485cd-5fe5-c0e7-2f81-cafc3bb95cb8" class="hp-fourth-section">
     <div class="mycontainer orozco">
 
-        <div style="padding-top:56.17021276595745%; margin-bottom: 100px;" class="w-embed-youtubevideo youtube">
+        <!--<div style="padding-top:56.17021276595745%; margin-bottom: 100px;" class="w-embed-youtubevideo youtube">
             <iframe src="<?php echo get_post_meta( get_the_ID(), 'video', true ); ?>" frameborder="0" style="position:absolute;left:0;top:0;width:100%;height:740px;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen="">
                 <?php echo get_post_meta( get_the_ID(), 'video', true ); ?>
             </iframe>
-        </div>
+        </div>-->
 
         <div class="orozco-hp-wrapper" id="orozco-zone">
             <div class="huge-orozco-text">

@@ -558,6 +558,22 @@ function licitaciones_postype(){
 
 add_action('init', 'licitaciones_postype');
 
+
+add_filter('licitaciones_columns', 'add_year_column');
+
+function add_year_column($columns) {
+  $new = array();
+
+  print_r($columns);
+  /*foreach($columns as $key => $title) {
+    if ($key=='date') 
+      $new['book'] = 'Associated Book(s)';
+    $new[$key] = $title;
+  }
+  return $new;*/
+}
+
+
 //Post Type de Licitaciones
 function directorio_postype(){
     register_post_type( 'directorios',
