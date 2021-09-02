@@ -43,7 +43,12 @@
         </div>
         <div class="cine-content-wrapper">
             <div class="col-wrapper left">
+                <?php
+                    $media_id = get_post_meta(get_the_ID(),'imagen',true);
+                    echo wp_get_attachment_image($media_id,'real');
+                ?>
                 <?php the_content(); ?>
+                
                 <!--<a href="#" class="basic-button small w-button"><?php _e( 'Comprar tickets', 'my_mc' ); ?></a>-->
             </div>
             <div class="col-wrapper">
