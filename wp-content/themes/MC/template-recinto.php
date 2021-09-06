@@ -114,13 +114,11 @@
                 </div>
             </div>
         </div>
-        <div class="div-block-9">
+        <div>
             <?php 
-                $imagen_1 = get_post_meta(get_the_ID(), 'imagen_1', true);
-                $imagen_2 = get_post_meta(get_the_ID(), 'imagen_2', true);
+                $imagen_1 = get_post_meta(get_the_ID(), 'imagen_1', true); 
             ?>
-            <img src="<?=wp_get_attachment_image_src($imagen_1,array('650','821'))[0]?>" loading="lazy" sizes="(max-width: 479px) 46vw, (max-width: 767px) 45vw, (max-width: 991px) 46vw, 47vw" alt="" class="image-7">
-            <img src="<?=wp_get_attachment_image_src($imagen_2,array('650','821'))[0]?>" loading="lazy" sizes="(max-width: 479px) 46vw, (max-width: 767px) 45vw, (max-width: 991px) 46vw, 47vw" alt="" class="image-7">
+            <img src="<?=wp_get_attachment_image_src($imagen_1,array('1320','821'))[0]?>" loading="lazy" sizes="(max-width: 479px) 46vw, (max-width: 767px) 45vw, (max-width: 991px) 46vw, 47vw" alt="" class="image-7">
         </div>
     </div>
 </div>
