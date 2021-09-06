@@ -45,6 +45,7 @@
                         $args = array(
                                 'post_type'=>'licitaciones', 
                                 'post_status' => 'publish', 
+                                'posts_per_page' => '-1',
                                 'meta_key'=>'licitaciones_year',
                                 'orderby' => 'meta_value',
                                 'order'=>'ASC'
@@ -56,6 +57,7 @@
                         if ($loop->have_posts()):
                             while($loop->have_posts()) : $loop->the_post();
                                 $year = get_post_meta(get_the_ID(), 'licitaciones_year', true);
+                                
                                 $cont_exists = 0;
                                 for($i=0;$i < count($years);$i++){
                                     if($years[$i] == $year){
@@ -81,6 +83,7 @@
 
 
                 <div class="w-tab-content">
+
                     <?php for($x=0;$x<count($years); $x++): ?>
                         <div data-w-tab="Tab <?php echo $years[$x]; ?>" class="w-tab-pane">
                             <div class="collection-list-wrapper-4">
@@ -88,6 +91,7 @@
                                     $args = array(
                                             'post_type'=>'licitaciones', 
                                             'post_status' => 'publish', 
+                                            'posts_per_page' => '-1',
                                             'meta_key'=>'licitaciones_year',
                                             'orderby' => 'meta_value',
                                             'order'=>'ASC',
