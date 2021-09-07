@@ -303,7 +303,7 @@
                   echo substr($content, 0, 750)." ...";
                   ?>
                 </div>
-                <a data-w-id="add4b97c-06ce-5bc5-5460-b5ef16ba2408" href="<?php echo esc_url( get_permalink( get_page_by_title( 'recinto' ) ) ); ?>#orozco-zone" class="leer-mas-wrapper w-inline-block"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/Recurso-16.svg" loading="lazy" alt="" class="image-4"> <div class="arrow-2-container">
+                <a data-w-id="add4b97c-06ce-5bc5-5460-b5ef16ba2408" href="<?php echo esc_url( get_permalink( get_page_by_path( 'recinto' ) ) ); ?>" class="leer-mas-wrapper w-inline-block"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/Recurso-16.svg" loading="lazy" alt="" class="image-4"> <div class="arrow-2-container">
                         <div class="arrow-2-container">
                             <div class="line-04"></div>
                             <div class="line-03"></div>
