@@ -121,6 +121,55 @@
             <br />
             <img src="<?=wp_get_attachment_image_src($imagen_1,array('1320','821'))[0]?>" loading="lazy" sizes="(max-width: 479px) 46vw, (max-width: 767px) 45vw, (max-width: 991px) 46vw, 47vw" alt="" class="image-7">
         </div>
+
+
+
+
+        <div data-delay="4000" data-animation="cross" data-autoplay="1" data-easing="ease-in-out-quad" data-duration="500" data-infinite="1" class="slider w-slider">
+            <div class="w-slider-mask">
+                <?php
+                    $gallery_recinto = new WP_Query(array(
+                        'post_type'=>'galeria_recinto'
+                    ));
+                 ?>
+                <?php if ( $gallery_recinto->have_posts() ) : ?>
+                    <?php while ( $gallery_recinto->have_posts() ) : $gallery_recinto->the_post(); ?>
+                        <?php PG_Helper::rememberShownPost(); ?>
+                        <div data-w-id="5c9df79f-71cd-1123-9ecf-71dfdd5c1eb5" <?php post_class( 'w-slide' ); ?> id="post-<?php the_ID(); ?>">
+                            <div class="slider-wrapper">
+                                <!--<div class="slider-text-wrapper">
+                                    <h1 class="heading"><?php the_title(); ?></h1>
+                                </div>-->
+                                <div class="slider-image-wrapper">
+                                    <a href="<?php echo esc_url( get_permalink() ); ?>">
+                                    <?php echo PG_Image::getPostImage( null, 'full', array(
+                                            'class' => 'slider-image',
+                                            'loading' => 'lazy',
+                                            'style' => '-webkit-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)',
+                                            'sizes' => '(max-width: 991px) 100vw, 70vw'
+                                    ), 'both', null ) ?>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                <?php else : ?>
+                    <p><?php _e( 'Sorry, no posts matched your criteria.', 'my_mc' ); ?></p>
+                <?php endif; ?>
+            </div>
+            <div class="left-arrow w-slider-arrow-left">
+                <div class="icon-2 w-icon-slider-left"></div>
+            </div>
+            <div class="right-arrow w-slider-arrow-right">
+                <div class="icon w-icon-slider-right"></div>
+            </div>
+            <div class="slide-nav w-slider-nav w-round"></div>
+        </div>
+
+
+
+
+
     </div>
 </div>
 <!--<div class="escuelas-section" style="padding-bottom: 50px">

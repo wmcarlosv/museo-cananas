@@ -633,6 +633,26 @@ function galeria_home_postype(){
 add_action('init', 'galeria_home_postype');
 
 
+function galeria_recinto_postype(){
+    register_post_type( 'galeria_recinto',
+        array(
+            'labels' => array(
+                'name' => __('Galerias Recintos'),
+                'singular_name' => __('Galeria Recinto')
+            ),
+            'public' => true,
+            'has_archive'=> true,
+            'rewrite' => array('slug' => 'galeria_recinto'),
+            'show_in_rest' => true,
+            'show_in_menu' => true,
+            'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'revisions', 'page-attributes' ),
+        )
+    );
+}
+
+add_action('init', 'galeria_recinto_postype');
+
+
 function licitaciones_add_custom_box() {
     $screens = [ 'licitaciones' ];
     foreach ( $screens as $screen ) {
