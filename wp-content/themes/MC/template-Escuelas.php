@@ -95,21 +95,21 @@
         <div class="experiencias-content-wrapper educacion">
             <div class="col-wrapper left">
                 <h2 class="heading-cine"><?php _e( 'Pasos y requisitos para agendar tu visita', 'my_mc' ); ?></h2>
-                <p class="taquilla-texto edu"><?php echo get_post_meta( get_the_ID(), 'pasos_y_requisitos_para_agendar_tu_visita', true ); ?></p>
+                <div class="taquilla-texto edu" style="white-space:pre-line"><?php echo get_post_meta( get_the_ID(), 'pasos_y_requisitos_para_agendar_tu_visita', true ); ?></div>
             </div>
             <div class="col-wrapper">
                 <h2 class="heading-cine"><?php _e( '¡Arma tu visita!', 'my_mc' ); ?></h2>
                 <h2 class="heading-cine"><?php _e( '1. Selecciona un recorrido.', 'my_mc' ); ?></h2>
                 <div class="div-block-3">
-                    <div class="taquilla-texto" style="white-space: pre-wrap;"><?php echo get_post_meta( get_the_ID(), '¡arma_tu_visita!_selecciona_un_recorrido', true ); ?></div>
+                    <div class="taquilla-texto" style="white-space:pre-line"><?php echo get_post_meta( get_the_ID(), '¡arma_tu_visita!_selecciona_un_recorrido', true ); ?></div>
                 </div>
                 <h2 class="heading-cine"><?php _e( '2. Elige un taller', 'my_mc' ); ?></h2>
                 <div class="div-block-3">
-                    <div class="taquilla-texto" style="white-space: pre-wrap;"><?php echo get_post_meta( get_the_ID(), '¡arma_tu_visita!_elige_un_taller', true ); ?></div>
+                    <div class="taquilla-texto" style="white-space:pre-line"><?php echo get_post_meta( get_the_ID(), '¡arma_tu_visita!_elige_un_taller', true ); ?></div>
                 </div>
                 <h2 class="heading-cine"><?php _e( '3. Elige una película', 'my_mc' ); ?></h2>
                 <div class="div-block-3">
-                    <div class="taquilla-texto" style="white-space: pre-wrap;"><?php echo get_post_meta( get_the_ID(), '¡arma_tu_visita!_elige_una_pelicula', true ); ?></div>
+                    <div class="taquilla-texto" style="white-space:pre-line"><?php echo get_post_meta( get_the_ID(), '¡arma_tu_visita!_elige_una_pelicula', true ); ?></div>
                 </div>
             </div>
         </div>
