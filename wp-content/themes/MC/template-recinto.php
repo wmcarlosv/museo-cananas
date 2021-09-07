@@ -121,6 +121,18 @@
             <br />
             <img src="<?=wp_get_attachment_image_src($imagen_1,array('1320','821'))[0]?>" loading="lazy" sizes="(max-width: 479px) 46vw, (max-width: 767px) 45vw, (max-width: 991px) 46vw, 47vw" alt="" class="image-7">
         </div>
+        <div class="images-gallery-container-orozco">
+            <?php
+                $bottom_galery = get_post_meta(get_the_ID(), 'gallery_bottom', true);
+
+                for($i=0; $i < count($bottom_galery); $i++){
+                    $imagen = wp_get_attachment_image_src($bottom_galery[$i]);
+            ?>
+            <div class="div-block-4">
+                <img src="<?php echo $imagen[0]; ?>" loading="lazy" alt="" class="image-6">
+            </div>
+        <?php } ?>
+        </div>
     </div>
 </div>
 <!--<div class="escuelas-section" style="padding-bottom: 50px">
