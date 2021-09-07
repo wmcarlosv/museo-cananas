@@ -114,10 +114,11 @@
                 </div>
             </div>
         </div>
-        <div>
+        <div style="text-align: center;">
             <?php 
                 $imagen_1 = get_post_meta(get_the_ID(), 'imagen_1', true); 
             ?>
+            <br />
             <img src="<?=wp_get_attachment_image_src($imagen_1,array('1320','821'))[0]?>" loading="lazy" sizes="(max-width: 479px) 46vw, (max-width: 767px) 45vw, (max-width: 991px) 46vw, 47vw" alt="" class="image-7">
         </div>
     </div>
