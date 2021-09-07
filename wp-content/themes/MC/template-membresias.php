@@ -46,7 +46,6 @@
                 <?php 
                     $link  = get_post_meta(get_the_ID(), 'link_formulario_membresia'); 
                 ?>
-                <!--<a href="<?php echo get_page_link($link[0]); ?>" class="basic-button w-button"><?php _e( 'Comprar membresía', 'my_mc' ); ?></a>-->
             </div>
             <div class="col-wrapper">
                 <div class="experiencia-container">
@@ -59,7 +58,7 @@
                     <div class="cartelera-sinopsis w-richtext">
                         <?php echo get_post_meta( get_the_ID(), 'individual_text', true ); ?>
                     </div>
-                    <a href="<?php echo get_post_meta(get_the_ID(), 'individual_link', true); ?>" class="basic-button w-button"><?php _e( 'Comprar membresía', 'my_mc' ); ?></a>
+                    <?php echo get_post_meta(get_the_ID(), 'individual_link', true); ?>
                 </div>
                 <div class="experiencia-container">
                     <h2 class="heading-experiencias"><strong><?php _e( 'Familiar', 'my_mc' ); ?></strong></h2>
@@ -71,7 +70,7 @@
                     <div class="cartelera-sinopsis w-richtext">
                         <?php echo get_post_meta( get_the_ID(), 'familiar_text', true ); ?>
                     </div>
-                    <a href="<?php echo get_post_meta(get_the_ID(), 'familiar_link', true); ?>" class="basic-button w-button"><?php _e( 'Comprar membresía', 'my_mc' ); ?></a>
+                    <?php echo get_post_meta(get_the_ID(), 'familiar_link', true); ?>
                 </div>
                 <div class="experiencia-container">
                     <h2 class="heading-experiencias"><strong><?php _e( 'Amigo Cabañas', 'my_mc' ); ?></strong></h2>
@@ -83,7 +82,7 @@
                     <div class="cartelera-sinopsis w-richtext">
                         <?php echo get_post_meta( get_the_ID(), 'amigo_cabanas_text', true ); ?>
                     </div>
-                    <a href="<?php echo get_post_meta(get_the_ID(), 'amigo_cabanas_link', true); ?>" class="basic-button w-button"><?php _e( 'Comprar membresía', 'my_mc' ); ?></a>
+                    <?php echo get_post_meta(get_the_ID(), 'amigo_cabanas_link', true); ?>
                 </div>
                 <div class="experiencia-container">
                     <h2 class="heading-experiencias"><strong><?php _e( 'Benefactor Cabañas', 'my_mc' ); ?></strong></h2>
@@ -95,7 +94,7 @@
                     <div class="cartelera-sinopsis w-richtext">
                         <?php echo get_post_meta( get_the_ID(), 'benefactor_cabanas_text', true ); ?>
                     </div>
-                    <a href="<?php echo get_post_meta(get_the_ID(), 'benefactor_cabanas_link', true); ?>" class="basic-button w-button"><?php _e( 'Comprar membresía', 'my_mc' ); ?></a>
+                    <?php echo get_post_meta(get_the_ID(), 'benefactor_cabanas_link', true); ?>
                 </div>
             </div>
         </div>
