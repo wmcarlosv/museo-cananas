@@ -79,7 +79,7 @@
                     $imagen_url = wp_get_attachment_image_url($imagen_top,'real');
                 ?>
                 <div class="wide-img-container">
-                    <img src="<?=$imagen_url?>" alt="" />
+                    <img class="service-image-background"> src="<?=$imagen_url?>" alt="" />
                 </div>
             </div>
             <img src="<?php echo PG_Image::getUrl( get_post_meta( get_the_ID(), 'product_gallery_0_image', true ), 'large' ) ?>" loading="lazy" alt="" class="tienda-simple-img">
