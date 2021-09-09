@@ -302,7 +302,7 @@
                     </div>
                 </div>
             </div>
-            <div class="orozco-info-container" style="border-bottom: 1px solid #981a4b;height:200px; z-index: 0;">
+            <div class="orozco-info-container" style="border-bottom: 1px solid #981a4b;height:165px; z-index: 0;">
                 <div style="overflow: none;display: block; border-bottom: 0px;">
                     <?php
                     if(get_bloginfo("language") == 'en-US'){
@@ -312,7 +312,13 @@
                     }
                  
                   $content = apply_filters( 'the_content', $recinto->post_content );
-                  echo substr($content, 0, 750)." ...";
+                  
+
+                  if(get_bloginfo("language") == 'en-US'){
+                        echo substr($content, 0, 550)." ...";
+                    }else{
+                         echo substr($content, 0, 750)." ...";
+                    }
                   ?>
                 </div>
                 <a data-w-id="add4b97c-06ce-5bc5-5460-b5ef16ba2408" href="<?php echo esc_url( get_permalink( $recinto ) ); ?>" class="leer-mas-wrapper w-inline-block"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/Recurso-16.svg" loading="lazy" alt="" class="image-4"> <div class="arrow-2-container">
