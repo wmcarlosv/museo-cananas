@@ -199,11 +199,7 @@
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
                 <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'colecciones' ) ) ); ?>" class="basic-button w-button"><?php _e( 'Ver todas las colecciones', 'my_mc' ); ?></a>
-                <div class="separador-con-titulo">
-                    <div class="subtitle">
-                        <?php _e( 'recinto:', 'my_mc' ); ?>
-                    </div>
-                </div>
+ 
                 <div class="coleccion-item">
                     <h4 class="heading-coleccion"><?php _e( 'Historia', 'my_mc' ); ?></h4>
                     <p class="coleccion-parrafo" style="overflow: hidden; display: -webkit-box; text-overflow: ellipsis; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
