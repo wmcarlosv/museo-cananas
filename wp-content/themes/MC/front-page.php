@@ -298,7 +298,7 @@
                     </div>
                 </div>
             </div>
-            <div class="orozco-info-container">
+            <div class="orozco-info-container-home">
                     <?php
                     if(get_bloginfo("language") == 'en-US'){
                          $recinto= get_page_by_path('history');
