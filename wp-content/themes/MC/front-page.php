@@ -298,8 +298,7 @@
                     </div>
                 </div>
             </div>
-            <div class="orozco-info-container" style="border-bottom: 1px solid #981a4b;height:165px; z-index: 0;">
-                <div style="overflow: none;display: block; border-bottom: 0px;">
+            <div class="orozco-info-container">
                     <?php
                     if(get_bloginfo("language") == 'en-US'){
                          $recinto= get_page_by_path('history');
