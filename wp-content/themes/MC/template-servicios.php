@@ -96,7 +96,7 @@
         </div>
         <div class="taquilla-container">
             <div class="col-wrapper">
-                <h2 class="heading-cine"><?php _e( 'Black Coffee', 'my_mc' ); ?></h2>
+                <h2 class="heading-cine"><?php _e( 'Black Coffee Gallery', 'my_mc' ); ?></h2>
                 <p class="taquilla-texto"><?php echo get_post_meta( get_the_ID(), 'cafeteria_black_coffee', true ); ?></p>
             </div>
             <div class="col-wrapper">
@@ -120,7 +120,7 @@
         </div>
         <div class="taquilla-container">
             <div class="col-wrapper">
-                <h2 class="heading-cine"><?php _e( 'Artes y Museografía del Museo Cabañas', 'my_mc' ); ?></h2>
+                <h2 class="heading-cine"><?php _e( 'Biblioteca de Artes y Museografía del Museo Cabañas', 'my_mc' ); ?></h2>
                 <p class="taquilla-texto"><?php echo get_post_meta( get_the_ID(), 'biblioteca_artes_y_museografia_del_museo_cabanas', true ); ?></p>
             </div>
             <div class="col-wrapper">
