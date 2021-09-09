@@ -311,7 +311,7 @@
                   
 
                   if(get_bloginfo("language") == 'en-US'){
-                        echo substr($content, 0, 550)." ...";
+                        echo substr($content, 0, 350)." ...";
                     }else{
                          echo substr($content, 0, 750)." ...";
                     }
