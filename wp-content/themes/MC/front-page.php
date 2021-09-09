@@ -217,6 +217,12 @@
                           }
                           the_field('historia_parrafo_0_parrafo', $historia);
 
+                          if(get_bloginfo("language") == 'en-US'){
+                                 $recinto= get_page_by_path('history');
+                            }else{
+                                 $recinto= get_page_by_path('historia');
+                            }
+
                       ?>
                     </p>
                     <div class="text-block-2">
@@ -224,7 +230,7 @@
                     </div>
                     <div class="coeccion-item-arrow-container">
                         <div class="arrow-1-container">
-                            <a class="arrow-1-container" href="<?php echo esc_url( get_page_link( PG_Helper::getPostFromSlug( 'recinto', 'page' ) ) ); ?>">
+                            <a class="arrow-1-container" href="<?php echo esc_url( get_page_link( $recinto ) ); ?>">
                                 <div class="line-03"></div>
                                 <div class="div-block">
                                     <div class="line-02"></div>
