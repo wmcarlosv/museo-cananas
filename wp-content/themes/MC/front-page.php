@@ -247,6 +247,12 @@
 
                           the_field('patrimonio_de_la_humanidad', $humanidad);
 
+                            if(get_bloginfo("language") == 'en-US'){
+                                 $recinto= get_page_by_path('premises');
+                            }else{
+                                 $recinto= get_page_by_path('historia');
+                            }
+
                       ?>
                     </p>
                     <div class="text-block-2">
@@ -254,7 +260,7 @@
                     </div>
                     <div class="coeccion-item-arrow-container">
                         <div class="arrow-1-container">
-                            <a class="arrow-1-container" href="<?php echo esc_url( get_page_link( PG_Helper::getPostFromSlug( 'recinto', 'page' ) ) ); ?>">
+                            <a class="arrow-1-container" href="<?php echo esc_url( get_page_link( $recinto ) ); ?>">
                                 <div class="line-03"></div>
                                 <div class="div-block">
                                     <div class="line-02"></div>
@@ -296,14 +302,14 @@
                     if(get_bloginfo("language") == 'en-US'){
                          $recinto= get_page_by_path('premises');
                     }else{
-                         $recinto= get_page_by_path('recinto');
+                         $recinto= get_page_by_path('historia');
                     }
                  
                   $content = apply_filters( 'the_content', $recinto->post_content );
                   echo substr($content, 0, 750)." ...";
                   ?>
                 </div>
-                <a data-w-id="add4b97c-06ce-5bc5-5460-b5ef16ba2408" href="<?php echo esc_url( get_permalink( get_page_by_path( 'recinto' ) ) ); ?>" class="leer-mas-wrapper w-inline-block"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/Recurso-16.svg" loading="lazy" alt="" class="image-4"> <div class="arrow-2-container">
+                <a data-w-id="add4b97c-06ce-5bc5-5460-b5ef16ba2408" href="<?php echo esc_url( get_permalink( $recinto ) ); ?>" class="leer-mas-wrapper w-inline-block"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/Recurso-16.svg" loading="lazy" alt="" class="image-4"> <div class="arrow-2-container">
                         <div class="arrow-2-container">
                             <div class="line-04"></div>
                             <div class="line-03"></div>
