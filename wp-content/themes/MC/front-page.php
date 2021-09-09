@@ -248,7 +248,7 @@
                           the_field('patrimonio_de_la_humanidad', $humanidad);
 
                             if(get_bloginfo("language") == 'en-US'){
-                                 $recinto= get_page_by_path('premises');
+                                 $recinto= get_page_by_path('history');
                             }else{
                                  $recinto= get_page_by_path('historia');
                             }
@@ -300,7 +300,7 @@
                 <div style="overflow: none;display: block; border-bottom: 0px;">
                     <?php
                     if(get_bloginfo("language") == 'en-US'){
-                         $recinto= get_page_by_path('premises');
+                         $recinto= get_page_by_path('history');
                     }else{
                          $recinto= get_page_by_path('historia');
                     }
