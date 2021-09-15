@@ -81,24 +81,30 @@
                     <div data-w-tab="Tab 1" class="w-tab-pane">
                         <div class="exhibiciones-page-wrapper">
                             <?php 
-                                $actuales = new WP_Query(
-                                    array(
-                                        'post_type'=>'post',
-                                        'tax_query' => array(
-                                            'relation'=>'OR',
-                                            array(
-                                                'taxonomy'=>'category',
-                                                'field'=>'name',
-                                                'terms'=>'actuales'
-                                            ),
-                                            array(
+                                if(get_locale()=="es_ES"){
+                                    $actuales = new WP_Query(
+                                        array(
+                                            'post_type'=>'post',
+                                            'tax_query' => array(
                                                 'taxonomy'=>'category',
                                                 'field'=>'name',
                                                 'terms'=>'current'
                                             )
                                         )
-                                    )
-                                );
+                                    );
+                                }else{
+                                     $actuales = new WP_Query(
+                                        array(
+                                            'post_type'=>'post',
+                                            'tax_query' => array(
+                                                    'taxonomy'=>'category',
+                                                    'field'=>'name',
+                                                    'terms'=>'current'
+                                                )
+                                        )
+                                    );
+                                }
+                                
                                 if ( have_posts() ) : 
 
                                 ?>
@@ -132,24 +138,31 @@
                     <div data-w-tab="Tab 2" class="w-tab-pane">
                         <div class="exhibiciones-page-wrapper">
                             <?php 
-                             $pasadas = new WP_Query(
-                                    array(
-                                        'post_type'=>'post',
-                                        'tax_query' => array(
-                                            'relation'=>'OR',
-                                            array(
-                                                'taxonomy'=>'category',
-                                                'field'=>'name',
-                                                'terms'=>'pasadas'
-                                            ),
-                                            array(
+
+                                if(get_locale()=="es_ES"){
+                                    $pasadas = new WP_Query(
+                                        array(
+                                            'post_type'=>'post',
+                                            'tax_query' => array(
                                                 'taxonomy'=>'category',
                                                 'field'=>'name',
                                                 'terms'=>'last'
                                             )
                                         )
-                                    )
-                                );
+                                    );
+                                }else{
+                                     $pasadas = new WP_Query(
+                                        array(
+                                            'post_type'=>'post',
+                                            'tax_query' => array(
+                                                    'taxonomy'=>'category',
+                                                    'field'=>'name',
+                                                    'terms'=>'pasadas'
+                                                )
+                                        )
+                                    );
+                                }
+
                             if ( have_posts() ) : ?>
                                 <?php while ( $pasadas->have_posts() ) : $pasadas->the_post(); ?>
                                     <?php PG_Helper::rememberShownPost(); ?>
@@ -181,24 +194,31 @@
                     <div data-w-tab="Tab 3" class="w-tab-pane w--tab-active">
                         <div class="exhibiciones-page-wrapper">
                             <?php 
-                            $proximas = new WP_Query(
-                                    array(
-                                        'post_type'=>'post',
-                                        'tax_query' => array(
-                                            'relation'=>'OR',
-                                            array(
+
+                                 if(get_locale()=="es_ES"){
+                                    $proximas = new WP_Query(
+                                        array(
+                                            'post_type'=>'post',
+                                            'tax_query' => array(
                                                 'taxonomy'=>'category',
                                                 'field'=>'name',
                                                 'terms'=>'proximas'
-                                            ),
-                                            array(
-                                                'taxonomy'=>'category',
-                                                'field'=>'name',
-                                                'terms'=>'upcoming'
                                             )
                                         )
-                                    )
-                                );
+                                    );
+                                }else{
+                                     $proximas = new WP_Query(
+                                        array(
+                                            'post_type'=>'post',
+                                            'tax_query' => array(
+                                                    'taxonomy'=>'category',
+                                                    'field'=>'name',
+                                                    'terms'=>'upcoming'
+                                                )
+                                        )
+                                    );
+                                }
+ 
 
                             if ( have_posts() ) : ?>
                                 <?php while ( $proximas->have_posts() ) : $proximas->the_post(); ?>
