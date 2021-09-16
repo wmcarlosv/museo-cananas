@@ -85,23 +85,14 @@
                                     $actuales = new WP_Query(
                                         array(
                                             'post_type'=>'post',
-                                            'tax_query' => array(
-                                                'taxonomy'=>'category',
-                                                'field'=>'name',
-                                                'terms'=>'current'
-                                            )
+                                            'category_name' => 'actuales'
                                         )
                                     );
                                 }else{
                                      $actuales = new WP_Query(
                                         array(
                                             'post_type'=>'post',
-                                            'tax_query' => array(
-                                                    'taxonomy'=>'category',
-                                                    'field'=>'name',
-                                                    'terms'=>'current'
-                                                )
-                                        )
+                                            'category_name' => 'current'                                        )
                                     );
                                 }
                                 
@@ -143,22 +134,14 @@
                                     $pasadas = new WP_Query(
                                         array(
                                             'post_type'=>'post',
-                                            'tax_query' => array(
-                                                'taxonomy'=>'category',
-                                                'field'=>'name',
-                                                'terms'=>'last'
-                                            )
+                                            'category_name' => 'pasadas'
                                         )
                                     );
                                 }else{
                                      $pasadas = new WP_Query(
                                         array(
                                             'post_type'=>'post',
-                                            'tax_query' => array(
-                                                    'taxonomy'=>'category',
-                                                    'field'=>'name',
-                                                    'terms'=>'pasadas'
-                                                )
+                                            'category_name' => 'last'
                                         )
                                     );
                                 }
@@ -199,26 +182,17 @@
                                     $proximas = new WP_Query(
                                         array(
                                             'post_type'=>'post',
-                                            'tax_query' => array(
-                                                'taxonomy'=>'category',
-                                                'field'=>'name',
-                                                'terms'=>'proximas'
-                                            )
+                                            'category_name' => 'proximas'
                                         )
                                     );
                                 }else{
                                      $proximas = new WP_Query(
                                         array(
                                             'post_type'=>'post',
-                                            'tax_query' => array(
-                                                    'taxonomy'=>'category',
-                                                    'field'=>'name',
-                                                    'terms'=>'upcoming'
-                                                )
+                                            'category_name' => 'upcoming'                                        
                                         )
                                     );
                                 }
- 
 
                             if ( have_posts() ) : ?>
                                 <?php while ( $proximas->have_posts() ) : $proximas->the_post(); ?>
