@@ -54,7 +54,8 @@
             <div class="col-wrapper">
                  <?php 
                     $args = array(
-                        'post_type'=> 'peliculas'
+                        'post_type'=> 'peliculas',
+                        'posts_per_page' => -1
                     );
 
                     $loop = new WP_Query( $args );
