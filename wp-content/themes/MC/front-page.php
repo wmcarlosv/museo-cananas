@@ -326,7 +326,7 @@
                             </div>
                         </div>
                     </div> </a>
-                <a href="<?php echo esc_url( get_permalink( $recinto ) ); ?>" class="basic-button orozco w-button"><?php _e( 'Leer más', 'my_mc' ); ?></a>
+                <a style="display: block;" href="<?php echo esc_url( get_permalink( $recinto ) ); ?>" class="basic-button orozco w-button"><?php _e( 'Leer más', 'my_mc' ); ?></a>
             </div>
         </div>
     </div>
