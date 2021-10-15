@@ -269,27 +269,47 @@
     <div class="mycontainer footer">
         <div class="footer-wrapper">
             <div id="w-node-aac255a4-46db-2952-e2ac-403bb428fac7-2aaf4bf3" class="newsletter-wrapper">
-                <div class="w-form">
-                    
-                    <form id="wf-form-Newsletter" name="wf-form-Newsletter" data-name="Newsletter">
-                        <label for="email" class="footer-list-title">
-                            <?php _e( '¿Quieres recibir información del Museo Cabañas? ¡Suscríbete!', 'my_mc' ); ?>
-                        </label>
-                        <div class="text-field-container">
-                            <input type="email" class="text-field w-input" maxlength="256" name="email" data-name="Email" placeholder="<?php _e( 'Correo Electrónico', 'my_mc' ); ?>" id="email" required="">
-                            <input type="submit" value="<?php _e( 'Suscribirte', 'my_mc' ); ?>" data-wait="Please wait..." class="submit-button w-button">
-                        </div>
-                    </form>
-                    <div class="w-form-done">
-                        <div>
-                            <?php _e( 'Thank you! Your submission has been received!', 'my_mc' ); ?>
+                <div class="w-form" id="pgpb_contact_form_mailer_id">
+                    <?php $mailer = new PG_Simple_Form_Mailer(); ?>
+                    <?php $mailer->process( array(
+                            'form_id' => 'pgpb_contact_form_mailer_id',
+                            'save_to_post_type' => true,
+                            'post_type' => 'subscription'
+                    ) ); ?>
+                    <?php if( !$mailer->processed || $mailer->error) : ?>
+                        <form <?php echo get_option('mailchip_data'); ?>>
+                            <label for="email-2" class="footer-list-title">
+                                <?php _e( '¿Quieres recibir información del Museo Cabañas? ¡Suscríbete!', 'my_mc' ); ?>
+                            </label>
+                            <div class="text-field-container">
+                                <input type="email" class="text-field w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="<?php _e( 'Correo Electrónico', 'my_mc' ); ?>" id="email-2" required="" value="<?php echo ( isset( $_POST['email-2'] ) ? $_POST['email-2'] : '' ); ?>">
+                                <input type="submit" value="<?php _e( 'Suscribirte', 'my_mc' ); ?>" data-wait="Please wait..." class="submit-button w-button" name="pgpb_contact_form_mailer_id_2">
+                            </div>
+                            <input type="hidden" name="pgpb_contact_form_mailer_id" value="1"/>
+                        </form>
+                    <?php endif; ?>
+                    <?php if( $mailer->processed ) : ?>
+                        <?php echo $mailer->message; ?>
+                    <?php endif; ?>
+                    <div class="success-message w-form-done">
+                        <div class="text-block-3">
+                            <?php _e( '¡Gracias por Suscribirte!', 'my_mc' ); ?>
                         </div>
                     </div>
-                    <div class="w-form-fail">
-                        <div>
-                            <?php _e( 'Oops! Something went wrong while submitting the form.', 'my_mc' ); ?>
+                    <div class="error-message w-form-fail">
+                        <div class="text-block-4">
+                            <?php _e( '¡Oops! Parece que algo salio mal.', 'my_mc' ); ?>
                         </div>
                     </div>
+                    <?php
+                        if(get_bloginfo("language") == 'en-US'){
+                             $privacidad= get_page_by_path('privacy');
+                        }else{
+                             $privacidad= get_page_by_path('privacidad');
+                        }
+                    ?>
+
+                    <a href="<?php echo esc_url( get_permalink( $privacidad ) ); ?>" class="footer-link"><?php _e( 'Aviso de Privacidad', 'my_mc' ); ?></a>
                 </div>
             </div>
             <ol id="w-node-_3023e319-5a48-5c7f-3c35-fdd9f99b1999-2aaf4bf3" role="list" class="footer-links-list w-list-unstyled">
