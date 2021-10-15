@@ -117,6 +117,14 @@
                             <?php _e( '¡Oops! Parece que algo salio mal.', 'my_mc' ); ?>
                         </div>
                     </div>
+                    <?php
+                        if(get_bloginfo("language") == 'en-US'){
+                             $privacidad= get_page_by_path('privacy');
+                        }else{
+                             $privacidad= get_page_by_path('privacidad');
+                        }
+                    ?>
+                    <a href="<?php echo esc_url( get_permalink( $privacidad ) ); ?>" class="footer-link"><?php _e( 'Aviso de Privacidad', 'my_mc' ); ?></a>
                 </div>
             </div>
             <ol id="w-node-b407221c-e062-a29b-b2c2-4e7144ef7f02-44ef7ef1" role="list" class="footer-links-list w-list-unstyled">

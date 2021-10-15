@@ -1,10 +1,11 @@
 <?php
 /*
- Template Name: exi post
- Template Post Type: post
+ Template Name: Privacy page
+ Template Post Type: page
 */
 ?>
 <?php get_header(); ?>
+
 <div class="nav-container">
     <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/Logo-rojo.svg" loading="lazy" height="" width="150" alt="" class="main-logo mobile">
     <div data-w-id="20c92c8a-de61-cf16-b65e-7a6aa147bdad" class="menu-icon-wrapper">
@@ -28,87 +29,19 @@
         </div>
         <!-- #main-nav -->
         <div class="nav-items-wrapper-language">
-          <?php if ( is_active_sidebar( 'my_lang' ) ) : ?>
+         <?php if ( is_active_sidebar( 'my_lang' ) ) : ?>
               <?php dynamic_sidebar( 'my_lang' ); ?>
           <?php endif; ?>
       </div>
     </div>
 </div>
-<div class="exp-header-section">
-    <div class="nav-spacer"></div>
-    <div class="mycontainer header">
-          <a data-w-id="0a145c33-6e16-f8fc-bfd4-cb427c448321" target="_blank" href="<?php echo get_option('url_ticket'); ?>" class="bot-n-tickets w-inline-block">
-            <div class="boton-tickets-text">
-                  <?php _e( 'Compra', 'my_mc' ); ?>
-                  <br>
-                  <?php _e( 'tus', 'my_mc' ); ?>
-                  <br>
-                  <?php _e( 'entradas', 'my_mc' ); ?>
-                  <br>
-                  <?php _e( 'aquí', 'my_mc' ); ?>
-              </div>
-          </a>
-        <div class="exp-header-container">
-            <div class="exp-pie-foto">
-                <?php echo get_post_meta(get_the_ID(), 'pie_de_foto', true); ?>
-            </div>
-            <div class="exp-title-wrapper">
-                <div class="text-block-2">
-                    <?php echo get_post_meta( get_the_ID(), 'above_header', true ); ?>
-                </div>
-                <h1 class="heading"><?php the_title(); ?></h1>
-                <div class="fechas">
-                    <?php echo get_post_meta( get_the_ID(), 'fechas', true ); ?>
-                </div>
-            </div>
-            <div class="exp-header-image-wrapper">
-                <?php echo PG_Image::getPostImage( null, 'full', array(
-                        'class' => 'exp-big-img',
-                        'loading' => 'lazy',
-                        'sizes' => '(max-width: 991px) 100vw, 64vw'
-                ), 'both', null ) ?>
-            </div>
+<div class="cine-section">
+    <div class="mycontainer cine-container">
+        <div class="main-title-wrapper cine">
+            <h1 class="main-title"><strong><?php echo get_the_title(); ?></strong></h1>
         </div>
-        <div class="exp-data-wrapper">
-            <div class="exp-data-content">
-                <div class="exp-data-subtitle">
-                    <?php _e( 'Autor', 'my_mc' ); ?>
-                </div>
-                <div class="exp-data-text">
-                    <?php echo get_post_meta( get_the_ID(), 'autor', true ); ?>
-                </div>
-            </div>
-            <div class="exp-data-content">
-                <div class="exp-data-subtitle">
-                    <?php _e( 'Curador', 'my_mc' ); ?>
-                </div>
-                <div class="exp-data-text">
-                    <?php echo get_post_meta( get_the_ID(), 'curador', true ); ?>
-                </div>
-            </div>
-            <div class="exp-data-content">
-                <div class="exp-data-subtitle">
-                    <?php _e( 'Sala', 'my_mc' ); ?>
-                </div>
-                <div class="exp-data-text">
-                    <?php echo get_post_meta( get_the_ID(), 'sala', true ); ?>
-                </div>
-            </div>
-            <div class="exp-data-content">
-                <div class="exp-data-subtitle">
-                    <?php _e( 'Fechas', 'my_mc' ); ?>
-                </div>
-                <div class="exp-data-text">
-                    <?php echo get_post_meta( get_the_ID(), 'fechas', true ); ?>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="exp-content-section">
-    <div class="mycontainer exp-content">
-        <div class="exp-content-text-wrapper">
-            <?php the_content(); ?>
+        <div class="experiencias-content-wrapper educacion">
+                <?php the_content(); ?>
         </div>
     </div>
 </div>
@@ -155,6 +88,7 @@
                              $privacidad= get_page_by_path('privacidad');
                         }
                     ?>
+
                     <a href="<?php echo esc_url( get_permalink( $privacidad ) ); ?>" class="footer-link"><?php _e( 'Aviso de Privacidad', 'my_mc' ); ?></a>
                 </div>
             </div>
@@ -206,6 +140,5 @@
         </div>
     </div>
 </div>
-
 
 <?php get_footer(); ?>
