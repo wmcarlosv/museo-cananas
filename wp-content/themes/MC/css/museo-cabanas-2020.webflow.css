@@ -3914,3 +3914,11 @@ div.div-block-9{
   -webkit-column-count: 2 !important;
     column-count: 2 !important;
 }
+
+#email-2{
+  color:  white !important;
+}
+
+#email-2::placeholder{
+  color: white !important;
+}
