@@ -3909,3 +3909,8 @@ div.div-block-9{
 .basic-button.descargables {
     margin-top: 5px;
 }
+
+.orozco-info-container-home{
+  -webkit-column-count: 2 !important;
+    column-count: 2 !important;
+}
