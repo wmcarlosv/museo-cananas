@@ -40,7 +40,7 @@
         <div class="main-title-wrapper cine">
             <h1 class="main-title"><strong><?php echo get_the_title(); ?></strong></h1>
         </div>
-        <div class="experiencias-content-wrapper educacion">
+        <div class="privacidad" style="padding:30px 100px; text-align: justify;">
                 <?php the_content(); ?>
         </div>
     </div>

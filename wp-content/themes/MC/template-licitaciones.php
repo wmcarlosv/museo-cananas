@@ -93,8 +93,10 @@
                                             'post_status' => 'publish', 
                                             'posts_per_page' => '-1',
                                             'meta_key'=>'licitaciones_year',
-                                            'orderby' => 'meta_value',
-                                            'order'=>'ASC',
+                                            'orderby'=>array(
+                                                'date'=>'DESC',
+                                                'meta_value'=>'ASC'
+                                            ),
                                             'meta_query'=>array(
                                                 'key'=>'licitaciones_year',
                                                 'value'=>$years[$x],
