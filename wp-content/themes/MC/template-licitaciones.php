@@ -123,7 +123,7 @@
                                         <?php 
                                         $pdf_licitacion = get_post_meta( $post->ID, 'licitaciones_file', true );
                                         if( !empty($pdf_licitacion) ): ?>
-                                          <a href="<?php echo $pdf_licitacion['url'];  ?>" class="basic-button licitaciones w-button" download><?php _e( 'descargar', 'my_mc' ); ?></a>
+                                          <a href="<?php echo str_replace("http://201.131.6.21/","https://museocabanas.jalisco.gob.mx/", $pdf_licitacion['url']);  ?>" class="basic-button licitaciones w-button" download><?php _e( 'descargar', 'my_mc' ); ?></a>
                                         <?php endif; ?>
                                     </div>
                                 </div>
