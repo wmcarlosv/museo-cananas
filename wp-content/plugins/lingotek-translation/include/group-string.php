@@ -14,10 +14,10 @@ class Lingotek_Group_String extends Lingotek_Group {
 	 *
 	 * @param object $term term translation object
 	 */
-	protected function load($term) {
-		parent::load($term);
+	protected function load( $term ) {
+		parent::load( $term );
 		$this->name = $term->name;
-		$this->md5 = &$this->desc_array['lingotek']['md5'];
+		$this->md5  = &$this->desc_array['lingotek']['md5'];
 	}
 
 	/*
@@ -26,7 +26,15 @@ class Lingotek_Group_String extends Lingotek_Group {
 	 * @since 0.2
 	 */
 	public function save() {
-		wp_update_term((int) $this->term_id, $this->taxonomy, array('slug' => $this->document_id, 'name' => $this->name, 'description' => serialize($this->desc_array)));
+		wp_update_term(
+			(int) $this->term_id,
+			$this->taxonomy,
+			array(
+				'slug'        => $this->document_id,
+				'name'        => $this->name,
+				'description' => serialize( $this->desc_array ),
+			)
+		);
 	}
 
 	/*
@@ -38,32 +46,44 @@ class Lingotek_Group_String extends Lingotek_Group {
 	 * @param object $language
 	 * @param string $document_id translation term name (Lingotek document id)
 	 */
-	public static function create($name, $language, $document_id) {
+	public static function create( $name, $language, $document_id ) {
 		$desc = array(
 			'lingotek' => array(
 				'type'         => 'string',
-				'md5'          => md5(self::get_content($name)),
+				'md5'          => md5( self::get_content( $name ) ),
 				'source'       => $language->mo_id,
 				'status'       => 'importing',
-				'translations' => array()
+				'translations' => array(),
 			),
 		);
 
-		$terms = wp_get_object_terms($language->mo_id, 'post_translations');
+		$terms = wp_get_object_terms( $language->mo_id, 'post_translations' );
 
 		// the translation already exists but was previously disassociated
-		if ($key = array_search($name, wp_list_pluck($terms, 'name'))) {
-			wp_update_term((int) $terms[$key]->term_id, 'post_translations', array('slug' => $document_id, 'name' => $name, 'description' => serialize($desc)));
-		}
-
-		else {
-			wp_insert_term($name, 'post_translations', array('slug' => $document_id, 'description' => serialize($desc)));
-		}
-
-		wp_set_object_terms($language->mo_id, $document_id, 'post_translations', true); // add terms
-
+		if ( $key = array_search( $name, wp_list_pluck( $terms, 'name' ) ) ) {
+			wp_update_term(
+				(int) $terms[ $key ]->term_id,
+				'post_translations',
+				array(
+					'slug'        => $document_id,
+					'name'        => $name,
+					'description' => serialize( $desc ),
+				)
+			);
+		} else {
+			wp_insert_term(
+				$name,
+				'post_translations',
+				array(
+					'slug'        => $document_id,
+					'description' => serialize( $desc ),
+				)
+			);
+		}//end if
+		// Add terms.
+		wp_set_object_terms( $language->mo_id, $document_id, 'post_translations', true );
 	}
-	
+
 	/*
 	 * uploads a modified source
 	 *
@@ -72,18 +92,18 @@ class Lingotek_Group_String extends Lingotek_Group {
 	 * @param string $group group name
 	 * @param string $empty used for compatibility with parent class
 	 */
-	public function patch($params, $group = '', $content = null) {
-		$client = new Lingotek_API();		
-		$res = $client->patch_document($this->document_id, $params, $group);
+	public function patch( $params, $group = '', $content = null ) {
+		$client = new Lingotek_API();
+		$res    = $client->patch_document( $this->document_id, $params, $group );
 
-		if ($res !== FALSE) {
-			$this->md5 = md5($content);
-			$this->status = 'importing';
-			$this->translations = array_fill_keys(array_keys($this->translations), 'pending');
+		if ( $res !== false ) {
+			$this->md5          = md5( $content );
+			$this->status       = 'importing';
+			$this->translations = array_fill_keys( array_keys( $this->translations ), 'pending' );
 			$this->save();
 		}
 	}
-  
+
 	/*
 	 * returns the content to translate
 	 *
@@ -92,22 +112,24 @@ class Lingotek_Group_String extends Lingotek_Group {
 	 * @param object $group string group name
 	 * @return string json encoded content to translate
 	 */
-	public static function get_content($group) {
-		foreach (PLL_Admin_Strings::get_strings() as $string) {
-			if ($string['context'] == $group)
-				$arr[$string['string']] = $string['string'];
+	public static function get_content( $group ) {
+		foreach ( PLL_Admin_Strings::get_strings() as $string ) {
+			if ( $string['context'] == $group ) {
+				$arr[ $string['string'] ] = $string['string'];
+			}
 		}
-		return json_encode($arr);
+		return json_encode( $arr );
 	}
-  
+
 	/*
 	 * requests translations to Lingotek TMS
 	 *
 	 * @since 0.2
 	 */
 	public function request_translations() {
-		if (isset($this->source))
-			$this->_request_translations($this->get_source_language());
+		if ( isset( $this->source ) ) {
+			$this->_request_translations( $this->get_source_language() );
+		}
 	}
 
 	/*
@@ -118,26 +140,29 @@ class Lingotek_Group_String extends Lingotek_Group {
 	 *
 	 * @param string $locale
 	 */
-	public function create_translation($locale) {
+	public function create_translation( $locale ) {
 		$client = new Lingotek_API();
 
-		if (false === ($translation = $client->get_translation($this->document_id, $locale, $this->name)))
+		if ( false === ( $translation = $client->get_translation( $this->document_id, $locale, $this->name ) ) ) {
 			return;
-
-		$strings = wp_list_pluck(PLL_Admin_Strings::get_strings(), 'name', 'string'); // get the strings name for the filter
-		$translations = json_decode($translation, true); // wp_insert_post expects array
-		$language = $this->pllm->get_language($locale);
-
-		$mo = new PLL_MO();
-		$mo->import_from_db($language);
-
-		foreach ($translations as $key => $translation) {
-			$translation = apply_filters('pll_sanitize_string_translation', $translation, $strings[$key], $this->name);
-			$mo->add_entry($mo->make_entry($key, $translation));
 		}
 
-		$mo->export_to_db($language);
-		$this->safe_translation_status_update($locale, 'current');
+		// Get the strings name for the filter.
+		$strings = wp_list_pluck( PLL_Admin_Strings::get_strings(), 'name', 'string' );
+		// wp_insert_post expects array.
+		$translations = json_decode( $translation, true );
+		$language     = $this->pllm->get_language( $locale );
+
+		$mo = new PLL_MO();
+		$mo->import_from_db( $language );
+
+		foreach ( $translations as $key => $translation ) {
+			$translation = apply_filters( 'pll_sanitize_string_translation', $translation, $strings[ $key ], $this->name );
+			$mo->add_entry( $mo->make_entry( $key, $translation ) );
+		}
+
+		$mo->export_to_db( $language );
+		$this->safe_translation_status_update( $locale, 'current' );
 	}
 
 	/*
@@ -148,7 +173,7 @@ class Lingotek_Group_String extends Lingotek_Group {
 	 * @return bool
 	 */
 	public function is_automatic_upload() {
-		return 'automatic' == Lingotek_Model::get_profile_option('upload', 'string', $this->get_source_language()) && parent::is_automatic_upload();
+		return 'automatic' == Lingotek_Model::get_profile_option( 'upload', 'string', $this->get_source_language() ) && parent::is_automatic_upload();
 	}
 
 	/*
@@ -159,6 +184,6 @@ class Lingotek_Group_String extends Lingotek_Group {
 	 * @return object
 	 */
 	public function get_source_language() {
-		return $this->pllm->get_language($this->pllm->options['default_lang']);
+		return $this->pllm->get_language( $this->pllm->options['default_lang'] );
 	}
 }

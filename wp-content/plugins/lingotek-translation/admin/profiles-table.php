@@ -1,7 +1,8 @@
 <?php
 
 if ( ! class_exists( 'WP_List_Table' ) ) {
-	require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' ); // since WP 3.1.
+	// since WP 3.1.
+	require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
 }
 
 /**
@@ -14,11 +15,14 @@ class Lingotek_Profiles_Table extends WP_List_Table {
 	 *
 	 * @since 0.2
 	 */
-	function __construct() {
-		parent::__construct(array(
-			'plural'   => 'lingotek-profiles', // do not translate (used for css class).
-			'ajax'	 => false,
-		));
+	public function __construct() {
+		parent::__construct(
+			array(
+				// do not translate (used for css class).
+				'plural' => 'lingotek-profiles',
+				'ajax'   => false,
+			)
+		);
 	}
 
 	/**
@@ -30,7 +34,7 @@ class Lingotek_Profiles_Table extends WP_List_Table {
 	 * @param string $column_name column.
 	 * @return string
 	 */
-	function column_default( $item, $column_name ) {
+	public function column_default( $item, $column_name ) {
 		return isset( $item[ $column_name ] ) ? esc_html( $item[ $column_name ] ) : '';
 	}
 
@@ -42,9 +46,10 @@ class Lingotek_Profiles_Table extends WP_List_Table {
 	 * @param array $item item.
 	 * @return string
 	 */
-	function column_usage( $item ) {
+	protected function column_usage( $item ) {
 		return empty( $item['usage'] ) ?
 			__( 'No content types', 'lingotek-translation' ) :
+			/* translators: %d: Number of content types. */
 			sprintf( _n( '%d content type', '%d content types', $item['usage'], 'lingotek-translation' ), number_format_i18n( $item['usage'] ) );
 	}
 
@@ -56,7 +61,7 @@ class Lingotek_Profiles_Table extends WP_List_Table {
 	 * @param array $item item.
 	 * @return string
 	 */
-	function column_actions( $item ) {
+	public function column_actions( $item ) {
 		$actions = array();
 
 		if ( 'disabled' !== $item['profile'] ) {
@@ -86,9 +91,9 @@ class Lingotek_Profiles_Table extends WP_List_Table {
 	 *
 	 * @return array the list of column titles
 	 */
-	function get_columns() {
+	public function get_columns() {
 		return array(
-			'name' => __( 'Profile name', 'lingotek-translation' ),
+			'name'    => __( 'Profile name', 'lingotek-translation' ),
 			'usage'   => __( 'Usage', 'lingotek-translation' ),
 			'actions' => __( 'Actions', 'lingotek-translation' ),
 		);
@@ -101,7 +106,7 @@ class Lingotek_Profiles_Table extends WP_List_Table {
 	 *
 	 * @return array
 	 */
-	function get_sortable_columns() {
+	public function get_sortable_columns() {
 		return array(
 			'name' => array( 'name', false ),
 		);
@@ -114,8 +119,8 @@ class Lingotek_Profiles_Table extends WP_List_Table {
 	 *
 	 * @param array $data data.
 	 */
-	function prepare_items( $data = array() ) {
-		$per_page = $this->get_items_per_page( 'lingotek_profiles_per_page' );
+	public function prepare_items( $data = array() ) {
+		$per_page              = $this->get_items_per_page( 'lingotek_profiles_per_page' );
 		$this->_column_headers = array( $this->get_columns(), array(), $this->get_sortable_columns() );
 
 		/**
@@ -126,23 +131,28 @@ class Lingotek_Profiles_Table extends WP_List_Table {
 		 * @return int  sort direction.
 		 */
 		function usort_reorder( $a, $b ) {
-			$order = filter_input( INPUT_GET, 'order' );
+			$order   = filter_input( INPUT_GET, 'order' );
 			$orderby = filter_input( INPUT_GET, 'orderby' );
-			$result = strcmp( $a[ $orderby ], $b[ $orderby ] ); // determine sort order.
-			return (empty( $order ) || 'asc' === $order  ) ? $result : -$result; // send final sort direction to usort.
+			// Determine sort order.
+			$result = strcmp( $a[ $orderby ], $b[ $orderby ] );
+			// Send final sort direction to usort.
+			return ( empty( $order ) || 'asc' === $order ) ? $result : -$result;
 		};
 
-		if ( ! empty( $orderby ) ) { // no sort by default.
+		// No sort by default.
+		if ( ! empty( $orderby ) ) {
 			usort( $data, 'usort_reorder' );
 		}
 
 		$total_items = count( $data );
-		$this->items = array_slice( $data, ($this->get_pagenum() - 1) * $per_page, $per_page );
+		$this->items = array_slice( $data, ( $this->get_pagenum() - 1 ) * $per_page, $per_page );
 
-		$this->set_pagination_args(array(
-			'total_items' => $total_items,
-			'per_page'	=> $per_page,
-			'total_pages' => ceil( $total_items / $per_page ),
-		));
+		$this->set_pagination_args(
+			array(
+				'total_items' => $total_items,
+				'per_page'    => $per_page,
+				'total_pages' => ceil( $total_items / $per_page ),
+			)
+		);
 	}
 }

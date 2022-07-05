@@ -1,7 +1,8 @@
 <?php
 
 if ( ! class_exists( 'WP_List_Table' ) ) {
-	require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' ); // since WP 3.1.
+	// Since WP 3.1.
+	require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
 }
 
 /**
@@ -26,11 +27,14 @@ class Lingotek_Custom_Fields_Table extends WP_List_Table {
 	 *
 	 * @since 0.2
 	 */
-	function __construct() {
-		parent::__construct(array(
-			'plural'   => 'lingotek-custom-fields', // do not translate (used for css class).
-			'ajax'   => false,
-		));
+	public function __construct() {
+		parent::__construct(
+			array(
+				// Do not translate (used for css class).
+				'plural' => 'lingotek-custom-fields',
+				'ajax'   => false,
+			)
+		);
 	}
 
 	/**
@@ -40,10 +44,11 @@ class Lingotek_Custom_Fields_Table extends WP_List_Table {
 	 *
 	 * @param array $item item.
 	 * @return string
+	 *
+	 * @deprecated Unused?
 	 */
-	function column_meta_key( $item ) {
-		// var_dump($item);
-		printf('<input type="checkbox" onClick="show(this);" class="boxes" name="%s" value="value1" > ',$item['meta_key'] );
+	protected function column_meta_key( $item ) {
+		printf( '<input type="checkbox" onClick="show(this);" class="boxes" name="%s" value="value1" > ', esc_html( $item['meta_key'] ) );
 		return isset( $item['meta_key'] ) ? esc_html( $item['meta_key'] ) : '';
 	}
 
@@ -53,12 +58,12 @@ class Lingotek_Custom_Fields_Table extends WP_List_Table {
 	 * @since 0.2
 	 *
 	 * @param array $item item.
+	 *
+	 * @deprecated Unused?
 	 */
-	function column_setting( $item ) {
-		//var_dump($item);
-		$settings = array( 'translate', 'copy', 'ignore' );
+	protected function column_setting( $item ) {
+		$settings             = array( 'translate', 'copy', 'ignore' );
 		$custom_field_choices = get_option( 'lingotek_custom_fields', array() );
-    //var_dump($custom_field_choices);
 		printf( '<select class="custom-field-setting" name="%1$s" id="%1$s">', 'settings[' . esc_html( $item['meta_key'] ) . ']' );
 
 		// select the option from the lingotek_custom_fields option.
@@ -80,11 +85,11 @@ class Lingotek_Custom_Fields_Table extends WP_List_Table {
 	 *
 	 * @return array the list of column titles
 	 */
-	function get_columns() {
+	public function get_columns() {
 		return array(
-
-		'meta_key' => __( '<input type="checkbox" id="master" onClick="toggle(this);" value="value2" > Custom Field Key', 'lingotek-translation' ),
-		'setting' => __( 'Action', 'lingotek-translation' ),
+			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+			'meta_key' => __( '<input type="checkbox" id="master" onClick="toggle(this);" value="value2" > Custom Field Key', 'lingotek-translation' ),
+			'setting'  => __( 'Action', 'lingotek-translation' ),
 		);
 	}
 
@@ -95,9 +100,10 @@ class Lingotek_Custom_Fields_Table extends WP_List_Table {
 	 *
 	 * @return array
 	 */
-	function get_sortable_columns() {
+	public function get_sortable_columns() {
 		return array(
-		'meta_key' => array( 'meta_key', false ),
+			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+			'meta_key' => array( 'meta_key', false ),
 		);
 	}
 
@@ -108,7 +114,7 @@ class Lingotek_Custom_Fields_Table extends WP_List_Table {
 	 *
 	 * @param array $data data.
 	 */
-	function prepare_items( $data = array() ) {
+	public function prepare_items( $data = array() ) {
 		$this->_column_headers = array( $this->get_columns(), array(), $this->get_sortable_columns() );
 
 		/**
@@ -119,22 +125,27 @@ class Lingotek_Custom_Fields_Table extends WP_List_Table {
 		 * @return int sort direction.
 		 */
 		function usort_reorder( $a, $b ) {
-			$order = filter_input( INPUT_GET, 'order' );
+			$order   = filter_input( INPUT_GET, 'order' );
 			$orderby = filter_input( INPUT_GET, 'orderby' );
-			$result = strcmp( $a[ $orderby ], $b[ $orderby ] ); // determine sort order.
-			return (empty( $order ) || 'asc' === $order ) ? $result : -$result; // send final sort direction to usort.
+			// Determine sort order.
+			$result = strcmp( $a[ $orderby ], $b[ $orderby ] );
+			// Send final sort direction to usort.
+			return ( empty( $order ) || 'asc' === $order ) ? $result : -$result;
 		};
 
-		if ( ! empty( $orderby ) ) { // no sort by default.
+		// No sort by default.
+		if ( ! empty( $orderby ) ) {
 			usort( $data, 'usort_reorder' );
 		}
 
 		$total_items = count( $data );
 		$this->items = $data;
 
-		$this->set_pagination_args(array(
-			'total_items' => $total_items,
-			'per_page'  => count( $data ),
-		));
+		$this->set_pagination_args(
+			array(
+				'total_items' => $total_items,
+				'per_page'    => count( $data ),
+			)
+		);
 	}
 }

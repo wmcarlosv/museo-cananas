@@ -60,17 +60,16 @@ class Lingotek_Filters_Term extends PLL_Admin_Filters_Term {
 	 * @param string $taxonomy taxonomy.
 	 */
 	public function save_term( $term_id, $tt_id, $taxonomy ) {
-		$document = $this->lgtm->get_group('term', $term_id);
-		if ($document) {
-			$document->pre_save_terms($term_id, $taxonomy, PLL()->model->term->get_language( $term_id ));
+		$document = $this->lgtm->get_group( 'term', $term_id );
+		if ( $document ) {
+			$document->pre_save_terms( $term_id, $taxonomy, PLL()->model->term->get_language( $term_id ) );
 		}
-
 
 		if ( ! $this->model->is_translated_taxonomy( $taxonomy ) ) {
 			return;
 		}
 
-		$import_get = filter_input( INPUT_GET, 'import' );
+		$import_get  = filter_input( INPUT_GET, 'import' );
 		$import_post = filter_input( INPUT_POST, 'import' );
 		if ( empty( $import ) && empty( $import_post ) ) {
 			parent::save_term( $term_id, $tt_id, $taxonomy );
@@ -135,8 +134,8 @@ class Lingotek_Filters_Term extends PLL_Admin_Filters_Term {
 			return array();
 		}
 
-		$delete_tags = null;
-		$delete_tags_get = filter_input( INPUT_GET, 'delete_tags' );
+		$delete_tags      = null;
+		$delete_tags_get  = filter_input( INPUT_GET, 'delete_tags' );
 		$delete_tags_post = filter_input( INPUT_POST, 'delete_tags' );
 		if ( ! empty( $delete_tags_get ) ) {
 			$delete_tags = filter_input( INPUT_GET, 'delete_tags' );
@@ -162,16 +161,17 @@ class Lingotek_Filters_Term extends PLL_Admin_Filters_Term {
 	public function delete_term( $term_id ) {
 		$taxonomy = substr( current_filter(), 7 );
 		foreach ( $this->get_translations_to_sync( $term_id ) as $tr_id ) {
-			wp_delete_term( $tr_id, $taxonomy ); // forces deletion for the translations which are not already in the list.
+			// Forces deletion for the translations which are not already in the list.
+			wp_delete_term( $tr_id, $taxonomy );
 		}
 		$this->lgtm->delete_term( $term_id );
 	}
 
-	public function cancel_term($term_id){
-		$taxonomy = substr(current_filter(), 7);
-		foreach($this->get_translations_to_sync($term_id) as $tr_id) {
-			wp_delete_term($tr_id, $taxonomy);
+	public function cancel_term( $term_id ) {
+		$taxonomy = substr( current_filter(), 7 );
+		foreach ( $this->get_translations_to_sync( $term_id ) as $tr_id ) {
+			wp_delete_term( $tr_id, $taxonomy );
 		}
-		$this->lgtm->cancel_term($term_id);
+		$this->lgtm->cancel_term( $term_id );
 	}
 }

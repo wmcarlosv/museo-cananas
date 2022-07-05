@@ -28,7 +28,6 @@ class Lingotek_String_actions extends Lingotek_Actions {
 	 */
 	protected function get_language( $name ) {
 		return $this->pllm->get_language( $this->pllm->options['default_lang'] );
-		;
 	}
 
 
@@ -53,7 +52,7 @@ class Lingotek_String_actions extends Lingotek_Actions {
 	 * @return string
 	 */
 	protected function get_action_link( $args, $warning = false ) {
-		$args['page'] = 'lingotek-translation_manage';
+		$args['page']     = 'lingotek-translation_manage';
 		$args['noheader'] = true;
 		return parent::get_action_link( $args, $warning );
 	}
@@ -78,7 +77,6 @@ class Lingotek_String_actions extends Lingotek_Actions {
 	 * @param string $action action.
 	 */
 	public function manage_actions( $action ) {
-
 		$redirect = remove_query_arg( array( 'action', 'action2' ), wp_get_referer() );
 		if ( ! $redirect ) {
 			$redirect = admin_url( 'admin.php?page=lingotek-translation_manage&sm=strings' );
@@ -120,13 +118,13 @@ class Lingotek_String_actions extends Lingotek_Actions {
 
 			default:
 				if ( ! $this->_manage_actions( $action ) ) {
-					return; // do not redirect if this is not one of our actions.
+					// Do not redirect if this is not one of our actions.
+					return;
 				}
-		}
+		}//end switch
 
 		wp_redirect( $redirect );
 		exit();
-
 	}
 
 	/**

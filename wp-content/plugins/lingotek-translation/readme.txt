@@ -3,8 +3,8 @@ Contributors: chouby, smithworx, erichie, robertdhanna, ipoulsen, elliothanna, l
 Donate link: http://lingotek.com/
 Tags: automation, bilingual, international, language, Lingotek, localization, multilanguage, multilingual, translate, translation
 Requires at least: 3.8
-Tested up to: 5.6
-Stable tag: 1.4.12
+Tested up to: 5.8
+Stable tag: 1.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -122,6 +122,35 @@ For more, visit the [Lingotek documentation site](https://lingotek.atlassian.net
 5. The Lingotek Translation plugin provides the ability to Copy, Translate, and Ignore each specific custom field. Our plugin supports Wordpress custom fields and advanced custom fields.
 
 == Changelog ==
+= 1.5.1 (2021-08-19) =
+  - Compatibility issues with PolyLang 3.1
+  - Add check for the Document Status
+  - PHP Notice when actions don't include locale
+
+= 1.5.0 (2021-08-05) =
+* New UI
+  - The source and translation icons have been replaced with chips. This makes it easier to view which stage the translations are in.
+  - Added dropdown actions to the source and target chips.
+  - Added Cancel option for specific targets in the action dropdown.
+*New Gone status
+  - This will give you a visual indicator when a document or target has been archived or deleted.
+
+= 1.4.16 (2021-07-22) =
+* Fixed small whitespace bug
+
+= 1.4.15 (2021-07-20) =
+* Ensure compatibility with WordPress 5.8
+* WordPress: Warning when authenticating in new clean installation
+* WordPress: When strings are not enabled, there's a link to set up content types and enable them, but it's broken
+* WordPress - Components missing after translation
+
+= 1.4.14 (2021-07-07) =
+* Fixed WordPress: consume the download_interim_translation callback
+
+= 1.4.13 (2021-6-14) =
+* Updated code base to be compatible with PHP 8
+* Updated cancel action behavior to be more consistent.
+
 = 1.4.12 (2021-5-6) =
 * Changed deprecated Polylang method
 

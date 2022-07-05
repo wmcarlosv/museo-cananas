@@ -10,6 +10,9 @@ jQuery(document).ready(function($) {
 			if (lingotek_data.locales){
 				data.locales = JSON.stringify(lingotek_data.locales);
 			}
+			if (lingotek_data.target_locale){
+				data.target_locale = lingotek_data.target_locale;
+			}
 			$.post(ajaxurl, data , function(response) {
 				$("#lingotek-progressbar").progressbar({
 					value: ++i / lingotek_data.ids.length * 100

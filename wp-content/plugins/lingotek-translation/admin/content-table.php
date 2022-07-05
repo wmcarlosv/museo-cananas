@@ -1,7 +1,8 @@
 <?php
 
 if ( ! class_exists( 'WP_List_Table' ) ) {
-	require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' ); // since WP 3.1.
+	// Since WP 3.1.
+	require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
 }
 
 /**
@@ -27,13 +28,16 @@ class Lingotek_Content_Table extends WP_List_Table {
 	 * @param array $content_types array of content types.
 	 * @since 0.2
 	 */
-	function __construct( $content_types ) {
-		parent::__construct(array(
-			'plural'   => 'lingotek-content', // do not translate (used for css class).
-			'ajax'	 => false,
-		));
+	public function __construct( $content_types ) {
+		parent::__construct(
+			array(
+				// Do not translate (used for css class).
+				'plural' => 'lingotek-content',
+				'ajax'   => false,
+			)
+		);
 
-		$this->profiles = Lingotek::get_profiles();
+		$this->profiles      = Lingotek::get_profiles();
 		$this->content_types = $content_types;
 	}
 
@@ -44,14 +48,15 @@ class Lingotek_Content_Table extends WP_List_Table {
 	 *
 	 * @param array $item items.
 	 */
-	function column_name( $item ) {
+	protected function column_name( $item ) {
 		global $polylang;
 
 		printf( '<span class="content-type-name">%s</span>', esc_html( $item['name'] ) );
 
 		// the source language for strings is always the default language.
 		if ( 'string' !== $item['type'] ) {
-			printf('<a id="id[%s]" class="dashicons dashicons-arrow-right" onclick="%s" href="#"></a>',
+			printf(
+				'<a id="id[%s]" class="dashicons dashicons-arrow-right" onclick="%s" href="#"></a>',
 				esc_attr( $item['type'] ),
 				"
 				d1 = document.getElementById('sources-name[" . esc_html( $item['type'] ) . "]');
@@ -71,10 +76,11 @@ class Lingotek_Content_Table extends WP_List_Table {
 
 			printf( '<ul class="sources-name" id="sources-name[%s]" style="display:none;">', esc_html( $item['type'] ) );
 			foreach ( $polylang->model->get_languages_list() as $language ) {
+				/* translators: %s: The language name. */
 				printf( '<li>%s</li>', sprintf( esc_html( __( '%s source', 'lingotek-translation' ) ), esc_html( $language->name ) ) );
 			}
 			echo '</ul>';
-		}
+		}//end if
 	}
 
 	/**
@@ -84,12 +90,12 @@ class Lingotek_Content_Table extends WP_List_Table {
 	 *
 	 * @param array $item item.
 	 */
-	function column_profile( $item ) {
+	protected function column_profile( $item ) {
 		global $polylang;
 
 		printf( '<select class="content-type-profile" name="%1$s" id="%1$s">', esc_html( $item['type'] ) . '[profile]' );
 		foreach ( $this->profiles as $key => $profile ) {
-			$selected = (isset( $item['profile'] ) && $key === $item['profile']) ? 'selected="selected"' : '';
+			$selected = ( isset( $item['profile'] ) && $key === $item['profile'] ) ? 'selected="selected"' : '';
 			echo "\n\t<option value='" . esc_attr( $key ) . "' " . esc_html( $selected ) . '>' . esc_html( $profile['name'] ) . '</option>';
 		}
 		echo '</select>';
@@ -102,7 +108,7 @@ class Lingotek_Content_Table extends WP_List_Table {
 			foreach ( $polylang->model->get_languages_list() as $language ) {
 				printf( '<li><select name="%1$s" id="%1$s">', esc_html( $item['type'] ) . '[sources][' . esc_html( $language->slug ) . ']' );
 				foreach ( $options as $key => $profile ) {
-					$selected = (isset( $item['sources'][ $language->slug ] ) && $key === $item['sources'][ $language->slug ]) ? 'selected="selected"' : '';
+					$selected = ( isset( $item['sources'][ $language->slug ] ) && $key === $item['sources'][ $language->slug ] ) ? 'selected="selected"' : '';
 					echo "\n\t<option value='" . esc_attr( $key ) . "' " . esc_html( $selected ) . '>' . esc_html( $profile['name'] ) . '</option>';
 				}
 				echo '</select></li>';
@@ -124,7 +130,7 @@ class Lingotek_Content_Table extends WP_List_Table {
 	protected function display_fields( $labels, $values, $name ) {
 		foreach ( $labels as $key => $str ) {
 			if ( is_array( $str ) ) {
-				if ( 'metas' === $key  ) {
+				if ( 'metas' === $key ) {
 					continue;
 				}
 				$this->display_fields( $str, isset( $values[ $key ] ) ? $values[ $key ] : array(), $name . "[$key]" );
@@ -146,10 +152,10 @@ class Lingotek_Content_Table extends WP_List_Table {
 	 *
 	 * @param array $item item.
 	 */
-	function column_fields( $item ) {
+	protected function column_fields( $item ) {
 		if ( ! empty( $item['fields'] ) ) {
 			echo '<ul class="content-type-fields">';
-			$this->display_fields( $item['fields']['label'], isset( $item['fields']['value'] ) ? $item['fields']['value'] : array() , $item['type'] . '[fields]' );
+			$this->display_fields( $item['fields']['label'], isset( $item['fields']['value'] ) ? $item['fields']['value'] : array(), $item['type'] . '[fields]' );
 			echo '</ul>';
 		}
 	}
@@ -161,7 +167,7 @@ class Lingotek_Content_Table extends WP_List_Table {
 	 *
 	 * @return array the list of column titles
 	 */
-	function get_columns() {
+	public function get_columns() {
 		return array(
 			'name'    => __( 'Content Type', 'lingotek-translation' ),
 			'profile' => __( 'Profile', 'lingotek-translation' ),
@@ -176,7 +182,7 @@ class Lingotek_Content_Table extends WP_List_Table {
 	 *
 	 * @return array
 	 */
-	function get_sortable_columns() {
+	public function get_sortable_columns() {
 		return array(
 			'name' => array( 'name', false ),
 		);
@@ -189,8 +195,8 @@ class Lingotek_Content_Table extends WP_List_Table {
 	 *
 	 * @param array $data data.
 	 */
-	function prepare_items( $data = array() ) {
-		$per_page = $this->get_items_per_page( 'lingotek_content_per_page' );
+	public function prepare_items( $data = array() ) {
+		$per_page              = $this->get_items_per_page( 'lingotek_content_per_page' );
 		$this->_column_headers = array( $this->get_columns(), array(), $this->get_sortable_columns() );
 
 		/**
@@ -201,23 +207,28 @@ class Lingotek_Content_Table extends WP_List_Table {
 		 * @return int sort direction.
 		 */
 		function usort_reorder( $a, $b ) {
-			$order = filter_input( INPUT_GET, 'order' );
+			$order   = filter_input( INPUT_GET, 'order' );
 			$orderby = filter_input( INPUT_GET, 'orderby' );
-			$result = strcmp( $a[ $orderby ], $b[ $orderby ] ); // determine sort order.
-			return (empty( $order ) || $order === 'asc') ? $result : -$result; // send final sort direction to usort.
+			// Determine sort order.
+			$result = strcmp( $a[ $orderby ], $b[ $orderby ] );
+			// Send final sort direction to usort.
+			return ( empty( $order ) || 'asc' === $order ) ? $result : -$result;
 		};
 
-		if ( ! empty( $orderby ) ) { // no sort by default.
+		// No sort by default.
+		if ( ! empty( $orderby ) ) {
 			usort( $data, 'usort_reorder' );
 		}
 
 		$total_items = count( $data );
-		$this->items = array_slice( $data, ($this->get_pagenum() - 1) * $per_page, $per_page );
+		$this->items = array_slice( $data, ( $this->get_pagenum() - 1 ) * $per_page, $per_page );
 
-		$this->set_pagination_args(array(
-			'total_items' => $total_items,
-			'per_page'	=> $per_page,
-			'total_pages' => ceil( $total_items / $per_page ),
-		));
+		$this->set_pagination_args(
+			array(
+				'total_items' => $total_items,
+				'per_page'    => $per_page,
+				'total_pages' => ceil( $total_items / $per_page ),
+			)
+		);
 	}
 }

@@ -5,12 +5,12 @@ defined( 'WPINC' ) || exit ;
 $menu_list = array(
 	'settings_css' 				=> __( 'CSS Settings', 'litespeed-cache' ),
 	'settings_js'				=> __( 'JS Settings', 'litespeed-cache' ),
-	'settings_html' 			=> __( 'Optimization', 'litespeed-cache' ),
+	'settings_html' 			=> __( 'HTML Settings', 'litespeed-cache' ),
 	'settings_media' 			=> __( 'Media Settings', 'litespeed-cache' ),
 	'settings_media_exc'		=> __( 'Media Excludes', 'litespeed-cache' ),
 	'settings_localization'		=> __( 'Localization', 'litespeed-cache' ),
 	'settings_tuning' 			=> __( 'Tuning', 'litespeed-cache' ),
-) ;
+);
 
 ?>
 
@@ -25,13 +25,6 @@ $menu_list = array(
 </div>
 
 <div class="litespeed-wrap">
-
-	<?php if ( Optimize::need_db() && ! Data::get_instance()->tb_exist( 'cssjs' ) ) : ?>
-	<div class="litespeed-callout notice notice-error inline">
-		<h4><?php echo __( 'WARNING', 'litespeed-cache' ) ; ?></h4>
-		<p><?php echo sprintf( __( 'Failed to create Optimizer table. Please follow <a %s>Table Creation guidance from LiteSpeed Wiki</a> to finish setup.', 'litespeed-cache' ), 'href="https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:cache:lscwp:installation" target="_blank"' ) ; ?></p>
-	</div>
-	<?php endif; ?>
 
 	<div class="litespeed-callout notice notice-warning inline">
 		<h4><?php echo __( 'NOTICE', 'litespeed-cache' ) ; ?></h4>

@@ -25,7 +25,8 @@ class Lingotek_Filters_Media extends PLL_Admin_Filters_Media {
 		$this->lgtm = &$GLOBALS['wp_lingotek']->model;
 
 		add_action( 'edit_attachment', array( &$this, 'edit_attachment' ) );
-		add_action( 'add_attachment', array( &$this, 'add_attachment' ), 11 ); // after Polylang.
+		// After Polylang.
+		add_action( 'add_attachment', array( &$this, 'add_attachment' ), 11 );
 	}
 
 	/**

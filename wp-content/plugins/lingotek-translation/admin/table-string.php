@@ -20,11 +20,14 @@ class Lingotek_Table_String extends PLL_Table_String {
 			$input_type = $item['multiline'] ?
 				'<textarea name="translation[%1$s][%2$s]" id="%1$s-%2$s" disabled="disabled">%4$s</textarea>' :
 				'<input type="text" name="translation[%1$s][%2$s]" id="%1$s-%2$s" value="%4$s" disabled="disabled" />';
-			$out .= sprintf('<div class="translation"><label for="%1$s-%2$s">%3$s</label>' . $input_type . '</div>' . "\n",
+			$out       .= sprintf(
+				'<div class="translation"><label for="%1$s-%2$s">%3$s</label>' . $input_type . '</div>' . "\n",
 				esc_attr( $key ),
 				esc_attr( $item['row'] ),
 				esc_html( $this->languages['languages'][ $key ] ),
-			format_to_edit( $translation )); // don't interpret special chars.
+				// Don't interpret special chars.
+				format_to_edit( $translation )
+			);
 		}
 		return $out;
 	}
@@ -49,7 +52,7 @@ class Lingotek_Table_String extends PLL_Table_String {
 		// Load translations.
 		foreach ( $listlanguages as $language ) {
 			// filters by language if requested.
-			if ( ($lg = get_user_meta( get_current_user_id(), 'pll_filter_content', true )) && $language->slug !== $lg ) {
+			if ( ( $lg = get_user_meta( get_current_user_id(), 'pll_filter_content', true ) ) && $language->slug !== $lg ) {
 				continue;
 			}
 
@@ -57,25 +60,29 @@ class Lingotek_Table_String extends PLL_Table_String {
 			$mo->import_from_db( $language );
 			foreach ( $data as $key => $row ) {
 				$data[ $key ]['translations'][ $language->slug ] = $mo->translate( $row['string'] );
-				$data[ $key ]['row'] = $key; // store the row number for convenience.
+				// Store the row number for convenience.
+				$data[ $key ]['row'] = $key;
 			}
 		}
 
-		$per_page = $this->get_items_per_page( 'pll_strings_per_page' );
+		$per_page              = $this->get_items_per_page( 'pll_strings_per_page' );
 		$this->_column_headers = array( $this->get_columns(), array(), $this->get_sortable_columns() );
 
 		$orderby = filter_input( INPUT_GET, 'orderby' );
-		if ( ! empty( $orderby ) ) { // No sort by default.
+		// No sort by default.
+		if ( ! empty( $orderby ) ) {
 			usort( $data, array( $this, 'usort_reorder' ) );
 		}
 
 		$total_items = count( $data );
 		$this->items = array_slice( $data, ( $this->get_pagenum() - 1 ) * $per_page, $per_page );
 
-		$this->set_pagination_args( array(
-			'total_items' => $total_items,
-			'per_page'	=> $per_page,
-			'total_pages' => ceil( $total_items / $per_page ),
-		) );
+		$this->set_pagination_args(
+			array(
+				'total_items' => $total_items,
+				'per_page'    => $per_page,
+				'total_pages' => ceil( $total_items / $per_page ),
+			)
+		);
 	}
 }

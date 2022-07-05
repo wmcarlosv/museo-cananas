@@ -26,7 +26,8 @@ class Lingotek_Workflow_Factory {
 	 *   @var array
 	 */
 	private static $map = array(
-		'ltk-professional-translation' => 'Lingotek_Professional_Translation_Workflow', // prod.
+		// Prod.
+		'ltk-professional-translation' => 'Lingotek_Professional_Translation_Workflow',
 	);
 
 	/**
@@ -36,12 +37,9 @@ class Lingotek_Workflow_Factory {
 	 *   @param string $workflow_id the Id of the given workflow.
 	 */
 	public static function get_workflow_instance( $workflow_id ) {
-		if ( ! isset( self::$map[ $workflow_id ] ) )
-		{
+		if ( ! isset( self::$map[ $workflow_id ] ) ) {
 			return new Lingotek_Workflow();
-		}
-		else
-		{
+		} else {
 			self::class_load( self::$map[ $workflow_id ] );
 			return new self::$map[ $workflow_id ]( $workflow_id );
 		}
@@ -50,11 +48,11 @@ class Lingotek_Workflow_Factory {
 	/**
 	 *   Echos the information modals describing various details about the workflow.
 	 */
-	public static function echo_info_modals() {
+	public static function lingotek_translation_professional_translation_info_modals() {
 		add_thickbox();
 		foreach ( self::$map as $id => $class ) {
 			$workflow = new $class( $id );
-			$workflow->echo_info_modal();
+			$workflow->lingotek_translation_professional_translation_info_modal();
 		}
 	}
 
@@ -64,7 +62,9 @@ class Lingotek_Workflow_Factory {
 	 *   @param string $class class name to be loaded.
 	 */
 	private static function class_load( $class ) {
-		if ( ! isset( $class ) ) { return; }
-		if ( ! class_exists( $class ) ) { require_once( LINGOTEK_WORKFLOWS . '/' . Lingotek::convert_class_to_file( $class ) . '.php' ); }
+		if ( ! isset( $class ) ) {
+			return; }
+		if ( ! class_exists( $class ) ) {
+			require_once LINGOTEK_WORKFLOWS . '/' . Lingotek::convert_class_to_file( $class ) . '.php'; }
 	}
 }

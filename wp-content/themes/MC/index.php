@@ -50,8 +50,17 @@
                 <div class="w-tab-content">
                     <div data-w-tab="Tab 4" class="w-tab-pane">
                         <div class="exhibiciones-page-wrapper">
-                            <?php if ( have_posts() ) : ?>
-                                <?php while ( have_posts() ) : the_post(); ?>
+                            <?php
+                                $todas = new WP_Query(
+                                        array(
+                                            'post_type'=>'post',
+                                            'category_name' => 'pasadas, actuales, proximas, last, current, upcoming',
+                                            'posts_per_page'=>'-1'
+                                        )
+                                    );
+                            ?>
+                            <?php if ( $todas->have_posts() ) : ?>
+                                <?php while ( $todas->have_posts() ) : $todas->the_post(); ?>
                                     <?php PG_Helper::rememberShownPost(); ?>
                                     <a href="<?php echo esc_url( get_permalink() ); ?>" <?php post_class( 'exhibicion-item w-inline-block' ); ?> id="post-<?php the_ID(); ?>"> <div class="exhibicion-text-wrapper">
                                             <div class="text-block-2">
@@ -85,14 +94,17 @@
                                     $actuales = new WP_Query(
                                         array(
                                             'post_type'=>'post',
-                                            'category_name' => 'actuales'
+                                            'category_name' => 'actuales',
+											'posts_per_page'=>'-1'
                                         )
                                     );
                                 }else{
                                      $actuales = new WP_Query(
                                         array(
                                             'post_type'=>'post',
-                                            'category_name' => 'current'                                        )
+                                            'category_name' => 'current',
+											'posts_per_page'=>'-1'
+										)
                                     );
                                 }
                                 
@@ -134,14 +146,16 @@
                                     $pasadas = new WP_Query(
                                         array(
                                             'post_type'=>'post',
-                                            'category_name' => 'pasadas'
+                                            'category_name' => 'pasadas',
+											'posts_per_page'=>'-1'
                                         )
                                     );
                                 }else{
                                      $pasadas = new WP_Query(
                                         array(
                                             'post_type'=>'post',
-                                            'category_name' => 'last'
+                                            'category_name' => 'last',
+											'posts_per_page'=>'-1'
                                         )
                                     );
                                 }
@@ -182,14 +196,16 @@
                                     $proximas = new WP_Query(
                                         array(
                                             'post_type'=>'post',
-                                            'category_name' => 'proximas'
+                                            'category_name' => 'proximas',
+											'posts_per_page'=>'-1'
                                         )
                                     );
                                 }else{
                                      $proximas = new WP_Query(
                                         array(
                                             'post_type'=>'post',
-                                            'category_name' => 'upcoming'                                        
+                                            'category_name' => 'upcoming',
+											'posts_per_page'=>'-1'
                                         )
                                     );
                                 }

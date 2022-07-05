@@ -11,31 +11,32 @@ class Lingotek_HTTP {
 	const TIMEOUT = 30;
 	/*
 	 * formats a request as multipart
-	 * greatly inspired from mailgun wordpress plugin
+	 * greatly inspired from mailgun WordPress plugin
 	 *
 	 * @since 0.1
 	 */
-	public function format_as_multipart(&$body) {
-		$boundary = '----------------------------32052ee8fd2c'; // arbitrary boundary
+	public function format_as_multipart( &$body ) {
+		// Arbitrary boundary.
+		$boundary = '----------------------------32052ee8fd2c';
 
 		$this->headers['Content-Type'] = 'multipart/form-data; boundary=' . $boundary;
 
 		$data = '';
 
-		foreach ($body as $key => $value) {
-			if (is_array($value)) {
-				foreach($value as $k => $v) {
+		foreach ( $body as $key => $value ) {
+			if ( is_array( $value ) ) {
+				foreach ( $value as $k => $v ) {
 					$data .= '--' . $boundary . "\r\n";
 					$data .= 'Content-Disposition: form-data; name="' . $key;
-					if ($key !== 'translation_locale_code' && $key !== 'translation_workflow_id'){ //request targets cannot be in an array, they need to have the same key
+					// Request targets cannot be in an array, as they need to have the same key.
+					if ( $key !== 'translation_locale_code' && $key !== 'translation_workflow_id' ) {
 						$data .= '[' . $k . ']';
-					}  
-					$data.= "\"\r\n\r\n";
+					}
+					$data .= "\"\r\n\r\n";
 					$data .= $v . "\r\n";
 				}
-			}
-			else {
-				$data .= '--' . $boundary ."\r\n";
+			} else {
+				$data .= '--' . $boundary . "\r\n";
 				$data .= 'Content-Disposition: form-data; name="' . $key . '"' . "\r\n\r\n";
 				$data .= $value . "\r\n";
 			}
@@ -49,12 +50,19 @@ class Lingotek_HTTP {
 	 *
 	 * @since 0.1
 	 */
-	public function post($url, $args  = array(), $custom_timeout = false) {
-    Lingotek::log("POST $url");
-    if (!empty($args)) {
-      Lingotek::log($args);
-    }
-    return wp_remote_post($url, array('headers' => $this->headers, 'body' => $args, 'timeout' => ($custom_timeout) ? $custom_timeout : self::TIMEOUT));
+	public function post( $url, $args = array(), $custom_timeout = false ) {
+		Lingotek::log( "POST $url" );
+		if ( ! empty( $args ) ) {
+			Lingotek::log( $args );
+		}
+		return wp_remote_post(
+			$url,
+			array(
+				'headers' => $this->headers,
+				'body'    => $args,
+				'timeout' => ( $custom_timeout ) ? $custom_timeout : self::TIMEOUT,
+			)
+		);
 	}
 
 	/*
@@ -62,25 +70,40 @@ class Lingotek_HTTP {
 	 *
 	 * @since 0.1
 	 */
-	public function get($url, $args = array()) {
-    Lingotek::log("GET $url");
-    if (!empty($args)) {
-      Lingotek::log($args);
-    }
-    return wp_remote_get($url, array('headers' => $this->headers, 'body' => $args, 'timeout' => self::TIMEOUT));
-  }
+	public function get( $url, $args = array() ) {
+		Lingotek::log( "GET $url" );
+		if ( ! empty( $args ) ) {
+			Lingotek::log( $args );
+		}
+		return wp_remote_get(
+			$url,
+			array(
+				'headers' => $this->headers,
+				'body'    => $args,
+				'timeout' => self::TIMEOUT,
+			)
+		);
+	}
 
-  /*
+	/*
 	 * send a DELETE request
 	 *
 	 * @since 0.1
 	 */
-	public function delete($url, $args  = array()) {
-    Lingotek::log("DELETE $url");
-    if (!empty($args)) {
-      Lingotek::log($args);
-    }
-    return wp_remote_request($url, array('method' => 'DELETE', 'headers' => $this->headers, 'body' => $args, 'timeout' => self::TIMEOUT));
+	public function delete( $url, $args = array() ) {
+		Lingotek::log( "DELETE $url" );
+		if ( ! empty( $args ) ) {
+			Lingotek::log( $args );
+		}
+		return wp_remote_request(
+			$url,
+			array(
+				'method'  => 'DELETE',
+				'headers' => $this->headers,
+				'body'    => $args,
+				'timeout' => self::TIMEOUT,
+			)
+		);
 	}
 
 	/*
@@ -88,11 +111,19 @@ class Lingotek_HTTP {
 	 *
 	 * @since 0.1
 	 */
-	public function patch($url, $args  = array()) {
-	Lingotek::log("PATCH $url");
-	if (!empty($args)) {
-		Lingotek::log($args);
-	}
-	return wp_remote_request($url, array('method' => 'PATCH', 'headers' => $this->headers, 'body' => $args, 'timeout' => self::TIMEOUT));
+	public function patch( $url, $args = array() ) {
+		Lingotek::log( "PATCH $url" );
+		if ( ! empty( $args ) ) {
+			Lingotek::log( $args );
+		}
+		return wp_remote_request(
+			$url,
+			array(
+				'method'  => 'PATCH',
+				'headers' => $this->headers,
+				'body'    => $args,
+				'timeout' => self::TIMEOUT,
+			)
+		);
 	}
 }
